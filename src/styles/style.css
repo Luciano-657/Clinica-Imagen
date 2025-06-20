@@ -51,12 +51,16 @@ body {
 /* ============================= */
 header {
     display: flex;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--color-hover-primary);
+    background-color: rgba(22, 51, 74, 0.8);
+    backdrop-filter: blur(8px);
     padding: 1rem;
     position: relative;
     z-index: 1001;
+    position: sticky;
 }
 
 .logo img {
