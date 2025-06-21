@@ -1,5 +1,4 @@
-//Menu Hamburgeusa
-
+//Menu Hamburguesa
 const header = document.getElementById("main-header");
 const toggleBtn = document.getElementById("toggle-btn");
 const closeBtn = document.getElementById("close-btn");
@@ -7,15 +6,25 @@ const overlay = document.getElementById("overlay");
 
 toggleBtn.addEventListener("click", () => {
     header.classList.add("nav-open");
+    document.body.style.overflow = "hidden";
 });
 
-closeBtn.addEventListener("click", () => {
+function cerrarMenu() {
     header.classList.remove("nav-open");
+    document.body.style.overflow = "";
+}
+
+closeBtn.addEventListener("click", cerrarMenu);
+overlay.addEventListener("click", cerrarMenu);
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+        cerrarMenu();
+    }
 });
 
-overlay.addEventListener("click", () => {
-    header.classList.remove("nav-open");
-});
+
+
 
 //Carrusel de porque elegirnos
 

@@ -6,7 +6,7 @@
     --color-bg: #D1ECF9;            /* Azul cielo - Fondo general */
     --color-primary: #1A3C57;       /* Azul marino - Títulos, botones importantes */
     --color-white: #F4F4F5;         /* Blanco - Tarjetas, formularios, texto */
-    --color-mint: #B2F2BB;          /* Verde menta - Botones secundarios, íconos */
+    --color-mint: #72e681;          /* Verde menta - Botones secundarios, íconos */
     --color-beige: #F5F5DC;         /* Beige - Fondos suaves o detalles */
 
     /* Hover y estados */
@@ -27,7 +27,7 @@
     --border-radius: 6px;
 
     /* Otros */
-    --transition: 0.3s ease;
+    --transition: 0.3s ease-in-out;
 }
 
 /* ============================= */
@@ -37,6 +37,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* 🔒 Previene scroll lateral global */
 }
 
 body {
@@ -54,18 +59,19 @@ body {
 /* ============================= */
 /*    HEADER Y MENÚ              */
 /* ============================= */
+
 header {
     display: flex;
-    top: 0;
-    left: 0;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(22, 51, 74, 0.8);
     backdrop-filter: blur(8px);
     padding: 1rem;
-    position: relative;
-    z-index: 1001;
     position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100%;
 }
 
 .logo img {
@@ -73,7 +79,6 @@ header {
     width: auto;
 }
 
-/* Botón hamburguesa */
 .menu-toggle {
     font-size: 1.8rem;
     cursor: pointer;
@@ -83,7 +88,6 @@ header {
     z-index: 1002;
 }
 
-/* Panel del menú */
 nav {
     position: fixed;
     top: 0;
@@ -104,7 +108,6 @@ nav {
     right: 0;
 }
 
-/* Botón de cierre */
 .close-btn {
     background: none;
     border: none;
@@ -115,22 +118,16 @@ nav {
     margin-bottom: 1rem;
 }
 
-/* Opciones de menú */
-nav a,
-.login-btn {
+nav a {
+    position: relative;
+    font-size: 16px;
     color: var(--color-white);
     text-decoration: none;
+    font-weight: bold;
     padding: 0.6rem;
     border-radius: var(--border-radius);
     transition: background var(--transition);
     font-family: var(--fiont-man);
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    position: relative;
 }
 
 nav a::after {
@@ -148,7 +145,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-.login-btn:hover::after{
+.login-btn:hover::after {
     width: 0%;
 }
 
@@ -163,7 +160,6 @@ nav a:hover::after {
     background-color: var(--color-hover-mint);
 }
 
-/* Overlay oscuro */
 .overlay {
     position: fixed;
     top: 0;
@@ -411,10 +407,9 @@ nav a:hover::after {
 .caja-redes{
     background-color: var(--color-white);
     border-radius: var(--border-radius);
-    height: 80px;
+    height: 100px;
     width: 300px;
     display: flex;
-    padding: 10px;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -485,7 +480,7 @@ footer p{
 /* ============================= */
 @media (min-width: 1024px) {
     header {
-        padding: 1rem 3rem;
+    padding: 1rem 3rem;
     }
 
     nav {
@@ -517,5 +512,4 @@ footer p{
     .logo img {
         height: 80px;
     }
-
 }
