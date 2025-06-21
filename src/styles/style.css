@@ -40,10 +40,11 @@
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: var(--fiont-man);
     font-size: var(--font-size-base);
     background-color: var(--color-bg);
     color: var(--text-primary);
+    overflow-x: hidden;
 }
 
 /* ============================= */
@@ -194,7 +195,7 @@ nav a:hover::after {
 
 .hero a{
     background-color: var(--color-primary);
-    color: var(--color-beige);
+    color: var(--color-white);
     text-align: center;
     font-weight: bold;
     text-decoration: none;
@@ -408,11 +409,12 @@ nav a:hover::after {
 }
 
 .caja-redes{
-    background-color: var(--color-beige);
+    background-color: var(--color-white);
     border-radius: var(--border-radius);
-    height: 100px;
+    height: 80px;
     width: 300px;
     display: flex;
+    padding: 10px;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -420,7 +422,6 @@ nav a:hover::after {
 .caja-redes img{
     width: 40px;
     height: 40px;
-    margin-bottom: 0.5rem;
 }
 
 /* ============================= */
@@ -436,7 +437,7 @@ footer{
 }
 
 footer p{
-    color: var(--color-beige);
+    color: var(--color-white);
     font-weight: bold;
     font-family: var(--fiont-man);
 }
