@@ -3,19 +3,19 @@
 /* ============================= */
 :root {
     /* Colores base */
-    --color-bg: #D1ECF9;            /* Azul cielo - Fondo general */
-    --color-primary: #1A3C57;       /* Azul marino - Títulos, botones importantes */
-    --color-white: #F4F4F5;         /* Blanco - Tarjetas, formularios, texto */
-    --color-mint: #72e681;          /* Verde menta - Botones secundarios, íconos */
-    --color-beige: #F5F5DC;         /* Beige - Fondos suaves o detalles */
+    --color-bg: #D1ECF9;
+    --color-primary: #1A3C57;      
+    --color-white: #F4F4F5;
+    --color-mint: #72e681;
+    --color-black: #141313;
 
     /* Hover y estados */
-    --color-hover-primary: #16334a;   /* Versión más oscura del azul marino */
-    --color-hover-mint: #9be0a6;      /* Versión más intensa del verde menta */
+    --color-hover-primary: #16334a;
+    --color-hover-mint: #9be0a6;
 
     /* Texto */
     --text-primary: var(--color-primary);
-    --text-on-dark: var(--color-white);
+    --text-on-dark: var(--color-black);
 
   /* Tipografía */
     --fiont-man: Arial, sans-serif;
@@ -41,7 +41,7 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* 🔒 Previene scroll lateral global */
+    overflow-x: hidden;
 }
 
 body {
@@ -50,28 +50,29 @@ body {
     background-color: var(--color-bg);
     color: var(--text-primary);
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
-/* ============================= */
-/*       MOVIL FIRST             */
-/* ============================= */
+    /* ============================= */
+    /*       MOVIL FIRST             */
+    /* ============================= */
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
+    /* ============================= */
+    /*    HEADER Y MENÚ              */
+    /* ============================= */
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(22, 51, 74, 0.8);
     backdrop-filter: blur(8px);
     padding: 1rem;
-    position: sticky;
-    top: 0;
-    left: 0;
     z-index: 1001;
-    width: 100%;
 }
 
 .logo img {
@@ -84,7 +85,7 @@ header {
     cursor: pointer;
     background: none;
     border: none;
-    color: var(--color-beige);
+    color: var(--color-white);
     z-index: 1002;
 }
 
@@ -134,8 +135,8 @@ nav a::after {
     content: '';
     position: absolute;
     width: 0%;
-    height: 2px;
-    background: #fff;
+    height: 3px;
+    background: #5c5ae7;
     left: 0;
     bottom: -5px;
     transition: width 0.3s;
@@ -175,9 +176,9 @@ nav a:hover::after {
     display: block;
 }
 
-/* ============================= */
-/*    HERO                       */
-/* ============================= */
+    /* ============================= */
+    /*    HERO                       */
+    /* ============================= */
 
 .hero{
     padding-top: 40px;
@@ -201,8 +202,9 @@ nav a:hover::after {
 }
 
 .hero a:hover{
-    background-color: var(--color-hover-primary);
-    transition: background var(--transition);
+    background-color:rgb(46, 107, 175);
+    transition: 0.5s;
+    box-shadow: 0px 0px 14px 4px rgba(145, 174, 232, 1);
 }
 
 /* ============================= */
@@ -258,12 +260,12 @@ nav a:hover::after {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #1A3C57;
+    background-color:var(--color-black);
     color: white;
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 50px;
     z-index: 2;
 }
 
@@ -383,7 +385,7 @@ nav a:hover::after {
     text-align: center;
 }
 
-/* Centrado del botón */
+
 .llamado-card .llamado-boton {
     display: block;
     max-width: fit-content;
@@ -412,11 +414,17 @@ nav a:hover::after {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .caja-redes img{
     width: 40px;
     height: 40px;
+}
+
+.caja-redes img:hover{
+    transform: scale(1.3);
+    transition: 0.3s;
 }
 
 /* ============================= */
@@ -435,16 +443,24 @@ footer p{
     color: var(--color-white);
     font-weight: bold;
     font-family: var(--fiont-man);
+    font-size: 1rem;
 }
 
 /* ============================= */
 /*    TABLET                     */
 /* ============================= */
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
+
 @media (min-width: 768px) and (max-width: 1023px) {
+
+    /* ============================= */
+    /*    HEADER Y MENÚ              */
+    /* ============================= */
+
+    body {
+    padding-top: 80px;
+    }
+
     nav {
         position: static;
         flex-direction: row;
@@ -460,6 +476,10 @@ footer p{
         transition: none;
     }
 
+    nav a{
+        font-size: 1.3rem;
+    }
+
     .menu-toggle,
     .close-btn,
     .overlay {
@@ -467,20 +487,151 @@ footer p{
     }
 
     .logo img {
-        height: 45px;
+        height: 70px;
     }
+
+    /* ============================= */
+    /*    HERO                       */
+    /* ============================= */
+
+    .hero{
+        padding-bottom: 40px;
+    }
+
+    .hero h1{
+        font-size: 2.5rem;
+    }
+
+    .hero a{
+        font-size: 1.5rem;
+    }
+
+    /* ============================= */
+    /* SECCION PORQUE ELEGRINOS      */
+    /* ============================= */
+
+        .carousel-container {
+        overflow: visible;
+    }
+
+    .carousel {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: visible;
+        gap: 2rem;
+    }
+
+    .card {
+        flex: 1 1 calc(30% - 2rem);
+        max-width: calc(30% - 2rem);
+        min-width: unset;
+    }
+
+    .card p {
+    font-size: 20px;
+    font-weight: bold;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .section-title{
+        font-size: 2rem;
+    }
+
+    /* ============================= */
+    /* SECCION DE RESEÑAS            */
+    /* ============================= */
+
+    .reseña {
+    min-width: 45vw;
+    max-width: 45vw;
+    }
+
+    .reseña h4{
+        font-size: 1.5rem;
+    }
+
+    .reseña p{
+        font-size: 1.5rem;
+    }
+
+    /* ============================= */
+    /* SECCION DE LLAMADO            */
+    /* ============================= */
+    
+    .llamado-card {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        height: 400px;
+        padding: 2rem;
+        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .llamado-titulo {
+        font-size: 2rem;
+    }
+
+    .llamado-texto {
+        font-size: 1.5rem;
+        font-weight: bolder;
+    }
+
+    .llamado-boton {
+        font-size: 1.3rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* ============================= */
+    /* SECCION DE REDES              */
+    /* ============================= */
+
+    .caja-redes{
+        height: 100px;
+        width: 600px;
+        justify-content: space-around;
+    }
+
+    .caja-redes img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .caja-redes img:hover{
+        transform: scale(1.3);
+        transition: 0.3s;
+    }
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
+
+    footer p{
+        font-size: 1.8rem;
+    }
+
 }
 
 /* ============================= */
 /*    ESCRITORIO                 */
 /* ============================= */
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
 @media (min-width: 1024px) {
+
+    /* ============================= */
+    /*    HEADER Y MENÚ              */
+    /* ============================= */
+
+    body {
+    padding-top: 100px;
+    }
+
     header {
-    padding: 1rem 3rem;
+    padding: 0.5rem 0.5rem;
     }
 
     nav {
@@ -498,6 +649,10 @@ footer p{
         transition: none;
     }
 
+    nav a{ 
+    font-size: 1.3rem;
+    }
+
     .menu-toggle,
     .close-btn,
     .overlay {
@@ -512,4 +667,135 @@ footer p{
     .logo img {
         height: 80px;
     }
+
+    /* ============================= */
+    /*    HERO                       */
+    /* ============================= */
+
+    .hero{
+        padding-bottom: 40px;
+    }
+
+    .hero h1{
+        font-size: 2.5rem;
+    }
+
+    .hero a{
+        font-size: 1.5rem;
+    }
+
+    /* ============================= */
+    /* SECCION PORQUE ELEGRINOS      */
+    /* ============================= */
+
+        .carousel-container {
+        overflow: visible;
+    }
+
+    .carousel {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: visible;
+        gap: 2rem;
+    }
+
+    .card {
+        flex: 1 1 calc(30% - 2rem);
+        max-width: calc(30% - 2rem);
+        min-width: unset;
+    }
+
+    .card p {
+    font-size: 20px;
+    font-weight: bold;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .section-title{
+        font-size: 2rem;
+    }
+
+    /* ============================= */
+    /* SECCION DE RESEÑAS            */
+    /* ============================= */
+
+    .reseña {
+    min-width: 50vw;
+    max-width: 40vw;
+    }
+
+    .reseña h4{
+        font-size: 1.5rem;
+    }
+
+    .reseña p{
+        font-size: 1.5rem;
+    }
+
+    /* ============================= */
+    /* SECCION DE LLAMADO            */
+    /* ============================= */
+    
+    .llamado-container {
+        padding: 4rem 2rem;
+    }
+
+    .llamado-card {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        height: 400px;
+        padding: 2rem;
+        gap: 3rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .llamado-titulo {
+        font-size: 2rem;
+    }
+
+    .llamado-texto {
+        font-size: 1.7rem;
+        font-weight: bolder;
+    }
+
+    .llamado-boton {
+        font-size: 1.5rem;
+        padding: 0.9rem 2rem;
+    }
+
+    /* ============================= */
+    /* SECCION DE REDES              */
+    /* ============================= */
+
+    .caja-redes{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        height: 100px;
+        width: 600px;
+        justify-content: space-around;
+    }
+
+    .caja-redes img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .caja-redes img:hover{
+        transform: scale(1.3);
+        transition: 0.3s;
+    }
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
+
+    footer p{
+        font-size: 1.8rem;
+    }
+
 }

@@ -1,29 +1,29 @@
 //Menu Hamburguesa
+
 const header = document.getElementById("main-header");
 const toggleBtn = document.getElementById("toggle-btn");
 const closeBtn = document.getElementById("close-btn");
 const overlay = document.getElementById("overlay");
+const menuLinks = document.querySelectorAll("#mobile-menu a");
 
-toggleBtn.addEventListener("click", () => {
+function openMenu() {
     header.classList.add("nav-open");
-    document.body.style.overflow = "hidden";
-});
-
-function cerrarMenu() {
-    header.classList.remove("nav-open");
-    document.body.style.overflow = "";
+    document.body.style.overflow = "hidden"; // 🔒 Desactiva scroll
 }
 
-closeBtn.addEventListener("click", cerrarMenu);
-overlay.addEventListener("click", cerrarMenu);
+function closeMenu() {
+    header.classList.remove("nav-open");
+    document.body.style.overflow = ""; // 🔓 Restaura scroll
+}
 
-window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) {
-        cerrarMenu();
-    }
+toggleBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+// Opcional: cerrar al hacer clic en cualquier link del menú
+    menuLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
 });
-
-
 
 
 //Carrusel de porque elegirnos
