@@ -1,0 +1,436 @@
+/* ============================= */
+/*       MOVIL FIRST             */
+/* ============================= */
+
+/* ============================= */
+/*    HEADER Y MENÚ              */
+/* ============================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(22, 51, 74, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.menu-toggle {
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    z-index: 1002;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    transition: right var(--transition);
+    z-index: 1003;
+}
+
+.nav-open nav {
+    right: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    position: relative;
+    font-size: 16px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: var(--border-radius);
+    transition: background var(--transition);
+    font-family: var(--fiont-man);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: var(--color-bg);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.login-btn:hover::after {
+    width: 0%;
+}
+
+.login-btn {
+    background-color: var(--color-mint);
+    color: var(--color-primary);
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: var(--color-hover-mint);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+    display: none;
+}
+
+#overlay.activo {
+    display: block;
+}
+
+    /* ============================= */
+    /*    HERO                       */
+    /* ============================= */
+
+.hero {
+    position: relative;
+    height: 350px;
+    margin-top: 10px;
+    text-align: center;
+    background-image: url('../images/img16.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    overflow: hidden;
+    padding: 0 1rem; /* Mejora legibilidad en mobile */
+    gap: 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(235,122,255,0.73) 0%, rgba(22,48,135,0.94) 100%);
+    z-index: 1;
+}
+
+.hero::after {
+    display: none;
+}
+
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 2;
+    font-family: var(--fiont-man);
+    max-width: 900px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+    /* ============================= */
+    /*    GRILLA                     */
+    /* ============================= */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.5rem;
+    align-items: start;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+.card-header {
+    flex-grow: 1;
+}
+
+.icon {
+    font-size: 2rem;
+    color: #3c3d40;
+    margin-bottom: 0.5rem;
+}
+
+.card h2 {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    margin: 0.5rem 0;
+}
+
+.btn-toggle {
+    margin-top: 0.8rem;
+    background-color: #3c3d40;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-toggle:hover {
+    background-color: #212226;
+}
+
+.card-expandable {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0;
+    background-color: #e8f4fc;
+    border-top: 1px solid #ccc;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    margin-top: 1rem;
+}
+
+
+.card-expandable.show {
+    max-height: 400px;
+    padding: 1rem;
+    overflow: visible;
+}
+
+.card-expandable img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(22, 51, 74, 1);
+    padding: 1rem;
+}
+
+footer p{
+    color: var(--color-white);
+    font-weight: bold;
+    font-family: var(--fiont-man);
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+/* ============================= */
+/*    HEADER Y MENÚ              */
+/* ============================= */
+
+    body {
+    padding-top: 80px;
+    }
+
+    nav {
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        height: auto;
+        background-color: transparent;
+        width: auto;
+        max-width: none;
+        padding: 0;
+        gap: 1rem;
+        right: auto;
+        transition: none;
+    }
+
+    nav a{
+        font-size: 1rem;
+    }
+
+    .menu-toggle,
+    .close-btn,
+    .overlay {
+        display: none !important;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+/* ============================= */
+/*    HERO                       */
+/* ============================= */
+
+    .hero {
+        height: 400px; /* más altura en tablet */
+        padding-bottom: 40px;
+        margin-top: 25px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+/* ============================= */
+/*    GRILLA                     */
+/* ============================= */
+
+    .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    }
+
+/* ============================= */
+/*    FOOTER                     */
+/* ============================= */
+
+    footer p{
+        font-size: 1.8rem;
+    }
+}
+
+/* ============================= */
+/*    ESCRITORIO                 */
+/* ============================= */
+
+@media (min-width: 1024px) {
+
+/* ============================= */
+/*    HEADER Y MENÚ              */
+/* ============================= */
+
+    body {
+    padding-top: 100px;
+    }
+
+    header {
+    padding: 0.5rem 0.5rem;
+    }
+
+    nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+        background-color: transparent;
+        height: auto;
+        width: auto;
+        padding: 0;
+        right: auto;
+        transition: none;
+    }
+
+    nav a{ 
+    font-size: 1.3rem;
+    }
+
+    .menu-toggle,
+    .close-btn,
+    .overlay {
+        display: none !important;
+    }
+
+    .login-btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+/* ============================= */
+/*    HERO                       */
+/* ============================= */
+
+    .hero {
+        height: 600px; /* mayor altura en escritorio */
+        padding-bottom: 40px;
+        margin: 0;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+/* ============================= */
+/*    GRILLA                     */
+/* ============================= */
+
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
+
+    footer p{
+        font-size: 1.8rem;
+    }
+}

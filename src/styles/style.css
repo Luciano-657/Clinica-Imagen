@@ -1,58 +1,3 @@
-/* ============================= */
-/* 🎨 PALETA DE LA CLÍNICA       */
-/* ============================= */
-:root {
-    /* Colores base */
-    --color-bg: #D1ECF9;
-    --color-primary: #1A3C57;      
-    --color-white: #F4F4F5;
-    --color-mint: #72e681;
-    --color-black: #141313;
-
-    /* Hover y estados */
-    --color-hover-primary: #16334a;
-    --color-hover-mint: #9be0a6;
-
-    /* Texto */
-    --text-primary: var(--color-primary);
-    --text-on-dark: var(--color-black);
-
-  /* Tipografía */
-    --fiont-man: Arial, sans-serif;
-    --font-secondary: Arial Italic, sans-serif;
-    --font-size-base: 16px;
-
-    /* Dimensiones */
-    --header-height: 60px;
-    --border-radius: 6px;
-
-    /* Otros */
-    --transition: 0.3s ease-in-out;
-}
-
-/* ============================= */
-/* 🔃 RESETEO Y BASE             */
-/* ============================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-body {
-    font-family: var(--fiont-man);
-    font-size: var(--font-size-base);
-    background-color: var(--color-bg);
-    color: var(--text-primary);
-    overflow-x: hidden;
-    padding-top: 80px;
-}
-
     /* ============================= */
     /*       MOVIL FIRST             */
     /* ============================= */
@@ -136,7 +81,7 @@ nav a::after {
     position: absolute;
     width: 0%;
     height: 3px;
-    background: #5c5ae7;
+    background: var(--color-bg);
     left: 0;
     bottom: -5px;
     transition: width 0.3s;
@@ -161,18 +106,18 @@ nav a:hover::after {
     background-color: var(--color-hover-mint);
 }
 
-.overlay {
+#overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9;
     display: none;
-    z-index: 1000;
 }
 
-.nav-open ~ .overlay {
+#overlay.activo {
     display: block;
 }
 
@@ -180,17 +125,50 @@ nav a:hover::after {
     /*    HERO                       */
     /* ============================= */
 
-.hero{
-    padding-top: 40px;
+.hero {
+    position: relative;
+    height: 300px;
+    margin-top: 10px;
     text-align: center;
+    background-image: url('../images/img16.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    overflow: hidden;
 }
 
-.hero h1{
-    margin-bottom: 40px;
+/* Overlay de color */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(235,122,255,0.73) 0%, rgba(22,48,135,0.94) 100%);
+    z-index: 1;
+}
+
+/* Desactivamos ::after si no se usa */
+.hero::after {
+    display: none;
+}
+
+/* Texto y botón encima del overlay */
+.hero h1,
+.hero a {
+    position: relative;
+    z-index: 2;
     font-family: var(--fiont-man);
 }
 
-.hero a{
+.hero h1 {
+    margin-bottom: 40px;
+}
+
+.hero a {
     background-color: var(--color-primary);
     color: var(--color-white);
     text-align: center;
@@ -198,14 +176,15 @@ nav a:hover::after {
     text-decoration: none;
     padding: 0.6rem;
     border-radius: var(--border-radius);
-    font-family: var(--fiont-man);
+    width: 200px;
+    transition: var(--transition);
 }
 
-.hero a:hover{
-    background-color:rgb(46, 107, 175);
-    transition: 0.5s;
+.hero a:hover {
+    background-color: rgb(46, 107, 175);
     box-shadow: 0px 0px 14px 4px rgba(145, 174, 232, 1);
 }
+
 
 /* ============================= */
 /* SECCION PORQUE ELEGRINOS      */
@@ -275,6 +254,32 @@ nav a:hover::after {
 
 .arrow.right {
     right: 5px;
+}
+
+/* ============================= */
+/* SECCION DE INSTALACIONES      */
+/* ============================= */
+
+.sec-instal{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sec-instal img{
+    border-radius: 5%;
+    height: 200px;
+    width: 300px;
+}
+
+.sec-instal p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-align: center;
 }
 
 /* ============================= */
@@ -471,13 +476,13 @@ footer p{
         width: auto;
         max-width: none;
         padding: 0;
-        gap: 2rem;
+        gap: 1rem;
         right: auto;
         transition: none;
     }
 
     nav a{
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .menu-toggle,
@@ -494,15 +499,17 @@ footer p{
     /*    HERO                       */
     /* ============================= */
 
-    .hero{
+    .hero {
+        height: 400px; /* más altura en tablet */
         padding-bottom: 40px;
+        margin-top: 25px;
     }
 
-    .hero h1{
+    .hero h1 {
         font-size: 2.5rem;
     }
 
-    .hero a{
+    .hero a {
         font-size: 1.5rem;
     }
 
@@ -538,6 +545,29 @@ footer p{
 
     .section-title{
         font-size: 2rem;
+    }
+
+/* ============================= */
+/* SECCION DE INSTALACIONES      */
+/* ============================= */
+
+    .sec-instal{
+        align-items: center;
+        padding: 40px;
+    }
+
+    .sec-instal img{
+        border-radius: 7%;
+        height: 400px;
+        width: 500px;
+    }
+
+    .sec-instal p{
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--color-primary);
+        text-align: center;
+        letter-spacing: 5px;
     }
 
     /* ============================= */
@@ -672,15 +702,18 @@ footer p{
     /*    HERO                       */
     /* ============================= */
 
-    .hero{
+    .hero {
+        height: 600px; /* mayor altura en escritorio */
         padding-bottom: 40px;
+        margin: 0;
+        
     }
 
-    .hero h1{
+    .hero h1 {
         font-size: 2.5rem;
     }
 
-    .hero a{
+    .hero a {
         font-size: 1.5rem;
     }
 
@@ -716,6 +749,27 @@ footer p{
 
     .section-title{
         font-size: 2rem;
+    }
+    
+    /* ============================= */
+    /* SECCION DE INSTALACIONES      */
+    /* ============================= */
+
+    .sec-instal{
+        align-items: center;
+        padding: 40px;
+    }
+
+    .sec-instal img{
+        border-radius: 7%;
+        height: 400px;
+        width: 500px;
+    }
+
+    .sec-instal p{
+        font-size: 2rem;
+        text-align: center;
+        letter-spacing: 5px;
     }
 
     /* ============================= */
