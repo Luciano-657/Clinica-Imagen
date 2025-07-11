@@ -38,8 +38,7 @@ nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 70%;
-    max-width: 300px;
+    width: 100%;
     height: 100vh;
     background-color: var(--color-primary);
     display: flex;
@@ -66,7 +65,8 @@ nav {
 
 nav a {
     position: relative;
-    font-size: 16px;
+    font-size: 24px;
+    letter-spacing: 2px;
     color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
@@ -130,7 +130,7 @@ nav a:hover::after {
     height: 350px;
     margin-top: 10px;
     text-align: center;
-    background-image: url('../images/img16.JPG');
+    background-image: url('../images/img13.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -148,7 +148,7 @@ nav a:hover::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(235,122,255,0.73) 0%, rgba(22,48,135,0.94) 100%);
+    background: linear-gradient(180deg, rgb(20 38 63 / 73%) 0%, rgba(22, 48, 135,0.94)100%);
     z-index: 1;
 }
 
@@ -174,6 +174,15 @@ nav a:hover::after {
     line-height: 1.5;
 }
 
+.hero-shadow {
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
     /* ============================= */
     /*    GRILLA                     */
     /* ============================= */
@@ -184,13 +193,14 @@ nav a:hover::after {
     gap: 1rem;
     padding: 0.5rem;
     align-items: start;
+    margin-top: 40px;
 }
 
 .card {
     background: white;
     border: 1px solid #ccc;
     border-radius: 6px;
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
@@ -213,6 +223,7 @@ nav a:hover::after {
 
 .card p {
     margin: 0.5rem 0;
+    font-weight: bolder;
 }
 
 .btn-toggle {
@@ -293,7 +304,7 @@ footer p{
         width: auto;
         max-width: none;
         padding: 0;
-        gap: 1rem;
+        gap: 0.5rem;
         right: auto;
         transition: none;
     }

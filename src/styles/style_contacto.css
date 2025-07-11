@@ -1,0 +1,728 @@
+/* ============================= */
+/*       MOVIL FIRST             */
+/* ============================= */
+
+/* ============================= */
+/*    HEADER Y MENÚ              */
+/* ============================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(22, 51, 74, 0.8);
+    backdrop-filter: blur(8px);
+    padding: 1rem;
+    z-index: 1001;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.menu-toggle {
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    z-index: 1002;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    transition: right var(--transition);
+    z-index: 1003;
+}
+
+.nav-open nav {
+    right: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    position: relative;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: var(--border-radius);
+    transition: background var(--transition);
+    font-family: var(--fiont-man);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: var(--color-bg);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.login-btn:hover::after {
+    width: 0%;
+}
+
+.login-btn {
+    background-color: var(--color-mint);
+    color: var(--color-primary);
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: var(--color-hover-mint);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9;
+    display: none;
+}
+
+#overlay.activo {
+    display: block;
+}
+
+
+
+    /* ============================= */
+    /*    HERO                       */
+    /* ============================= */
+
+.hero {
+    position: relative;
+    height: 350px;
+    margin-top: 10px;
+    text-align: center;
+    background-image: url('../images/img3.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    overflow: hidden;
+    padding: 0 1rem; /* Mejora legibilidad en mobile */
+    gap: 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(20 38 63 / 73%) 0%, rgba(22, 48, 135,0.94)100%);
+    z-index: 1;
+}
+
+.hero::after {
+    display: none;
+}
+
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 2;
+    font-family: var(--fiont-man);
+    max-width: 900px;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.hero-shadow {
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: popIn 0.8s ease;
+    transition: transform 0.3s ease;
+}
+
+.fa-xl {
+    font-size: 2.5em;
+}
+
+/* Ocultar tooltip en mobile/tablet */
+.tooltip {
+    display: none;
+}
+
+/* === ANIMACIÓN === */
+@keyframes popIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ============================= */
+/*   FORMULARIO DE CONTACTO      */
+/* ============================= */
+
+.form-container {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+input,
+textarea {
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    font-family: var(--fiont-man);
+    font-size: 1rem;
+    transition: border var(--transition);
+    width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.form-container button {
+    padding: 0.75rem;
+    background-color: var(--color-mint);
+    color: var(--text-on-dark);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color var(--transition);
+}
+
+.form-container button:hover {
+    background-color: var(--color-hover-mint);
+}
+
+.form-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#mensaje {
+  resize: none; /* No permite agrandar */
+}
+
+    /* ============================= */
+    /*    CARRUSEL                   */
+    /* ============================= */
+
+.ubicacion-header {
+    color: var(--color-primary);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 60px;
+}
+.ubicacion-header h2 {
+    margin-bottom: 1rem;
+}
+.ubicacion-header select {
+    padding: 0.5rem;
+    width: 90%;
+    max-width: 400px;
+    border: none;
+    border-radius: 6px;
+}
+
+.carousel-wrapper {
+    position: relative;
+}
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-left: 20px;
+}
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    flex: 0 0 auto;
+    width: 90vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+.card iframe {
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+}
+.card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+.card p {
+    font-size: 1rem;
+    margin: 0.7rem;
+    text-align: left;
+}
+.card .btn-map {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: #007acc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+
+
+/* Flechas para PC */
+.arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 122, 204, 0.8);
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 5;
+}
+.arrow.left { left: 0; }
+.arrow.right { right: 0; }
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    overflow-y: auto;
+    z-index: 10;
+}
+.modal-content {
+    background: white;
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+}
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.modal-info {
+    margin: 1rem 0;
+    color: #007acc;
+    font-weight: bold;
+}
+.card-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+}
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(22, 51, 74, 1);
+    padding: 1rem;
+}
+
+footer p{
+    color: var(--color-white);
+    font-weight: bold;
+    font-family: var(--fiont-man);
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+/* ============================= */
+/*    HEADER Y MENÚ              */
+/* ============================= */
+
+    body {
+    padding-top: 80px;
+    }
+
+    nav {
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        height: auto;
+        background-color: transparent;
+        width: auto;
+        max-width: none;
+        padding: 0;
+        gap: 0.5rem;
+        right: auto;
+        transition: none;
+    }
+
+    nav a{
+        font-size: 1rem;
+    }
+
+    .menu-toggle,
+    .close-btn,
+    .overlay {
+        display: none !important;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+/* ============================= */
+/*    HERO                       */
+/* ============================= */
+
+    .hero {
+        height: 400px; /* más altura en tablet */
+        padding-bottom: 40px;
+        margin-top: 25px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
+
+    .whatsapp-float{
+        width: 75px;
+        height: 75px;
+    }
+
+    .fa-xl {
+    font-size: 3.5em;
+    }
+
+    /* ============================= */
+    /*   FORMULARIO DE CONTACTO      */
+    /* ============================= */
+    
+    .form-container {
+        max-width: 700px;
+        padding: 2rem;
+    }
+
+    .form-container h1 {
+        font-size: 2rem;
+    }
+
+    .form-container button {
+        font-size: 1.1rem;
+    }
+
+    /* ============================= */
+    /*    CARRUSEL                   */
+    /* ============================= */
+
+    .card {
+        width: 45vw;
+    }
+    .card-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+/* ============================= */
+/*    FOOTER                     */
+/* ============================= */
+
+    footer p{
+        font-size: 1.8rem;
+    }
+}
+
+/* ============================= */
+/*    ESCRITORIO                 */
+/* ============================= */
+
+@media (min-width: 1024px) {
+
+/* ============================= */
+/*    HEADER Y MENÚ              */
+/* ============================= */
+
+    body {
+    padding-top: 100px;
+    }
+
+    header {
+    padding: 0.5rem 0.5rem;
+    }
+
+    nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+        background-color: transparent;
+        height: auto;
+        width: auto;
+        padding: 0;
+        right: auto;
+        transition: none;
+    }
+
+    nav a{ 
+    font-size: 1.3rem;
+    }
+
+    .menu-toggle,
+    .close-btn,
+    .overlay {
+        display: none !important;
+    }
+
+    .login-btn {
+        padding: 0.6rem 1.4rem;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+/* ============================= */
+/*    HERO                       */
+/* ============================= */
+
+    .hero {
+        height: 600px; /* mayor altura en escritorio */
+        padding-bottom: 40px;
+        margin: 0;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
+
+    .tooltip {
+        display: inline-block;
+        position: absolute;
+        right: 70px;
+        background-color: #25d366;
+        color: var(--color-white);
+        padding: 6px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        font-size: 14px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    .whatsapp-float{
+        width: 75px;
+        height: 75px;
+    }
+
+    .fa-xl {
+    font-size: 3.5em;
+    }
+
+    .whatsapp-float:hover .tooltip {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+    }
+
+    /* ============================= */
+    /*   FORMULARIO DE CONTACTO      */
+    /* ============================= */
+    
+    .form-container {
+        max-width: 800px;
+        padding: 2.5rem 3rem;
+        margin-top: 50px;
+    }
+
+    .form-container h1 {
+        font-size: 2.2rem;
+    }
+
+    input,
+    textarea {
+        font-size: 1.05rem;
+    }
+
+    .form-container button {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    /* ============================= */
+    /*    CARRUSEL                   */
+    /* ============================= */
+
+    .carousel-container {
+        overflow-x: hidden; /* evita la barra */
+        scroll-behavior: smooth;
+    }
+    .card {
+        width: 30vw;
+    }
+    .arrow {
+        display: block;
+    }
+    .card-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
+
+    footer p{
+        font-size: 1.8rem;
+    }
+}
