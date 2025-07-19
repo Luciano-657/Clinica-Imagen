@@ -91,6 +91,15 @@ nav a:hover::after {
     width: 100%;
 }
 
+nav a.active {
+    color: #999;
+}
+
+nav a.active::after {
+    width: 100%;
+    background: #999;
+}
+
 .login-btn:hover::after {
     width: 0%;
 }
@@ -119,6 +128,49 @@ nav a:hover::after {
 
 #overlay.activo {
     display: block;
+}
+
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: popIn 0.8s ease;
+    transition: transform 0.3s ease;
+}
+
+.fa-xl {
+    font-size: 2.5em;
+}
+
+/* Ocultar tooltip en mobile/tablet */
+.tooltip {
+    display: none;
+}
+
+/* === ANIMACIÓN === */
+@keyframes popIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
     /* ============================= */
@@ -279,8 +331,8 @@ nav a:hover::after {
 
 .sec-instal img{
     border-radius: 5%;
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 350px;
 }
 
 .sec-instal p{
@@ -493,6 +545,15 @@ footer p{
         font-size: 1rem;
     }
 
+    nav a.active {
+        color: #999;
+    }
+
+    nav a.active::after {
+        width: 100%;
+        background: #999;
+    }
+
     .menu-toggle,
     .close-btn,
     .overlay {
@@ -501,6 +562,19 @@ footer p{
 
     .logo img {
         height: 70px;
+    }
+
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
+
+    .whatsapp-float{
+        width: 75px;
+        height: 75px;
+    }
+
+    .fa-xl {
+    font-size: 3.5em;
     }
 
     /* ============================= */
@@ -566,8 +640,8 @@ footer p{
 
     .sec-instal img{
         border-radius: 7%;
-        height: 400px;
-        width: 500px;
+        height: 470px;
+        width: 600px;
     }
 
     .sec-instal p{
@@ -691,6 +765,16 @@ footer p{
     font-size: 1.3rem;
     }
 
+    nav a.active {
+    color: #999;
+    font-weight: bolder;
+    }
+
+    nav a.active::after {
+        width: 100%;
+        background: #999;
+    }
+
     .menu-toggle,
     .close-btn,
     .overlay {
@@ -704,6 +788,46 @@ footer p{
 
     .logo img {
         height: 80px;
+    }
+
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
+
+    .tooltip {
+        display: inline-block;
+        position: absolute;
+        right: 70px;
+        background-color: #25d366;
+        color: var(--color-white);
+        padding: 6px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        font-size: 14px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        margin-right: 20px;
+        font-weight: bold;
+    }
+
+    .whatsapp-float{
+        width: 75px;
+        height: 75px;
+    }
+
+    .fa-xl {
+    font-size: 3.5em;
+    }
+
+    .whatsapp-float:hover .tooltip {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
     }
 
     /* ============================= */
@@ -770,8 +894,9 @@ footer p{
 
     .sec-instal img{
         border-radius: 7%;
-        height: 450px;
+        height: 500px;
         width: 700px;
+        object-fit: contain;
     }
 
     .sec-instal p{
@@ -859,5 +984,4 @@ footer p{
     footer p{
         font-size: 1.8rem;
     }
-
 }

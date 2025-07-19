@@ -25,6 +25,15 @@ overlay.addEventListener("click", closeMenu);
     link.addEventListener("click", closeMenu);
 });
 
+const current = window.location.pathname.split("/").pop().toLowerCase();
+const links = document.querySelectorAll("#main-nav a");
+
+links.forEach(link => {
+    const href = link.getAttribute("href").toLowerCase();
+    if (href === current || (href === "index.html" && current === "")) {
+    link.classList.add("active");
+    }
+});
 
 //Carrusel de porque elegirnos
 

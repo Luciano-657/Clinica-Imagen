@@ -1,10 +1,14 @@
-/* ============================= */
-/*       MOVIL FIRST             */
-/* ============================= */
+    /* ============================= */
+    /*       MOVIL FIRST             */
+    /* ============================= */
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
+    /* ============================= */
+    /*    HEADER Y MENÚ              */
+    /* ============================= */
+
+body {
+    padding-top: 70px;
+}
 
 header {
     position: fixed;
@@ -91,10 +95,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-nav a:hover::after {
-    width: 100%;
-}
-
 nav a.active {
     color: #999;
 }
@@ -134,67 +134,6 @@ nav a.active::after {
     display: block;
 }
 
-    /* ============================= */
-    /*    HERO                       */
-    /* ============================= */
-
-.hero {
-    position: relative;
-    height: 350px;
-    margin-top: 10px;
-    text-align: center;
-    background-image: url('../images/img13.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    overflow: hidden;
-    padding: 0 1rem; /* Mejora legibilidad en mobile */
-    gap: 20px;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgb(20 38 63 / 73%) 0%, rgba(22, 48, 135,0.94)100%);
-    z-index: 1;
-}
-
-.hero::after {
-    display: none;
-}
-
-.hero h1,
-.hero p {
-    position: relative;
-    z-index: 2;
-    font-family: var(--fiont-man);
-    max-width: 900px;
-}
-
-.hero h1 {
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-}
-
-.hero p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.hero-shadow {
-    position: absolute;
-    z-index: 1;
-    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 1);
-    width: 100%;
-    height: 20px;
-    background-color: rgba(255, 255, 255, 1);
-}
 
     /* ============================= */
     /*    WHATSAPP-ICON              */
@@ -239,91 +178,208 @@ nav a.active::after {
     }
 }
 
-    /* ============================= */
-    /*    GRILLA                     */
-    /* ============================= */
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 0.5rem;
-    align-items: start;
-    margin-top: 40px;
-}
-
-.card {
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 0.5rem;
+.equipo {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-white);
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    align-items: center;
 }
 
-.card-header {
-    flex-grow: 1;
-}
-
-.icon {
-    font-size: 2rem;
-    color: #3c3d40;
+.equipo h2 {
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: var(--color-primary);
 }
 
-.card h2 {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.card p {
-    margin: 0.5rem 0;
-    font-weight: bolder;
-}
-
-.btn-toggle {
-    margin-top: 0.8rem;
-    background-color: #3c3d40;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
+.equipo-descripcion {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.btn-toggle:hover {
-    background-color: #212226;
-}
-
-.card-expandable {
-    max-height: 0;
+.tarjeta-container {
+    position: relative;
     overflow: hidden;
-    padding: 0 0;
-    background-color: #e8f4fc;
-    border-top: 1px solid #ccc;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-    margin-top: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
+.tarjetas {
+    position: relative;
+    height: 500px;
+}
 
-.card-expandable.show {
-    max-height: 400px;
+.tarjeta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: var(--transition);
     padding: 1rem;
-    overflow: visible;
+    background-color: var(--color-hover-mint);
+    border-radius: var(--border-radius);
+    z-index: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.card-expandable img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0.5rem;
+.tarjeta.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
 }
 
-    /* ============================= */
-    /*    FOOTER                     */
-    /* ============================= */
+.tarjeta:hover {
+    transform: scale(1.03);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.tarjeta .rol {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flecha {
+    background-color: var(--color-mint);
+    border: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 3;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+#prev-btn {
+    left: 3px;
+}
+
+#next-btn {
+    right: 3px;
+}
+
+.tarjeta .btn-ver-mas {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.tarjeta .btn-ver-mas:hover {
+    background-color: var(--color-hover-primary);
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container-conulta{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    background-image: url('../images/img7.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    overflow: hidden;
+    border-radius: 30px;
+    gap: 20px;
+}
+
+.container-conulta::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(20 38 63 / 73%) 0%, rgb(63 147 189 / 94%) 100%);
+    z-index: 1;
+}
+
+.container-conulta::after {
+    display: none;
+}
+
+.container-conulta h2{
+    color: var(--color-white);
+    font-size: 2rem;
+    z-index: 2;
+
+}
+
+.consulta-descripcion{
+    position: relative;
+    z-index: 2;
+    font-family: var(--fiont-man);
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.btn-consulta{
+    position: relative;
+    z-index: 2;
+    font-family: var(--fiont-man);
+}
+
+.btn-consulta {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.6rem;
+    border-radius: var(--border-radius);
+    width: 200px;
+    transition: var(--transition);
+}
+
+.btn-consulta:hover {
+    background-color: rgb(46, 107, 175);
+    box-shadow: 0px 0px 14px 4px rgba(145, 174, 232, 1);
+}
+
+/* ============================= */
+/*    FOOTER                     */
+/* ============================= */
 
 footer{
     display: flex;
@@ -340,11 +396,15 @@ footer p{
     font-size: 1rem;
 }
 
+/* ============================= */
+/*    TABLET                     */
+/* ============================= */
+
 @media (min-width: 768px) and (max-width: 1023px) {
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
+    /* ============================= */
+    /*    HEADER Y MENÚ              */
+    /* ============================= */
 
     body {
     padding-top: 80px;
@@ -388,24 +448,6 @@ footer p{
         height: 70px;
     }
 
-/* ============================= */
-/*    HERO                       */
-/* ============================= */
-
-    .hero {
-        height: 400px; /* más altura en tablet */
-        padding-bottom: 40px;
-        margin-top: 25px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
     /* ============================= */
     /*    WHATSAPP-ICON              */
     /* ============================= */
@@ -416,35 +458,65 @@ footer p{
     }
 
     .fa-xl {
-    font-size: 3.5em;
+        font-size: 3.5em;
     }
 
-/* ============================= */
-/*    GRILLA                     */
-/* ============================= */
-
-    .grid-container {
-    grid-template-columns: repeat(3, 1fr);
+    .equipo{
+        padding-top: 60px;
     }
 
-/* ============================= */
-/*    FOOTER                     */
-/* ============================= */
+    .equipo h2 {
+        font-size: 2.5rem;
+    }
+
+    .equipo-descripcion {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .tarjeta-container {
+        max-width: 700px;
+    }
+
+    .tarjetas {
+        display: flex;
+        gap: 1rem;
+        height: auto;
+        position: static;
+    }
+
+    .tarjeta {
+        position: relative;
+        opacity: 1 !important;
+        transform: scale(1);
+        flex: 1;
+    }
+
+    .flecha {
+        display: none;
+    }
+
+    .container-conulta{
+        width: 600px;
+    }
+
+    /* ============================= */
+    /*    FOOTER                     */
+    /* ============================= */
 
     footer p{
         font-size: 1.8rem;
     }
 }
-
-/* ============================= */
-/*    ESCRITORIO                 */
-/* ============================= */
+    /* ============================= */
+    /*    ESCRITORIO                 */
+    /* ============================= */
 
 @media (min-width: 1024px) {
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
+    /* ============================= */
+    /*    HEADER Y MENÚ              */
+    /* ============================= */
 
     body {
     padding-top: 100px;
@@ -473,7 +545,6 @@ footer p{
     font-size: 1.3rem;
     }
 
-    
     nav a.active {
     color: #999;
     font-weight: bolder;
@@ -539,31 +610,47 @@ footer p{
         transform: scale(1.1);
     }
 
-/* ============================= */
-/*    HERO                       */
-/* ============================= */
-
-    .hero {
-        height: 600px; /* mayor altura en escritorio */
-        padding-bottom: 40px;
-        margin: 0;
-        gap: 30px;
+    .equipo {
+        margin-top: 0px;
     }
 
-    .hero h1 {
+    .equipo h2 {
         font-size: 3.5rem;
     }
 
-    .hero p {
+    .equipo-descripcion {
         font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    .tarjeta-container {
+        max-width: 1024px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
-/* ============================= */
-/*    GRILLA                     */
-/* ============================= */
+    .tarjetas {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        height: auto;
+        position: static;
+    }
 
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
+    .tarjeta {
+        position: relative;
+        opacity: 1 !important;
+        transform: scale(1);
+        flex: 1;
+        max-width: 220px;
+    }
+
+    .flecha {
+        display: none;
+    }
+
+    .container-conulta{
+        width: 600px;
     }
 
     /* ============================= */
