@@ -8,19 +8,18 @@ const menuLinks = document.querySelectorAll("#mobile-menu a");
 
 function openMenu() {
     header.classList.add("nav-open");
-    document.body.style.overflow = "hidden"; // 🔒 Desactiva scroll
+    document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
     header.classList.remove("nav-open");
-    document.body.style.overflow = ""; // 🔓 Restaura scroll
+    document.body.style.overflow = "";
 }
 
 toggleBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-// Opcional: cerrar al hacer clic en cualquier link del menú
     menuLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
 });
@@ -43,7 +42,7 @@ return urlParams.get(param);
 const perfiles = {
     javier: {
     nombre: "Dr. Javier de Lima Moreno",
-    imagen: "/src/images/javier.JPG",
+    imagen: "src/images/javier.JPG",
     secciones: [
         {
             titulo: "📘 Formación Académica",
@@ -125,7 +124,7 @@ const perfiles = {
 
     laura: {
         nombre: "Dra. Laura Duque",
-        imagen: "/src/images/laura.jpg",
+        imagen: "src/images/laura.jpg",
         secciones: [
         {
             titulo: "📘 Formación Académica",
@@ -138,10 +137,10 @@ const perfiles = {
             titulo: "🎓 Formación Complementaria",
             contenido: `
             <ul>
-                <li>Pasantía en Odontología Restauradora Integral – Escuela de Graduados – UdelaR – Mayo 2014.</li>
+                <li>Pasantía en Odontología Restauradora Integral - Escuela de Graduados - UdelaR - Mayo 2014.</li>
                 <li>Curso de Ortodoncia en adultos I.E.S.S. Ortodoncia (2009-2010).</li>
-                <li>Seminario de introducción a Ortodoncia y ATM – Diciembre 2002.</li>
-                <li>Pasantía en Servicios de Urgencia – Facultad de Odontología – Mayo 2001.</li>
+                <li>Seminario de introducción a Ortodoncia y ATM - Diciembre 2002.</li>
+                <li>Pasantía en Servicios de Urgencia - Facultad de Odontología - Mayo 2001.</li>
             </ul>
             `
         },
@@ -150,10 +149,10 @@ const perfiles = {
             contenido: `
             <ul>
                 <li>Jornadas de Odontología Hospitalaria CASMU (2001).</li>
-                <li>Aplicación en Radiología – Facultad de Odontología – Marzo 2001.</li>
-                <li>Participación en ENIFO 1998 y 2000 – UdelaR.</li>
-                <li>Jornadas URUGUAYAS de Endodoncia – 1997.</li>
-                <li>II Encuentro Latinoamericano de Estudiantes – Córdoba (1994).</li>
+                <li>Aplicación en Radiología - Facultad de Odontología - Marzo 2001.</li>
+                <li>Participación en ENIFO 1998 y 2000 - UdelaR.</li>
+                <li>Jornadas URUGUAYAS de Endodoncia - 1997.</li>
+                <li>II Encuentro Latinoamericano de Estudiantes - Córdoba (1994).</li>
             </ul>
             `
         }
@@ -162,21 +161,21 @@ const perfiles = {
 
     sabrina: {
         nombre: "Dra. Sabrina Nieves",
-        imagen: "/src/images/sabrina.jpg",
+        imagen: "src/images/sabrina.jpg",
         secciones: [
         {
             titulo: "📘 Formación Académica",
             contenido: `
-            <p>Doctora en Odontología – Facultad de Odontología – UdelaR – Enero 2014.</p>
+            <p>Doctora en Odontología - Facultad de Odontología - UdelaR - Enero 2014.</p>
             `
         },
         {
             titulo: "💼 Experiencia Laboral",
             contenido: `
             <ul>
-                <li>Área de Patología Molecular – Grado 1 (2013).</li>
+                <li>Área de Patología Molecular - Grado 1 (2013).</li>
                 <li>Ayudante en Cátedra de Odontopediatría (2014).</li>
-                <li>Atención en Policlínicas Comunitarias – Policlínica Giraldez (2014).</li>
+                <li>Atención en Policlínicas Comunitarias - Policlínica Giraldez (2014).</li>
             </ul>
             `
         },
@@ -184,8 +183,8 @@ const perfiles = {
             titulo: "🎓 Cursos y Congresos",
             contenido: `
             <ul>
-                <li>Congreso de Estética – IM (2010).</li>
-                <li>ENIFO – IM (2010).</li>
+                <li>Congreso de Estética - IM (2010).</li>
+                <li>ENIFO - IM (2010).</li>
                 <li>VIII reunión SUIO (2013).</li>
                 <li>Seminario Ortodoncia Clínica y Desprogramación Mandibular (2014).</li>
                 <li>Curso sobre niños a nivel comunitario (2014).</li>
@@ -209,15 +208,15 @@ const perfiles = {
 
     rosina: {
         nombre: "Rosina Canavero",
-        imagen: "/src/images/rosina.jpg",
+        imagen: "ssrc/images/rosina.jpg",
         secciones: [
         {
             titulo: "🗂 Secretaría y Coordinación de Estudios",
             contenido: `
             <ul>
-                <li>Secretariado Ejecutivo – Instituto Crandon (1988-1990).</li>
-                <li>Inglés – Alianza Cultural Uruguay – EE.UU. (Nivel intermedio).</li>
-                <li>Informática – Outlook, Excel, PowerPoint, Open Office.</li>
+                <li>Secretariado Ejecutivo - Instituto Crandon (1988-1990).</li>
+                <li>Inglés - Alianza Cultural Uruguay - EE.UU. (Nivel intermedio).</li>
+                <li>Informática - Outlook, Excel, PowerPoint, Open Office.</li>
             </ul>
             `
         },
@@ -225,8 +224,8 @@ const perfiles = {
             titulo: "📑 Formación Complementaria",
             contenido: `
             <ul>
-                <li>Curso Wedding Planner – Prof. Irene Viera Hiriart.</li>
-                <li>Curso Ceremonial, Protocolo y Etiqueta – Círculo de la Prensa.</li>
+                <li>Curso Wedding Planner - Prof. Irene Viera Hiriart.</li>
+                <li>Curso Ceremonial, Protocolo y Etiqueta - Círculo de la Prensa.</li>
             </ul>
             `
         },
@@ -234,8 +233,8 @@ const perfiles = {
             titulo: "💼 Experiencia Laboral",
             contenido: `
             <ul>
-                <li>Organizadora de eventos – Carlos Gutierrez S.A. (2014-2017).</li>
-                <li>Arturo Pardié Negocios Agropecuarios (2010–2014).</li>
+                <li>Organizadora de eventos - Carlos Gutierrez S.A. (2014-2017).</li>
+                <li>Arturo Pardié Negocios Agropecuarios (2010-2014).</li>
             </ul>
             `
         }

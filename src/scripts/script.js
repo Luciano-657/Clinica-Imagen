@@ -8,19 +8,18 @@ const menuLinks = document.querySelectorAll("#mobile-menu a");
 
 function openMenu() {
     header.classList.add("nav-open");
-    document.body.style.overflow = "hidden"; // 🔒 Desactiva scroll
+    document.body.style.overflow = "hidden";
 }
 
 function closeMenu() {
     header.classList.remove("nav-open");
-    document.body.style.overflow = ""; // 🔓 Restaura scroll
+    document.body.style.overflow = "";
 }
 
 toggleBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
 overlay.addEventListener("click", closeMenu);
 
-// Opcional: cerrar al hacer clic en cualquier link del menú
     menuLinks.forEach(link => {
     link.addEventListener("click", closeMenu);
 });
