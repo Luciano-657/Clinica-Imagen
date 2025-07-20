@@ -307,7 +307,7 @@ input {
     }
 
     .overlay {
-        background-image: url('/src/images/diente.gif');
+        background-image: url('../images/diente.gif');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 0 0;
