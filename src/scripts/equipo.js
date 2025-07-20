@@ -208,7 +208,7 @@ const perfiles = {
 
     rosina: {
         nombre: "Rosina Canavero",
-        imagen: "ssrc/images/rosina.jpg",
+        imagen: "src/images/rosina.jpg",
         secciones: [
         {
             titulo: "🗂 Secretaría y Coordinación de Estudios",
