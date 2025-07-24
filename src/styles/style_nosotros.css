@@ -308,6 +308,72 @@ nav a.active::after {
     justify-content: flex-start;
 }
 
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.6); /* fondo claro translúcido */
+    border: 2px solid var(--color-primary); /* borde sutil usando color-primary */
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    color: var(--color-primary);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateX(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.info-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-mint);
+}
+
+/* ===== Animaciones de entrada por scroll ===== */
+.from-left.in-view {
+    animation: fadeInLeft 0.8s forwards ease-out;
+}
+
+.from-right.in-view {
+    animation: fadeInRight 0.8s forwards ease-out;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .container-conulta{
     position: relative;
     height: 300px;
@@ -496,6 +562,19 @@ footer p{
         display: none;
     }
 
+    .info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .info-card {
+        flex: 1 1 calc(40% - 2rem); /* dos por fila */
+        margin: 1rem;
+    }
+
     .container-conulta{
         width: 600px;
     }
@@ -647,6 +726,19 @@ footer p{
 
     .flecha {
         display: none;
+    }
+
+    .info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .info-card {
+        flex: 1 1 calc(40% - 2rem);
+        margin: 1rem;
     }
 
     .container-conulta{

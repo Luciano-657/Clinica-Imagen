@@ -70,3 +70,18 @@ document.getElementById("whatsapp-btn").addEventListener("click", function () {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 });
+
+const cards = document.querySelectorAll('.info-card');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target); // Solo se anima una vez
+    }
+    });
+}, {
+    threshold: 0.3
+});
+
+    cards.forEach(card => observer.observe(card));
