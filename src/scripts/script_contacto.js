@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById("whatsapp-btn").addEventListener("click", function () {
-    const phoneNumber = "598091484049";
+    const phoneNumber = "598092745398";
     const message = "Hola, quiero agendar una cita.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");

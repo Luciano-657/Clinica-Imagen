@@ -224,8 +224,6 @@ nav a.active::after {
 /* ============================= */
 
 footer{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: rgba(22, 51, 74, 1);
     padding: 1rem;
@@ -238,6 +236,26 @@ footer p{
     font-size: 1rem;
 }
 
+.foot{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons_social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.icons_social i:hover{
+    scale: 1.5;
+    transition: var(--transition);
+}
 
 /* ============================= */
 /*    TABLET                     */
@@ -304,7 +322,16 @@ footer p{
     /* ============================= */
 
     footer p{
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .icons_social{
+        font-size: 3rem;
+    }
+
+    .icons_social i:hover{
+        scale: 1.2;
+        transition: var(--transition);
     }
 }
 
@@ -384,7 +411,20 @@ footer p{
     /*    FOOTER                     */
     /* ============================= */
 
+    footer{
+        align-items: center;
+        background-color: rgba(22, 51, 74, 1);
+        padding: 1rem;
+    }
+
     footer p{
-        font-size: 1.8rem;
+        color: var(--color-white);
+        font-weight: bold;
+        font-family: var(--fiont-man);
+        font-size: 2rem;
+    }
+
+    .icons_social{
+        font-size: 2rem;
     }
 }
