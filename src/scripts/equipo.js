@@ -45,7 +45,7 @@ const perfiles = {
     imagen: "src/images/javier.JPG",
     secciones: [
         {
-            titulo: "📘 Formación Académica",
+            titulo: "Formación Académica",
             contenido: `
             <p>Título de Master en Imagenología.</p>
             <p>Doctor en Odontología (12 de agosto del 2003).</p>
@@ -54,7 +54,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "🎓 Postgrados",
+            titulo: "Postgrados",
             contenido: `
             <ul>
             <li>Master en Ciencias Odontológicas, UFRGS (2013).</li>
@@ -64,7 +64,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "🏛️ Cargos en la Universidad",
+            titulo: "Cargos en la Universidad",
             contenido: `
             <ul>
             <li>Titular del Servicio de Prótesis Buco-Maxilo-Facial. UdelaR.</li>
@@ -74,16 +74,16 @@ const perfiles = {
             `
         },
         {
-            titulo: "👨‍🏫 Docencia",
+            titulo: "Docencia",
             contenido: `
             <ul>
-            <li>Grado 2 – Servicio de Prótesis Buco-Maxilo-Facial (Pregrado).</li>
+            <li>Grado 2 - Servicio de Prótesis Buco-Maxilo-Facial (Pregrado).</li>
             <li>Co-dictante de cursos de Graduados y Postgraduados (2006 a la fecha).</li>
             </ul>
             `
         },
         {
-            titulo: "🔬 Investigaciones y Proyectos",
+            titulo: "Investigaciones y Proyectos",
             contenido: `
             <ul>
             <li>Red de investigación sobre conservación dentaria en pacientes oncológicos.</li>
@@ -93,7 +93,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "📚 Publicaciones Destacadas",
+            titulo: "Publicaciones Destacadas",
             contenido: `
             <ul>
             <li>Descentralización de la atención protésica en Uruguay (2013).</li>
@@ -103,14 +103,14 @@ const perfiles = {
             `
         },
         {
-            titulo: "🌎 Actividad Profesional",
+            titulo: "Actividad Profesional",
             contenido: `
-            <p>Consultorio particular desde 2004 – Clínica Médica Odontológica, Atlántida, Canelones.</p>
+            <p>Consultorio particular desde 2004 - Clínica Médica Odontológica, Atlántida, Canelones.</p>
             <p>Dictante en múltiples congresos nacionales e internacionales (Uruguay, México, Cuba, EE.UU., etc.).</p>
             `
         },
         {
-            titulo: "📖 Otros Méritos",
+            titulo: "Otros Méritos",
             contenido: `
             <ul>
             <li>Presidente y past-president de la Sociedad Latinoamericana de Rehabilitación de la Cara.</li>
@@ -127,14 +127,14 @@ const perfiles = {
         imagen: "src/images/laura.jpg",
         secciones: [
         {
-            titulo: "📘 Formación Académica",
+            titulo: "Formación Académica",
             contenido: `
             <p>Doctora en Odontología, otorgado el 27 de Mayo del 2002.</p>
             <p>Facultad de Odontología de la Universidad de la República.</p>
             `
         },
         {
-            titulo: "🎓 Formación Complementaria",
+            titulo: "Formación Complementaria",
             contenido: `
             <ul>
                 <li>Pasantía en Odontología Restauradora Integral - Escuela de Graduados - UdelaR - Mayo 2014.</li>
@@ -145,7 +145,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "📚 Actividades Académicas y Jornadas",
+            titulo: "Actividades Académicas y Jornadas",
             contenido: `
             <ul>
                 <li>Jornadas de Odontología Hospitalaria CASMU (2001).</li>
@@ -164,13 +164,13 @@ const perfiles = {
         imagen: "src/images/sabrina.jpg",
         secciones: [
         {
-            titulo: "📘 Formación Académica",
+            titulo: "Formación Académica",
             contenido: `
             <p>Doctora en Odontología - Facultad de Odontología - UdelaR - Enero 2014.</p>
             `
         },
         {
-            titulo: "💼 Experiencia Laboral",
+            titulo: "Experiencia Laboral",
             contenido: `
             <ul>
                 <li>Área de Patología Molecular - Grado 1 (2013).</li>
@@ -180,7 +180,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "🎓 Cursos y Congresos",
+            titulo: "Cursos y Congresos",
             contenido: `
             <ul>
                 <li>Congreso de Estética - IM (2010).</li>
@@ -194,7 +194,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "📄 Publicaciones",
+            titulo: "Publicaciones",
             contenido: `
             <ul>
                 <li>Odontoestomatología (2014): Citoqueratinas 14 y 19.</li>
@@ -211,7 +211,7 @@ const perfiles = {
         imagen: "src/images/rosina.jpg",
         secciones: [
         {
-            titulo: "🗂 Secretaría y Coordinación de Estudios",
+            titulo: "Secretaría y Coordinación de Estudios",
             contenido: `
             <ul>
                 <li>Secretariado Ejecutivo - Instituto Crandon (1988-1990).</li>
@@ -221,7 +221,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "📑 Formación Complementaria",
+            titulo: "Formación Complementaria",
             contenido: `
             <ul>
                 <li>Curso Wedding Planner - Prof. Irene Viera Hiriart.</li>
@@ -230,7 +230,7 @@ const perfiles = {
             `
         },
         {
-            titulo: "💼 Experiencia Laboral",
+            titulo: "Experiencia Laboral",
             contenido: `
             <ul>
                 <li>Organizadora de eventos - Carlos Gutierrez S.A. (2014-2017).</li>
@@ -270,3 +270,50 @@ function renderPerfil(personaId) {
 
 const persona = getQueryParam("persona");
 renderPerfil(persona);
+
+
+    // Boton desplegable mobile
+function toggleFooterSection(button) {
+    const section = button.parentElement;
+    const isActive = section.classList.contains("active");
+
+  // Cerrar todas las demás
+    document.querySelectorAll(".footer-section").forEach((s) => {
+    s.classList.remove("active");
+    });
+
+  // Si no estaba activa, activarla
+    if (!isActive) {
+    section.classList.add("active");
+    }
+}
+
+ // Validación y manejo del formulario
+    document.getElementById('consultaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Campos del formulario
+    const nombre = this.nombre.value.trim();
+    const correo = this.correo.value.trim();
+    const asunto = this.asunto.value.trim();
+    const mensaje = this.mensaje.value.trim();
+
+    // Validar campos básicos
+    if (!nombre || !correo || !asunto || !mensaje) {
+        alert('Por favor completa todos los campos.');
+        return;
+    }
+
+    // Validar reCAPTCHA
+    if (grecaptcha.getResponse() === '') {
+        alert('Por favor, verifica que no eres un robot.');
+        return;
+    }
+
+    // Simulación de envío (aquí pondrías el fetch/ajax real)
+    alert('Consulta enviada correctamente. ¡Gracias!');
+
+    // Reiniciar formulario y reCAPTCHA
+    this.reset();
+    grecaptcha.reset();
+});

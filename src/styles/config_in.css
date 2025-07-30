@@ -18,8 +18,8 @@
     --text-on-dark: var(--color-black);
 
   /* Tipografía */
-    --fiont-man: Arial, sans-serif;
-    --font-secondary: Arial Italic, sans-serif;
+    --fiont-man: "Roboto", sans-serif;
+    --font-secondary: "Playwrite HU", cursive;
     --font-size-base: 16px;
 
     /* Dimensiones */

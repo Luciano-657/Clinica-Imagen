@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tratamientos</title>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
     <link rel="icon" href="https://clinicaimagen.uy/wp-content/uploads/2023/06/cropped-logo230px-32x32.png" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/config_in.css">
@@ -25,7 +26,6 @@
             <button class="close-btn" id="close-btn">✖</button>
             <a href="index.html">Inicio</a>
             <a href="tratamientos.html">Tratamientos</a>
-            <a href="Nosotros.html">Nosotros</a>
             <a href="Contacto.html">Contacto</a>
             <a href="login.html" class="login-btn">Log in</a>
         </nav>
@@ -33,13 +33,13 @@
     <div id="overlay"></div>
     <main>
         <section class="hero">
-            <h1>Tu aliado en derivación odontológica</h1>
-            <p>
-                En CEO nos especializamos en brindar servicios de alta calidad a odontólogos que desean derivar a sus pacientes con la seguridad de que recibirán una atención ética, profesional y especializada.
-            </p>
-            <p class="subtext">
-                Nos comprometemos a devolver al paciente a su profesional de cabecera, fortaleciendo la confianza y el trabajo colaborativo.
-            </p>
+            <span>
+                <h1>Tu aliado en derivación odontológica</h1>
+                <p>
+                    En CEO nos especializamos en brindar servicios de alta calidad a odontólogos que desean derivar a sus pacientes con la seguridad de que recibirán una atención ética, profesional y especializada. <br>
+                    Nos comprometemos a devolver al paciente a su profesional de cabecera, fortaleciendo la confianza y el trabajo colaborativo.
+                </p>
+            </span>
         </section>
         <div class="hero-shadow"></div>
         <div class="whatsapp-float" id="whatsapp-btn">
@@ -49,214 +49,263 @@
         <section class="grid-container">
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-tooth icon"></i>
                     <h2>Ortodoncia</h2>
                     <p>Corrige la alineación dental y mejora la mordida.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-tooth icon"></i>
-                    <p>Beneficios: mejora estética facial, mordida funcional, higiene oral más fácil.</p>
+                    <h2>Beneficios</h2>
+                    <p>mejora estética facial, mordida funcional, higiene oral más fácil.</p>
+                    <button class="btn-close">Cerrar</button>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-child icon"></i>
                     <h2>Ortopedia Maxilar</h2>
-                    <p>Corrige problemas óseos en los <br> niños.</p>
+                    <p>Corrige problemas óseos en los niños.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-child icon"></i>
-                    <p>Beneficios: guía el crecimiento óseo, previene tratamientos complejos a futuro.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>guía el crecimiento óseo, previene tratamientos complejos a futuro.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-syringe icon"></i>
                     <h2>Implantes Dentales</h2>
                     <p>Reemplaza dientes perdidos de forma fija.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-syringe icon"></i>
-                    <p>Beneficios: funcionalidad, estética, evita pérdida ósea.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>funcionalidad, estética, evita pérdida ósea.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-smile icon"></i>
                     <h2>Estética Dental</h2>
-                    <p>Mejora la apariencia de tu <br> sonrisa.</p>
+                    <p>Mejora la apariencia de tu sonrisa.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-smile icon"></i>
-                    <p>Beneficios: sonrisa armónica, seguridad al sonreír, correcciones visibles.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>sonrisa armónica, seguridad al sonreír, correcciones visibles.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-star icon"></i>
                     <h2>Blanqueamiento Dental</h2>
-                    <p>Ilumina y aclara tus <br> dientes.</p>
+                    <p>Ilumina y aclara tus dientes.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-star icon"></i>
-                    <p>Beneficios: sonrisa más blanca, confianza, resultados rápidos.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>sonrisa más blanca, confianza, resultados rápidos.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-bacteria icon"></i>
                     <h2>Periodoncia</h2>
                     <p>Tratamiento de encías y tejidos de soporte.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-bacteria icon"></i>
-                    <p>Beneficios: encías sanas, prevención de pérdida dental.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Encías sanas, prevención de pérdida dental.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-teeth-open icon"></i>
                     <h2>Prótesis Dentales</h2>
-                    <p>Reemplazan piezas dentarias <br> perdidas.</p>
+                    <p>Reemplazan piezas dentarias perdidas.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-teeth-open icon"></i>
-                    <p>Beneficios: mejora masticación, habla, estética facial.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Mejora masticación, habla, estética facial.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-x-ray icon"></i>
                     <h2>Endodoncia</h2>
-                    <p>Tratamiento de conductos o <br> nervios.</p>
+                    <p>Tratamiento de conductos o nervios.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-x-ray icon"></i>
-                    <p>Beneficios: elimina dolor, conserva el diente natural.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Elimina dolor, conserva el diente natural.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-user-md icon"></i>
                     <h2>Cirugía Bucal</h2>
                     <p>Extracciones y procedimientos quirúrgicos.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-user-md icon"></i>
-                    <p>Beneficios: remueve lesiones, cordales, mejora funcionalidad.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Remueve lesiones, cordales, mejora funcionalidad.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-baby icon"></i>
                     <h2>Odontopediatría</h2>
                     <p>Odontología infantil preventiva y curativa.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-baby icon"></i>
-                    <p>Beneficios: controla crecimiento, educación temprana en salud bucal.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Controla crecimiento, educación temprana en salud bucal.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-bed icon"></i>
                     <h2>Bruxismo y Placas</h2>
-                    <p>Controla el rechinar de los <br> dientes.</p>
+                    <p>Controla el rechinar de los dientes.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-bed icon"></i>
-                    <p>Beneficios: evita desgaste dental, relaja mandíbula, reduce dolor.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Evita desgaste dental, relaja mandíbula, reduce dolor.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-tools icon"></i>
                     <h2>Rehabilitación Oral</h2>
-                    <p>Recupera funcionalidad oral <br> completa.</p>
+                    <p>Recupera funcionalidad oral completa.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-tools icon"></i>
-                    <p>Beneficios: funcionalidad total, estética integral.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Funcionalidad total, estética integral.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-radiation icon"></i>
                     <h2>Radiología Odontológica</h2>
-                    <p>Diagnóstico con imágenes <br> dentales.</p>
+                    <p>Diagnóstico con imágenes dentales.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-radiation icon"></i>
-                    <p>Beneficios: diagnóstico preciso, planificación adecuada.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Diagnóstico preciso, planificación adecuada.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-search icon"></i>
                     <h2>Diagnóstico y Prevención</h2>
                     <p>Chequeos y cuidados para evitar enfermedades.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-search icon"></i>
-                    <p>Beneficios: detección temprana, ahorro de tratamientos mayores.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Detección temprana, ahorro de tratamientos mayores.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-ambulance icon"></i>
                     <h2>Urgencias Odontológicas</h2>
                     <p>Atención inmediata ante emergencias dentales.</p>
                     <button class="btn-toggle">Ver más</button>
                 </div>
                 <div class="card-expandable">
-                    <i class="fas fa-ambulance icon"></i>
-                    <p>Beneficios: alivio rápido, control del daño, solución inmediata.</p>
+                    <button class="btn-close">Cerrar</button>
+                    <h2>Beneficios</h2>
+                    <p>Alivio rápido, control del daño, solución inmediata.</p>
                 </div>
             </div>
 
         </section>
 
     </main>
-    <footer>
-        <div class="foot">
-            <a href="index.html" class="logo"> 
-                <img src="src/images/Logo Clinica.png" alt="Logo de la empresa"/>
-            </a>
-            <p>© Clínica Imagen 2025</p>
+        <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="src/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="nosotros.html" class="footer-link">Ver más sobre nosotros</a>
+
+                    <form class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <a href="Contacto.html" class="footer-link">Encuentranos Aquí</a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="icons_social">
-            <a href="https://www.facebook.com/ClinicaImagenUy/" target="_blank"><i class="fa-brands fa-facebook-f" style="color: #74C0FC;"></i></a>
-            <a href="https://www.instagram.com/clinicaimagenuy/" target="_blank"><i class="fa-brands fa-instagram" style="color: #74C0FC;"></i></a>
-            <a href="https://x.com/clinicaimagenuy" target="_blank"><i class="fa-brands fa-twitter" style="color: #74C0FC;"></i></a>
-            <a href="https://www.linkedin.com/company/clinicaimagenuy/" target="_blank"><i class="fa-brands fa-linkedin" style="color: #74C0FC;"></i></a>
+
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>

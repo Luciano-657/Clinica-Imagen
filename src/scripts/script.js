@@ -84,7 +84,7 @@ const carrusel = document.getElementById("carrusel2");
     }, { threshold: 0.1 });
     observer.observe(carrusel);
 
-// Animación on-scroll desde la izquierda (sin interferir con el carrusel)
+// Animación on-scroll desde la izquierda de llamado laboral
 
 document.addEventListener("DOMContentLoaded", function () {
     const tarjetaLlamado = document.querySelector('.llamado-card');
@@ -100,9 +100,76 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, {
         root: null,
-        rootMargin: '0px 0px -20% 0px', // activa un poco antes de que esté completamente visible
+        rootMargin: '0px 0px -20% 0px',
         threshold: 0.05
     });
 
     llamadoObserver.observe(tarjetaLlamado);
     });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elementosAnimados = document.querySelectorAll('.anim-left, .anim-right');
+
+    if (!elementosAnimados.length) return;
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -20% 0px',
+        threshold: 0.05
+    });
+
+    elementosAnimados.forEach(el => observer.observe(el));
+    });
+
+    // Boton desplegable mobile
+function toggleFooterSection(button) {
+    const section = button.parentElement;
+    const isActive = section.classList.contains("active");
+
+  // Cerrar todas las demás
+    document.querySelectorAll(".footer-section").forEach((s) => {
+    s.classList.remove("active");
+    });
+
+  // Si no estaba activa, activarla
+    if (!isActive) {
+    section.classList.add("active");
+    }
+}
+
+ // Validación y manejo del formulario
+    document.getElementById('consultaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Campos del formulario
+    const nombre = this.nombre.value.trim();
+    const correo = this.correo.value.trim();
+    const asunto = this.asunto.value.trim();
+    const mensaje = this.mensaje.value.trim();
+
+    // Validar campos básicos
+    if (!nombre || !correo || !asunto || !mensaje) {
+        alert('Por favor completa todos los campos.');
+        return;
+    }
+
+    // Validar reCAPTCHA
+    if (grecaptcha.getResponse() === '') {
+        alert('Por favor, verifica que no eres un robot.');
+        return;
+    }
+
+    // Simulación de envío (aquí pondrías el fetch/ajax real)
+    alert('Consulta enviada correctamente. ¡Gracias!');
+
+    // Reiniciar formulario y reCAPTCHA
+    this.reset();
+    grecaptcha.reset();
+});

@@ -208,22 +208,48 @@ document.getElementById("whatsapp-btn").addEventListener("click", function () {
     window.open(url, "_blank");
 });
 
-document.getElementById("contact-form").addEventListener("submit", function (e) {
+    // Boton desplegable mobile
+function toggleFooterSection(button) {
+    const section = button.parentElement;
+    const isActive = section.classList.contains("active");
+
+  // Cerrar todas las demás
+    document.querySelectorAll(".footer-section").forEach((s) => {
+    s.classList.remove("active");
+    });
+
+  // Si no estaba activa, activarla
+    if (!isActive) {
+    section.classList.add("active");
+    }
+}
+
+ // Validación y manejo del formulario
+    document.getElementById('consultaForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const mensaje = document.getElementById("form-message");
-    const recaptchaResponse = grecaptcha.getResponse();
+    // Campos del formulario
+    const nombre = this.nombre.value.trim();
+    const correo = this.correo.value.trim();
+    const asunto = this.asunto.value.trim();
+    const mensaje = this.mensaje.value.trim();
 
-    if (recaptchaResponse.length === 0) {
-        mensaje.textContent = "Por favor verifica que no eres un robot.";
-        mensaje.style.color = "red";
+    // Validar campos básicos
+    if (!nombre || !correo || !asunto || !mensaje) {
+        alert('Por favor completa todos los campos.');
         return;
     }
 
-    mensaje.textContent = "Formulario enviado correctamente ✅";
-    mensaje.style.color = "green";
+    // Validar reCAPTCHA
+    if (grecaptcha.getResponse() === '') {
+        alert('Por favor, verifica que no eres un robot.');
+        return;
+    }
 
-    // Limpia los campos
-    e.target.reset();
+    // Simulación de envío (aquí pondrías el fetch/ajax real)
+    alert('Consulta enviada correctamente. ¡Gracias!');
+
+    // Reiniciar formulario y reCAPTCHA
+    this.reset();
     grecaptcha.reset();
 });

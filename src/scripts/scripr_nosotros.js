@@ -85,3 +85,49 @@ const observer = new IntersectionObserver((entries) => {
 });
 
     cards.forEach(card => observer.observe(card));
+
+        // Boton desplegable mobile
+function toggleFooterSection(button) {
+    const section = button.parentElement;
+    const isActive = section.classList.contains("active");
+
+  // Cerrar todas las demás
+    document.querySelectorAll(".footer-section").forEach((s) => {
+    s.classList.remove("active");
+    });
+
+  // Si no estaba activa, activarla
+    if (!isActive) {
+    section.classList.add("active");
+    }
+}
+
+ // Validación y manejo del formulario
+    document.getElementById('consultaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Campos del formulario
+    const nombre = this.nombre.value.trim();
+    const correo = this.correo.value.trim();
+    const asunto = this.asunto.value.trim();
+    const mensaje = this.mensaje.value.trim();
+
+    // Validar campos básicos
+    if (!nombre || !correo || !asunto || !mensaje) {
+        alert('Por favor completa todos los campos.');
+        return;
+    }
+
+    // Validar reCAPTCHA
+    if (grecaptcha.getResponse() === '') {
+        alert('Por favor, verifica que no eres un robot.');
+        return;
+    }
+
+    // Simulación de envío (aquí pondrías el fetch/ajax real)
+    alert('Consulta enviada correctamente. ¡Gracias!');
+
+    // Reiniciar formulario y reCAPTCHA
+    this.reset();
+    grecaptcha.reset();
+});

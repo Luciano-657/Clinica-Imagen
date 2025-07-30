@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
     <link rel="icon" href="https://clinicaimagen.uy/wp-content/uploads/2023/06/cropped-logo230px-32x32.png" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/config_in.css">
@@ -25,45 +25,24 @@
             <button class="close-btn" id="close-btn">✖</button>
             <a href="index.html">Inicio</a>
             <a href="tratamientos.html">Tratamientos</a>
-            <a href="Nosotros.html">Nosotros</a>
             <a href="Contacto.html">Contacto</a>
             <a href="login.html" class="login-btn">Log in</a>
         </nav>
     </header>
     <main>
         <section class="hero">
-            <h1>A un paso de ti</h1>
-            <p>
-                Aqui encontraras nuestros distintos locales para que puedas elegir el que mas te convenga 
-            </p>
+            <span>
+                <h1>A un paso de ti</h1>
+                <p>
+                    Aqui encontraras nuestros distintos locales para que puedas elegir el que mas te convenga 
+                </p>
+            </span>
         </section>
         <div class="whatsapp-float" id="whatsapp-btn">
             <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
             <span class="tooltip">Agendar citas</span>
         </div>  
         <div class="hero-shadow"></div>
-        <section class="form-container">
-            <h1>Contáctanos</h1>
-            <form id="contact-form">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo"/>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="tu@email.com"/>
-
-            <label for="asunto">Asunto</label>
-            <input type="text" id="asunto" name="asunto" required placeholder="Motivo de contacto"/>
-
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" maxlength="500" rows="5" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
-
-            <!-- Google reCAPTCHA -->
-            <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
-
-            <button type="submit">Enviar</button>
-            </form>
-            <p id="form-message" class="form-message"></p>
-        </section>
         <section class="ubicacion-header">
             <h2>Eliga aqui un departamento para informacion directa</h2>
             <select id="departamentoSelect">
@@ -90,18 +69,67 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="foot">
-            <a href="index.html" class="logo"> 
-                <img src="src/images/Logo Clinica.png" alt="Logo de la empresa"/>
-            </a>
-            <p>© Clínica Imagen 2025</p>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="src/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="nosotros.html" class="footer-link">Ver más sobre nosotros</a>
+
+                    <form class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <a href="Contacto.html" class="footer-link">Encuentranos Aquí</a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="icons_social">
-            <a href="https://www.facebook.com/ClinicaImagenUy/" target="_blank"><i class="fa-brands fa-facebook-f" style="color: #74C0FC;"></i></a>
-            <a href="https://www.instagram.com/clinicaimagenuy/" target="_blank"><i class="fa-brands fa-instagram" style="color: #74C0FC;"></i></a>
-            <a href="https://x.com/clinicaimagenuy" target="_blank"><i class="fa-brands fa-twitter" style="color: #74C0FC;"></i></a>
-            <a href="https://www.linkedin.com/company/clinicaimagenuy/" target="_blank"><i class="fa-brands fa-linkedin" style="color: #74C0FC;"></i></a>
+
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>

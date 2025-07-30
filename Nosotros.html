@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros</title>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
     <link rel="icon" href="https://clinicaimagen.uy/wp-content/uploads/2023/06/cropped-logo230px-32x32.png" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,7 +26,6 @@
             <button class="close-btn" id="close-btn">✖</button>
             <a href="index.html">Inicio</a>
             <a href="tratamientos.html">Tratamientos</a>
-            <a href="Nosotros.html">Nosotros</a>
             <a href="Contacto.html">Contacto</a>
             <a href="login.html" class="login-btn">Log in</a>
         </nav>
@@ -36,10 +36,12 @@
             <span class="tooltip">Agendar citas</span>
         </div>
     <section class="equipo">
-        <h2>Comprometidos en brindarte lo mejor</h2>
-        <p class="equipo-descripcion">
-            Las personas son el pilar de nuestra actividad, por eso nuestro equipo se capacita continuamente para poner a su disposición los últimos avances científicos y tecnológicos en el servicio que le brindamos.
-        </p>
+        <span>
+            <h2>Comprometidos en brindarte lo mejor</h2>
+            <p class="equipo-descripcion">
+                Las personas son el pilar de nuestra actividad, por eso nuestro equipo se capacita continuamente para poner a su disposición los últimos avances científicos y tecnológicos en el servicio que le brindamos.
+            </p>
+        </span>
 
         <div class="tarjeta-container">
             <button id="prev-btn" class="flecha">&#10094;</button>
@@ -75,31 +77,26 @@
         </div>
         <div class="info-section">
             <div class="info-card from-left">
-                <i class="fas fa-bullseye"></i>
                 <h3>Objetivos</h3>
                 <p>Consolidarse como referente nacional en imagenología dental digital, expandiendo sus servicios con tecnología de vanguardia y accesibilidad online total, en múltiples sedes dentro de Uruguay.</p>
             </div>
 
             <div class="info-card from-right">
-                <i class="fas fa-flag-checkered"></i>
                 <h3>Metas</h3>
                 <p>Impulsar el acceso universal al diagnóstico odontológico digital mediante escaneos, tomografías cone beam, impresión 3D y plataformas como MedCloud para compartir resultados en línea en tiempo real.</p>
             </div>
 
             <div class="info-card from-left">
-                <i class="fas fa-hands-helping"></i>
                 <h3>Misión</h3>
                 <p>Brindar servicios de diagnóstico por imágenes odontológicas con alta precisión, bajo nivel de radiación y tecnología de última generación, asegurando rapidez, seguridad y disponibilidad digital constante.</p>
             </div>
 
             <div class="info-card from-right">
-                <i class="fas fa-eye"></i>
                 <h3>Visión</h3>
                 <p>Universalizar la odontología digital en Uruguay, liderando la transformación tecnológica del sector con innovación, accesibilidad y excelencia en cada sede y <br> estudio realizado.</p>
             </div>
 
             <div class="info-card from-left">
-                <i class="fas fa-heart"></i>
                 <h3>Valores</h3>
                 <p>Innovación tecnológica, precisión diagnóstica, seguridad del paciente, accesibilidad digital, atención personalizada y profesionalismo humano como pilares del servicio.</p>
             </div>
@@ -110,18 +107,67 @@
             <a href="Contacto.html" class="btn-consulta">Consulta</a>
         </div>
     </section>
-    <footer>
-        <div class="foot">
-            <a href="index.html" class="logo"> 
-                <img src="src/images/Logo Clinica.png" alt="Logo de la empresa"/>
-            </a>
-            <p>© Clínica Imagen 2025</p>
+        <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="src/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="nosotros.html" class="footer-link">Ver más sobre nosotros</a>
+
+                    <form class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <a href="Contacto.html" class="footer-link">Encuentranos Aquí</a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="icons_social">
-            <a href="https://www.facebook.com/ClinicaImagenUy/" target="_blank"><i class="fa-brands fa-facebook-f" style="color: #74C0FC;"></i></a>
-            <a href="https://www.instagram.com/clinicaimagenuy/" target="_blank"><i class="fa-brands fa-instagram" style="color: #74C0FC;"></i></a>
-            <a href="https://x.com/clinicaimagenuy" target="_blank"><i class="fa-brands fa-twitter" style="color: #74C0FC;"></i></a>
-            <a href="https://www.linkedin.com/company/clinicaimagenuy/" target="_blank"><i class="fa-brands fa-linkedin" style="color: #74C0FC;"></i></a>
+
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>

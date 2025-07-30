@@ -35,31 +35,26 @@ links.forEach(link => {
 });
 
 
-// Botón "Ver más"
-document.querySelectorAll('.btn-toggle').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.card');
-    const expandable = card.querySelector('.card-expandable');
-    const isVisible = expandable.classList.contains('show');
+document.querySelectorAll('.card').forEach(card => {
+  const btnToggle = card.querySelector('.btn-toggle');
+  const expandable = card.querySelector('.card-expandable');
+  const btnClose = card.querySelector('.btn-close');
 
-    // Cerrar otras tarjetas abiertas
-    document.querySelectorAll('.card-expandable.show').forEach(openExp => {
-      if (openExp !== expandable) {
-        openExp.classList.remove('show');
-        openExp.closest('.card').querySelector('.btn-toggle').textContent = 'Ver más';
+  btnToggle.addEventListener('click', () => {
+    // Cerrar otras tarjetas
+    document.querySelectorAll('.card-expandable.show').forEach(open => {
+      if (open !== expandable) {
+        open.classList.remove('show');
       }
     });
+    expandable.classList.add('show');
+  });
 
-    // Alternar la tarjeta clickeada
-    if (isVisible) {
-      expandable.classList.remove('show');
-      btn.textContent = 'Ver más';
-    } else {
-      expandable.classList.add('show');
-      btn.textContent = 'Ver menos';
-    }
+  btnClose.addEventListener('click', () => {
+    expandable.classList.remove('show');
   });
 });
+
 
 //Burbuja de whatsapp
 
@@ -68,4 +63,50 @@ document.getElementById("whatsapp-btn").addEventListener("click", function () {
     const message = "Hola, quiero agendar una cita.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
+});
+
+    // Boton desplegable mobile
+function toggleFooterSection(button) {
+    const section = button.parentElement;
+    const isActive = section.classList.contains("active");
+
+  // Cerrar todas las demás
+    document.querySelectorAll(".footer-section").forEach((s) => {
+    s.classList.remove("active");
+    });
+
+  // Si no estaba activa, activarla
+    if (!isActive) {
+    section.classList.add("active");
+    }
+}
+
+ // Validación y manejo del formulario
+    document.getElementById('consultaForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Campos del formulario
+    const nombre = this.nombre.value.trim();
+    const correo = this.correo.value.trim();
+    const asunto = this.asunto.value.trim();
+    const mensaje = this.mensaje.value.trim();
+
+    // Validar campos básicos
+    if (!nombre || !correo || !asunto || !mensaje) {
+        alert('Por favor completa todos los campos.');
+        return;
+    }
+
+    // Validar reCAPTCHA
+    if (grecaptcha.getResponse() === '') {
+        alert('Por favor, verifica que no eres un robot.');
+        return;
+    }
+
+    // Simulación de envío (aquí pondrías el fetch/ajax real)
+    alert('Consulta enviada correctamente. ¡Gracias!');
+
+    // Reiniciar formulario y reCAPTCHA
+    this.reset();
+    grecaptcha.reset();
 });
