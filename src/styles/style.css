@@ -334,7 +334,7 @@ nav a.active::after {
 
 /* ==== Fondo Parallax para la sección ==== */
 .sec-instal {
-    background-image: url('/src/images/img22.jpg');
+    background-image: url('../images/img22.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -585,7 +585,7 @@ nav a.active::after {
 
 .footer {
     position: relative;
-    background-image: url('/src/images/img21.JPG');
+    background-image: url('../images/img21.JPG');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

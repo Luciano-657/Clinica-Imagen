@@ -463,7 +463,7 @@ span{
 
 .footer {
     position: relative;
-    background-image: url('/src/images/img21.JPG');
+    background-image: url('../images/img21.JPG');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
