@@ -543,6 +543,7 @@ nav a.active::after {
     margin-bottom: 1.5rem;
     color: var(--color-primary);
     text-align: center;
+    font-weight: bolder;
 }
 
 .llamado-boton {
@@ -664,6 +665,7 @@ nav a.active::after {
     margin-bottom: 1rem;
     transition: color var(--transition);
     font-family: var(--font-secondary);
+    font-weight: bolder;
 }
 
 .footer-link:hover {

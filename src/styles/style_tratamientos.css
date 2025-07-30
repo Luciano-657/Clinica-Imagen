@@ -285,11 +285,13 @@ nav a.active::after {
     margin-top: 0.5rem;
     font-size: 1.2rem;
     font-family: var(--fiont-man);
+    font-weight: lighter;
 }
 
 .card p {
     margin: 0.5rem 0;
     font-family: var(--font-secondary);
+    font-weight: bolder;
 }
 
 /* Botón para expandir */
@@ -349,7 +351,7 @@ nav a.active::after {
 .card-expandable p {
     margin: 0;
     font-size: 0.95rem;
-    font-weight: normal;
+    font-weight: bolder;
 }
 
 /* Botón de cerrar */
@@ -468,6 +470,7 @@ nav a.active::after {
     margin-bottom: 1rem;
     transition: color var(--transition);
     font-family: var(--font-secondary);
+    font-weight: bolder;
 }
 
 .footer-link:hover {

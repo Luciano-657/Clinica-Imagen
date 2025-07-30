@@ -542,6 +542,7 @@ span{
     margin-bottom: 1rem;
     transition: color var(--transition);
     font-family: var(--font-secondary);
+    font-weight: bolder;
 }
 
 .footer-link:hover {
