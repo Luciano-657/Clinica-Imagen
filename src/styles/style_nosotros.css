@@ -134,49 +134,9 @@ nav a.active::after {
     display: block;
 }
 
-
     /* ============================= */
-    /*    WHATSAPP-ICON              */
+    /*    EQUIPO DESCRIPCION         */
     /* ============================= */
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 40px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 999;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: popIn 0.8s ease;
-    transition: transform 0.3s ease;
-}
-
-.fa-xl {
-    font-size: 2.5em;
-}
-
-/* Ocultar tooltip en mobile/tablet */
-.tooltip {
-    display: none;
-}
-
-/* === ANIMACIÓN === */
-@keyframes popIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 .equipo {
     text-align: center;
@@ -488,8 +448,8 @@ span{
 }
 
 .footer-logo img {
-    width: 300px;
-    height: auto;
+    height: 80px;
+    width: auto;
 }
 
 .footer-container {
@@ -536,17 +496,40 @@ span{
 }
 
 .footer-link {
+    position: relative;
     display: inline-block;
     color: var(--color-white);
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s ease;
     margin-bottom: 1rem;
-    transition: color var(--transition);
     font-family: var(--font-secondary);
-    font-weight: bolder;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
-.footer-link:hover {
-    color: var(--color-mint);
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #99d6dd;
+    transition: width 0.4s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Estilo cuando está en la página activa */
+.footer-link.active {
+    color: #00bcd4; /* Color del texto al estar activo */
+}
+
+.footer-link.active::after {
+    width: 100%;
+    background-color: #00bcd4;
 }
 
 .footer-form {
@@ -580,6 +563,9 @@ span{
     font-weight: bold;
     margin-top: 0.5rem;
     transition: background-color var(--transition);
+    width: 100px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
 }
 
 .footer-form button:hover {
@@ -663,17 +649,8 @@ span{
     }
 
     /* ============================= */
-    /*    WHATSAPP-ICON              */
+    /*    EQUIPO DESCRIPCION         */
     /* ============================= */
-
-    .whatsapp-float{
-        width: 75px;
-        height: 75px;
-    }
-
-    .fa-xl {
-        font-size: 3.5em;
-    }
 
     .equipo{
         padding-top: 60px;
@@ -734,7 +711,7 @@ span{
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        gap: 3rem;
     }
 
     .footer-section {
@@ -838,44 +815,8 @@ span{
     }
 
     /* ============================= */
-    /*    WHATSAPP-ICON              */
+    /*    EQUIPO DESCRIPCION         */
     /* ============================= */
-
-    .tooltip {
-        display: inline-block;
-        position: absolute;
-        right: 70px;
-        background-color: #25d366;
-        color: var(--color-white);
-        padding: 6px 12px;
-        border-radius: 6px;
-        white-space: nowrap;
-        font-size: 14px;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(10px);
-        transition: all 0.3s ease;
-        margin-right: 20px;
-        font-weight: bold;
-    }
-
-    .whatsapp-float{
-        width: 75px;
-        height: 75px;
-    }
-
-    .fa-xl {
-    font-size: 3.5em;
-    }
-
-    .whatsapp-float:hover .tooltip {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.1);
-    }
 
     .equipo {
         margin-top: 0px;
@@ -940,7 +881,7 @@ span{
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        gap: 3rem;
     }
 
     .footer-section {

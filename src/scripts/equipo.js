@@ -34,6 +34,20 @@ links.forEach(link => {
     }
 });
 
+//Marcado de pagina en footer
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+        const links = document.querySelectorAll('.footer-link');
+
+        links.forEach(link => {
+            const page = link.dataset.page;
+            if (page && page.toLowerCase() === currentPage.toLowerCase()) {
+                link.classList.add('active');
+            }
+        });
+    });
+
 function getQueryParam(param) {
 const urlParams = new URLSearchParams(window.location.search);
 return urlParams.get(param);
@@ -251,6 +265,7 @@ function renderPerfil(personaId) {
 
     let html = `
         <section class="header-perfil">
+        <a href="Nosotros.html"><i class="fa-solid fa-arrow-rotate-left"></i> Regresar</a>
         <img src="${perfil.imagen}" alt="${perfil.nombre}" class="perfil-img">
         <h1>${perfil.nombre}</h1>
         </section>

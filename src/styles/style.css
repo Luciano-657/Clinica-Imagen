@@ -232,7 +232,7 @@ nav a.active::after {
 }
 
 .hero a {
-    background-color: var(--color-primary);
+    background-color: #3173a7ab;
     color: var(--color-white);
     text-align: center;
     font-weight: bold;
@@ -262,7 +262,7 @@ nav a.active::after {
 /* SECCION PORQUE ELEGRINOS      */
 /* ============================= */
 .section-title {
-    margin-top: 60px;
+    margin-top: 120px;
     font-family: var(--fiont-man);
     text-align: center;
     font-size: 1.5rem;
@@ -273,6 +273,7 @@ nav a.active::after {
 .carousel-container {
     position: relative;
     overflow: hidden;
+    margin-bottom: 120px;
 }
 
 .carousel {
@@ -300,11 +301,17 @@ nav a.active::after {
     margin-bottom: 0.5rem;
 }
 
-.card p {
-    font-size: var(--font-size-base);
-    color: var(--color-hover-primary);
+.card span p{
+    font-size: 20px;
     font-weight: bold;
     font-family: var(--fiont-man);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--color-hover-primary);
+    font-family: var(--font-secondary);
+    font-weight: 500;
 }
 
 .arrow {
@@ -381,7 +388,7 @@ nav a.active::after {
 .sec-text {
     height: 350px;
     max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(0 0 0 / 25%);
     padding: 2rem;
     border-radius: 10px;
     backdrop-filter: blur(6px);
@@ -401,11 +408,12 @@ nav a.active::after {
     padding: 0.8rem 1.5rem;
     background-color: #ffffff;
     color: #000;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 30px;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 4px rgb(0 0 0 / 46%);
+    font-family: var(--font-secondary);
 }
 
 .btn-nosotros:hover {
@@ -510,6 +518,8 @@ nav a.active::after {
     padding: 2rem 1rem;
     min-height: 50vh;
     overflow: hidden;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .llamado-card {
@@ -543,7 +553,7 @@ nav a.active::after {
     margin-bottom: 1.5rem;
     color: var(--color-primary);
     text-align: center;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 .llamado-boton {
@@ -611,8 +621,8 @@ nav a.active::after {
 }
 
 .footer-logo img {
-    width: 300px;
-    height: auto;
+    height: 80px;
+    width: auto;
 }
 
 .footer-container {
@@ -659,17 +669,40 @@ nav a.active::after {
 }
 
 .footer-link {
+    position: relative;
     display: inline-block;
     color: var(--color-white);
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s ease;
     margin-bottom: 1rem;
-    transition: color var(--transition);
     font-family: var(--font-secondary);
-    font-weight: bolder;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
-.footer-link:hover {
-    color: var(--color-mint);
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #99d6dd;
+    transition: width 0.4s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Estilo cuando está en la página activa */
+.footer-link.active {
+    color: #00bcd4; /* Color del texto al estar activo */
+}
+
+.footer-link.active::after {
+    width: 100%;
+    background-color: #00bcd4;
 }
 
 .footer-form {
@@ -703,6 +736,9 @@ nav a.active::after {
     font-weight: bold;
     margin-top: 0.5rem;
     transition: background-color var(--transition);
+    width: 100px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
 }
 
 .footer-form button:hover {
@@ -809,7 +845,7 @@ nav a.active::after {
     }
 
     .hero span{
-        align-items: flex-start;
+        align-items: center;
         height: 300px;
         width: 550px;
         position: absolute;
@@ -848,9 +884,17 @@ nav a.active::after {
         min-width: unset;
     }
 
+    .card span p{
+        font-size: 20px;
+        font-weight: bold;
+        font-family: var(--fiont-man);
+        margin-bottom: 1rem;
+    }
+
     .card p {
-    font-size: 20px;
-    font-weight: bold;
+        color: var(--color-hover-primary);
+        font-family: var(--font-secondary);
+        font-weight: 500;
     }
 
     .arrow {
@@ -959,7 +1003,7 @@ nav a.active::after {
     }
 
     .footer-link{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .footer-text{
@@ -1086,7 +1130,7 @@ nav a.active::after {
     }
 
     .hero span{
-        align-items: flex-start;
+        align-items: center;
         height: 400px;
         width: 550px;
         position: absolute;
@@ -1108,7 +1152,7 @@ nav a.active::after {
     /* SECCION PORQUE ELEGRINOS      */
     /* ============================= */
 
-        .carousel-container {
+    .carousel-container {
         overflow: visible;
     }
 
@@ -1125,9 +1169,17 @@ nav a.active::after {
         min-width: unset;
     }
 
+    .card span p{
+        font-size: 20px;
+        font-weight: bold;
+        font-family: var(--fiont-man);
+        margin-bottom: 1rem;
+    }
+
     .card p {
-    font-size: 20px;
-    font-weight: bold;
+        color: var(--color-hover-primary);
+        font-family: var(--font-secondary);
+        font-weight: 500;
     }
 
     .arrow {
@@ -1152,7 +1204,7 @@ nav a.active::after {
     }
 
     .sec-text {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     /* ============================= */
@@ -1212,7 +1264,7 @@ nav a.active::after {
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        gap: 3rem;
     }
 
     .footer-section {

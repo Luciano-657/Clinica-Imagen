@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Clinica Imagen | Contacto</title>
     <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
-    <link rel="icon" href="https://clinicaimagen.uy/wp-content/uploads/2023/06/cropped-logo230px-32x32.png" sizes="32x32"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="src/images/logo.ico" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/config_in.css">
     <link rel="stylesheet" href="src/styles/style_contacto.css">
@@ -34,17 +35,17 @@
             <span>
                 <h1>A un paso de ti</h1>
                 <p>
-                    Aqui encontraras nuestros distintos locales para que puedas elegir el que mas te convenga 
+                    Aquí encontraras nuestros distintos locales para que puedas elegir el que más te convenga 
                 </p>
             </span>
         </section>
         <div class="whatsapp-float" id="whatsapp-btn">
             <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
-            <span class="tooltip">Agendar citas</span>
+            <span class="tooltip">Agendate ahora</span>
         </div>  
         <div class="hero-shadow"></div>
         <section class="ubicacion-header">
-            <h2>Eliga aqui un departamento para informacion directa</h2>
+            <h2>Elija aquí un departamento para información directa</h2>
             <select id="departamentoSelect">
             <option value="">Buscar por departamento</option>
             <option value="Montevideo">Montevideo</option>
@@ -68,6 +69,29 @@
                 <div id="modal-results" class="card-list"></div>
             </div>
         </div>
+        <section class="sede-principal">
+            <h2 class="sede-titulo">Nuestra Sede Principal</h2>
+            <div class="sede-contenido">
+                <div class="sede-video">
+                    <video controls>
+                        <source src="src/videos/video-sede.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="sede-texto">
+                    <p>
+                        Nuestra clínica principal se encuentra ubicada en nuestra Sede Carrasco, más exacto en el Portal de las Américas, Av. De las Américas 6000, loc 109, Departamento de Canelones.
+                    </p>
+                    <p>
+                        Clínica Imagen emplea entre 11 y 50 personas, distribuidas en distintas sedes y laboratorios, lo que garantiza una atención eficiente y personalizada en cada etapa del proceso diagnóstico y de atención.
+                    </p>
+                    <p>
+                        Nuestra clínica odontológica cuenta con profesionales con más de 10 años de experiencia, por lo cual podemos asegurarte tranquilidad y seguridad a la hora de cuidar tu salud dental.
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </main>
     <footer class="footer">
         <div class="footer-container">
@@ -114,19 +138,17 @@
                     Contacto  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="footer-content-contacto">
-                    <a href="Contacto.html" class="footer-link">Encuentranos Aquí</a>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí</a>
                     <p class="footer-text">Disfrutá nuestras redes sociales:</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
-
         </div>
-
         <!-- Derechos -->
         <div class="footer-bottom">
             <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+    <title>Clinica Imagen - Nosotros</title>
     <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
-    <link rel="icon" href="https://clinicaimagen.uy/wp-content/uploads/2023/06/cropped-logo230px-32x32.png" sizes="32x32"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="src/images/logo.ico" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/config_in.css">
     <link rel="stylesheet" href="src/styles/style_nosotros.css">
-    <script src="src/scripts/scripr_nosotros.js" defer></script>
+    <script src="src/scripts/script_nosotros.js" defer></script>
 </head>
 <body>
     <header id="main-header">
@@ -31,10 +31,6 @@
         </nav>
     </header>
     <div class="overlay" id="overlay"></div>
-        <div class="whatsapp-float" id="whatsapp-btn">
-            <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
-            <span class="tooltip">Agendar citas</span>
-        </div>
     <section class="equipo">
         <span>
             <h2>Comprometidos en brindarte lo mejor</h2>
@@ -42,7 +38,6 @@
                 Las personas son el pilar de nuestra actividad, por eso nuestro equipo se capacita continuamente para poner a su disposición los últimos avances científicos y tecnológicos en el servicio que le brindamos.
             </p>
         </span>
-
         <div class="tarjeta-container">
             <button id="prev-btn" class="flecha">&#10094;</button>
 
@@ -50,7 +45,7 @@
                 <div class="tarjeta">
                     <img src="src/images/javier.JPG" alt="Dr. Javier De Lima Moreno">
                     <h3>Dr. Javier De Lima Moreno</h3>
-                    <p class="rol">Director</p>
+                    <p class="rol">Director - CEO</p>
                     <a href="equipo.html?persona=javier" class="btn-ver-mas">Ver más</a>
                 </div>
                 <div class="tarjeta">
@@ -93,18 +88,13 @@
 
             <div class="info-card from-right">
                 <h3>Visión</h3>
-                <p>Universalizar la odontología digital en Uruguay, liderando la transformación tecnológica del sector con innovación, accesibilidad y excelencia en cada sede y <br> estudio realizado.</p>
+                <p>Universalizar la odontología digital en Uruguay, liderando la transformación tecnológica del sector con innovación, accesibilidad y excelencia en cada sede y estudio realizado.</p>
             </div>
 
             <div class="info-card from-left">
                 <h3>Valores</h3>
                 <p>Innovación tecnológica, precisión diagnóstica, seguridad del paciente, accesibilidad digital, atención personalizada y profesionalismo humano como pilares del servicio.</p>
             </div>
-        </div>
-        <div class="container-conulta">
-            <h2>Tienes dudas?</h2>
-            <p class="consulta-descripcion">Contactanos</p>
-            <a href="Contacto.html" class="btn-consulta">Consulta</a>
         </div>
     </section>
         <footer class="footer">
@@ -124,7 +114,7 @@
                     <p class="footer-text">
                         Somos especialistas en odontología integral con enfoque humano.
                     </p>
-                    <a href="Nosotros.html" class="footer-link">Ver más sobre nosotros</a>
+                    <a href="Nosotros.html" class="footer-link" data-page="Nosotros">Ver más sobre nosotros</a>
 
                     <form class="footer-form" id="consultaForm">
                         <label for="nombre">Nombre</label>
@@ -152,13 +142,13 @@
                     Contacto  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="footer-content-contacto">
-                    <a href="Contacto.html" class="footer-link">Encuentranos Aquí</a>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí</a>
                     <p class="footer-text">Disfrutá nuestras redes sociales:</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>

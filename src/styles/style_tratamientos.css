@@ -250,128 +250,171 @@ nav a.active::after {
     }
 }
 
+    /* ============================= */
+    /*    GRILLA                     */
+    /* ============================= */
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.2rem;
     padding: 2rem;
-    align-items: start;
-    margin-top: 40px;
+    margin-top: 120px;
+    margin-bottom: 120px;
 }
 
-/* Tarjeta base */
 .card {
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-    position: relative;
-    overflow: hidden;
-    min-height: 200px;
-    max-height: 420px;
-}
-
-.card-header {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    transition: var(--transition);
 }
 
 .card h2 {
-    margin-top: 0.5rem;
     font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     font-family: var(--fiont-man);
-    font-weight: lighter;
 }
 
 .card p {
-    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
     font-family: var(--font-secondary);
-    font-weight: bolder;
 }
 
-/* Botón para expandir */
-.btn-toggle {
-    margin-top: auto;
-    background-color: #3c3d40;
-    color: white;
-    border: none;
+.card .btn-toggle {
+    align-self: flex-start;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
+    border: none;
+    background-color: var(--color-mint);
+    color: var(--color-black);
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-secondary);
 }
 
-.btn-toggle:hover {
-    background-color: #212226;
+.card .btn-toggle:hover {
+    background-color: var(--color-hover-mint);
 }
 
-/* Contenido expandido */
-.card-expandable {
-    transform: scale(0);
-    opacity: 0;
-    transform-origin: center;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-    background-color: rgb(255 255 255 / 96%);
-    border-top: 1px solid #ccc;
-    position: absolute;
+/* ============================= */
+/* 🪟 MODAL DE TRATAMIENTOS      */
+/* ============================= */
+.modal-overlay {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9998;
+    display: none;
+}
 
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    z-index: 9999;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    padding: 1rem;
-    padding-bottom: 4.5rem;
-    overflow-y: auto;
+    gap: 1rem;
+}
+.modal-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-.card-expandable.show {
-    transform: scale(1);
-    opacity: 1;
+.modal-content h2{
+font-family: var(--fiont-man);
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
 }
 
-.card-expandable h2 {
-    margin: 0;
-    font-size: 1.1rem;
-    padding-bottom: 10px;
+.modal-content h3{
+    font-family: var(--fiont-man);
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
-.card-expandable p {
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: bolder;
-}
-
-/* Botón de cerrar */
-.card-expandable .btn-close {
-    background-color: #3c3d40;
-    color: white;
-    padding: 0.5rem 1rem;
+.modal-close {
+    background: none;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    z-index: 3;
+    top: 0.8rem;
+    right: 1rem;
+    cursor: pointer;
 }
 
-.card-expandable .btn-close:hover {
-    background-color: #212226;
+.modal-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.modal-nav-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal-nav-btn:hover {
+    background-color: var(--color-hover-primary);
+}
+
+.desc-corta {
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    max-width: 600px;
+    font-family: var(--fiont-man);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.modal-content ul {
+    padding-left: 1.2rem;
+    text-align: left;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgb(85, 85, 85);
+    letter-spacing: 1px;
 }
 
 /* ============================= */
@@ -416,8 +459,8 @@ nav a.active::after {
 }
 
 .footer-logo img {
-    width: 300px;
-    height: auto;
+    height: 80px;
+    width: auto;
 }
 
 .footer-container {
@@ -464,17 +507,40 @@ nav a.active::after {
 }
 
 .footer-link {
+    position: relative;
     display: inline-block;
     color: var(--color-white);
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s ease;
     margin-bottom: 1rem;
-    transition: color var(--transition);
     font-family: var(--font-secondary);
-    font-weight: bolder;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
-.footer-link:hover {
-    color: var(--color-mint);
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #99d6dd;
+    transition: width 0.4s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Estilo cuando está en la página activa */
+.footer-link.active {
+    color: #00bcd4; /* Color del texto al estar activo */
+}
+
+.footer-link.active::after {
+    width: 100%;
+    background-color: #00bcd4;
 }
 
 .footer-form {
@@ -508,6 +574,9 @@ nav a.active::after {
     font-weight: bold;
     margin-top: 0.5rem;
     transition: background-color var(--transition);
+    width: 100px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
 }
 
 .footer-form button:hover {
@@ -642,31 +711,25 @@ nav a.active::after {
 
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        padding: 1rem;
     }
 
-    .card {
-        min-height: 200px;
-        max-height: 460px;
+    .modal {
+        width: 75%;
+        padding: 2rem;
     }
 
-    .card h2{
-        padding-bottom: 20px;
+    .modal-img {
+        max-height: 280px;
     }
 
-    .card-expandable h2 {
-    padding-bottom: 30px;
-    }
-
-        /* ============================= */
+    /* ============================= */
     /*    FOOTER                     */
     /* ============================= */
 
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        gap: 3rem;
     }
 
     .footer-section {
@@ -852,13 +915,16 @@ nav a.active::after {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .card {
-        min-height: 150px;
-        max-height: 500px;
+    .card h2 {
+        font-size: 1.4rem;
     }
 
-    .card-expandable{
-        overflow-y: hidden;
+    .modal {
+        width: 60%;
+        padding: 2.5rem;
+    }
+    .modal-img {
+        max-height: 350px;
     }
 
     /* ============================= */
@@ -868,7 +934,7 @@ nav a.active::after {
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
-        flex-wrap: wrap;
+        gap: 3rem;
     }
 
     .footer-section {

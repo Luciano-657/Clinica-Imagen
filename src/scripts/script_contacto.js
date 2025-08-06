@@ -24,6 +24,8 @@ function closeMenu() {
     link.addEventListener("click", closeMenu);
 });
 
+//Marcado de pagina de menu
+
 const current = window.location.pathname.split("/").pop().toLowerCase();
 const links = document.querySelectorAll("#main-nav a");
 
@@ -34,6 +36,19 @@ links.forEach(link => {
     }
 });
 
+//Marcado de pagina en footer
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+        const links = document.querySelectorAll('.footer-link');
+
+        links.forEach(link => {
+            const page = link.dataset.page;
+            if (page && page.toLowerCase() === currentPage.toLowerCase()) {
+                link.classList.add('active');
+            }
+        });
+    });
 
 const ubicaciones = [
     {

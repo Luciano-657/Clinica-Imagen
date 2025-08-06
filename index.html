@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinica Imagen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
-    <link rel="icon" href="https://clinicaimagen.uy/wp-content/uploads/2023/06/cropped-logo230px-32x32.png" sizes="32x32"/>
+    <link rel="icon" href="src/images/logo.ico" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/config_in.css">
     <link rel="stylesheet" href="src/styles/style.css">
@@ -17,7 +18,6 @@
             <img src="src/images/Logo Clinica.png" alt="Logo de la empresa" />
         </a>
 
-        <!-- Botón hamburguesa -->
         <button class="menu-toggle" id="toggle-btn">☰</button>
 
         <!-- Menú -->
@@ -40,7 +40,7 @@
         <div class="hero-shadow"></div>
         <div class="whatsapp-float" id="whatsapp-btn">
             <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
-            <span class="tooltip">Agendar citas</span>
+            <span class="tooltip">Agendate ahora</span>
         </div>  
         <h2 class="section-title">¿Por qué elegirnos?</h2>
 
@@ -49,27 +49,27 @@
             <div class="carousel" id="carousel">
             <div class="card">
                 <img src="src/images/icon 1.png" alt="icono 1" />
-                <p>Tecnología avanzada: <br> <br> Equipos digitales de última generación para radiografías, tomografías y escaneos.</p>
+                <span><p>Tecnología avanzada:</p></span> <p>Equipos digitales de última generación para radiografías, tomografías y escaneos.</p>
             </div>
             <div class="card">
                 <img src="src/images/icon 2.png" alt="icono 2" />
-                <p>Precisión diagnóstica: <br> <br> Imágenes de alta definición que mejoran la planificación y el tratamiento odontológico.</p>
+                <span><p>Precisión diagnóstica:</p></span> <p>Imágenes de alta definición que mejoran la planificación y el tratamiento odontológico.</p>
             </div>
             <div class="card">
                 <img src="src/images/icon 3.png" alt="icono 3" />
-                <p>Impresión 3D: <br> <br> Guías quirúrgicas personalizadas y modelos exactos para procedimientos más seguros.</p>
+                <span><p>Impresión 3D:</p></span> <p>Guías quirúrgicas personalizadas y modelos exactos para procedimientos más seguros.</p>
             </div>
             <div class="card">
                 <img src="src/images/icon 4.png" alt="icono 4" />
-                <p>Atención profesional: <br> <br> Personal capacitado y especializado en odontología digital.</p>
+                <span><p>Atención profesional:</p></span> <p>Personal capacitado y especializado en odontología digital.</p>
             </div>
             <div class="card">
                 <img src="src/images/icon 5.png" alt="icono 5" />
-                <p>Cobertura nacional: <br> <br>Sucursales en Montevideo y el interior, facilitando el acceso en todo el país.</p>
+                <span><p>Cobertura nacional:</p></span> <p>Sucursales en Montevideo y el interior, facilitando el acceso en todo el país.</p>
             </div>
             <div class="card">
                 <img src="src/images/icon 6.png" alt="icono 6" />
-                <p>Resultados rápidos: <br> <br> Entrega ágil de estudios digitales, optimizando tiempos para pacientes y odontólogos.</p>
+                <span><p>Resultados rápidos:</p></span> <p>Entrega ágil de estudios digitales, optimizando tiempos para pacientes y odontólogos.</p>
             </div>
             </div>
             <button class="arrow right" onclick="scrollCarousel(1)">❯</button>
@@ -82,9 +82,9 @@
                 </div>
                 <div class="sec-text anim-right">
                     <p>
-                        En Clinia Imagen contamos con un equipo altamente calificado de profesionales comprometidos con brindar una atención integral, cálida y personalizada. Nos enorgullece trabajar en un entorno moderno y equipado para ofrecer tratamientos eficaces y seguros.
+                        En Clínica Imagen contamos con un equipo altamente calificado de profesionales comprometidos con brindar una atención integral, cálida y personalizada. Nos enorgullece trabajar en un entorno moderno y equipado para ofrecer tratamientos eficaces y seguros.
                     </p>
-                    <a href="nosotros.html" class="btn-nosotros">Conocé más sobre nosotros</a>
+                    <a href="Nosotros.html" class="btn-nosotros">Conocé más sobre nosotros</a>
                 </div>
             </div>
         </section>
@@ -159,19 +159,17 @@
                     Contacto  <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="footer-content-contacto">
-                    <a href="Contacto.html" class="footer-link">Encuentranos Aquí</a>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí</a>
                     <p class="footer-text">Disfrutá nuestras redes sociales:</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
-
         </div>
-
         <!-- Derechos -->
         <div class="footer-bottom">
             <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>

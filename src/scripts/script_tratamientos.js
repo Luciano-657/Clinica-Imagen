@@ -1,112 +1,263 @@
-// Menu hamburguesa
+// ========== MENÚ HAMBURGUESA ==========
 const header = document.getElementById("main-header");
 const toggleBtn = document.getElementById("toggle-btn");
 const closeBtn = document.getElementById("close-btn");
-const overlay = document.getElementById("overlay");
+const navOverlay = document.getElementById("overlay");
 
 function openMenu() {
   header.classList.add("nav-open");
-  overlay.classList.add("activo");
+  navOverlay.classList.add("activo");
   document.body.classList.add("bloqueado");
 }
 
 function closeMenu() {
   header.classList.remove("nav-open");
-  overlay.classList.remove("activo");
+  navOverlay.classList.remove("activo");
   document.body.classList.remove("bloqueado");
 }
 
 toggleBtn?.addEventListener("click", openMenu);
 closeBtn?.addEventListener("click", closeMenu);
-overlay?.addEventListener("click", closeMenu);
+navOverlay?.addEventListener("click", closeMenu);
 
 document.querySelectorAll("#main-nav a").forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 
+// ========== MENÚ ACTIVO ==========
 const current = window.location.pathname.split("/").pop().toLowerCase();
-const links = document.querySelectorAll("#main-nav a");
-
-links.forEach(link => {
-    const href = link.getAttribute("href").toLowerCase();
-    if (href === current || (href === "index.html" && current === "")) {
+document.querySelectorAll("#main-nav a").forEach(link => {
+  const href = link.getAttribute("href").toLowerCase();
+  if (href === current || (href === "index.html" && current === "")) {
     link.classList.add("active");
-    }
+  }
 });
 
+// ========== FOOTER ACTIVO ==========
+window.addEventListener('DOMContentLoaded', () => {
+  const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+  const links = document.querySelectorAll('.footer-link');
 
-document.querySelectorAll('.card').forEach(card => {
-  const btnToggle = card.querySelector('.btn-toggle');
-  const expandable = card.querySelector('.card-expandable');
-  const btnClose = card.querySelector('.btn-close');
-
-  btnToggle.addEventListener('click', () => {
-    // Cerrar otras tarjetas
-    document.querySelectorAll('.card-expandable.show').forEach(open => {
-      if (open !== expandable) {
-        open.classList.remove('show');
-      }
-    });
-    expandable.classList.add('show');
-  });
-
-  btnClose.addEventListener('click', () => {
-    expandable.classList.remove('show');
+  links.forEach(link => {
+    const page = link.dataset.page;
+    if (page && page.toLowerCase() === currentPage.toLowerCase()) {
+      link.classList.add('active');
+    }
   });
 });
 
+// ========== MODAL TRATAMIENTOS ==========
+const tratamientosData = {
+  ortodoncia: {
+    titulo: "Ortodoncia",
+    descripcion: "Corrige la alineación dental y mejora la mordida.",
+    beneficios: ["Mejora estética facial", "Mordida funcional", "Higiene oral más fácil"],
+    imagen: "/src/images/tratamientos_imagenes/ortodoncia.jpg"
+  },
+  ortopedia: {
+    titulo: "Ortopedia Maxilar",
+    descripcion: "Corrige problemas óseos en los niños.",
+    beneficios: ["Guía el crecimiento óseo", "Previene tratamientos complejos a futuro"],
+    imagen: "/src/images/tratamientos_imagenes/Ortopedia_Maxilar.jpg"
+  },
+  implantes: {
+    titulo: "Implantes Dentales",
+    descripcion: "Reemplaza dientes perdidos de forma fija.",
+    beneficios: ["Funcionalidad", "Estética", "Evita pérdida ósea"],
+    imagen: "/src/images/tratamientos_imagenes/implantes_dentales.jpg"
+  },
+  estetica: {
+    titulo: "Estética Dental",
+    descripcion: "Mejora la apariencia de tu sonrisa.",
+    beneficios: ["Sonrisa armónica", "Seguridad al sonreír", "Correcciones visibles"],
+    imagen: "/src/images/tratamientos_imagenes/estetica_dental.jpg"
+  },
+  blanqueamiento: {
+    titulo: "Blanqueamiento Dental",
+    descripcion: "Ilumina y aclara tus dientes.",
+    beneficios: ["Sonrisa más blanca", "Confianza", "Resultados rápidos"],
+    imagen: "/src/images/tratamientos_imagenes/blanqueamiento_dental.jpg"
+  },
+  periodoncia: {
+    titulo: "Periodoncia",
+    descripcion: "Tratamiento de encías y tejidos de soporte.",
+    beneficios: ["Encías sanas", "Prevención de pérdida dental"],
+    imagen: "/src/images/tratamientos_imagenes/peridoncia.jpg"
+  },
+  protesis: {
+    titulo: "Prótesis Dentales",
+    descripcion: "Reemplazan piezas dentarias perdidas.",
+    beneficios: ["Mejora masticación", "Habla", "Estética facial"],
+    imagen: "/src/images/tratamientos_imagenes/protesis_dental.jpg"
+  },
+  endodoncia: {
+    titulo: "Endodoncia",
+    descripcion: "Tratamiento de conductos o nervios.",
+    beneficios: ["Elimina dolor", "Conserva el diente natural"],
+    imagen: "/src/images/tratamientos_imagenes/endodoncia.jpg"
+  },
+  cirugia: {
+    titulo: "Cirugía Bucal",
+    descripcion: "Extracciones y procedimientos quirúrgicos.",
+    beneficios: ["Remueve lesiones", "Cordales", "Mejora funcionalidad"],
+    imagen: "/src/images/tratamientos_imagenes/cirugia_bucal.jpg"
+  },
+  odontopediatria: {
+    titulo: "Odontopediatría",
+    descripcion: "Odontología infantil preventiva y curativa.",
+    beneficios: ["Controla crecimiento", "Educación temprana en salud bucal"],
+    imagen: "/src/images/tratamientos_imagenes/odontopediatria.jpg"
+  },
+  bruxismo: {
+    titulo: "Bruxismo y Placas",
+    descripcion: "Controla el rechinar de los dientes.",
+    beneficios: ["Evita desgaste dental", "Relaja mandíbula", "Reduce dolor"],
+    imagen: "/src/images/tratamientos_imagenes/bruxismo_placas.jpg"
+  },
+  rehabilitacion: {
+    titulo: "Rehabilitación Oral",
+    descripcion: "Recupera funcionalidad oral completa.",
+    beneficios: ["Funcionalidad total", "Estética integral"],
+    imagen: "/src/images/tratamientos_imagenes/rehabiltiacion_oral.jpg"
+  },
+  radiologia: {
+    titulo: "Radiología Odontológica",
+    descripcion: "Diagnóstico con imágenes dentales.",
+    beneficios: ["Diagnóstico preciso", "Planificación adecuada"],
+    imagen: "/src/images/tratamientos_imagenes/radiografia_odontologica.jpg"
+  },
+  prevencion: {
+    titulo: "Diagnóstico y Prevención",
+    descripcion: "Chequeos y cuidados para evitar enfermedades.",
+    beneficios: ["Detección temprana", "Ahorro de tratamientos mayores"],
+    imagen: "/src/images/tratamientos_imagenes/prevencion.jpg"
+  },
+  urgencias: {
+    titulo: "Urgencias Odontológicas",
+    descripcion: "Atención inmediata ante emergencias dentales.",
+    beneficios: ["Alivio rápido", "Control del daño", "Solución inmediata"],
+    imagen: "/src/images/tratamientos_imagenes/urgencia_odontologica.jpg"
+  }
+};
 
-//Burbuja de whatsapp
+const tratamientosOrden = Object.keys(tratamientosData);
+let currentIndex = 0;
 
-document.getElementById("whatsapp-btn").addEventListener("click", function () {
-    const phoneNumber = "598092745398";
-    const message = "Hola, quiero agendar una cita.";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-});
+const modal = document.getElementById("modal-tratamiento");
+const modalOverlay = document.getElementById("modal-overlay");
+const modalImg = document.getElementById("modal-img");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc-corta");
+const modalBeneficios = document.getElementById("modal-beneficios");
+const closeModalBtn = document.querySelector(".modal-close");
+const nextBtn = document.getElementById("next-tratamiento");
+const prevBtn = document.getElementById("prev-tratamiento");
 
-    // Boton desplegable mobile
-function toggleFooterSection(button) {
-    const section = button.parentElement;
-    const isActive = section.classList.contains("active");
+function cargarTratamiento(id) {
+  const data = tratamientosData[id];
+  if (!data) return;
 
-  // Cerrar todas las demás
-    document.querySelectorAll(".footer-section").forEach((s) => {
-    s.classList.remove("active");
-    });
-
-  // Si no estaba activa, activarla
-    if (!isActive) {
-    section.classList.add("active");
-    }
+  modalImg.src = data.imagen;
+  modalTitle.textContent = data.titulo;
+  modalDesc.textContent = data.descripcion;
+  modalBeneficios.innerHTML = "";
+  data.beneficios.forEach(b => {
+    const li = document.createElement("li");
+    li.textContent = b;
+    modalBeneficios.appendChild(li);
+  });
 }
 
- // Validación y manejo del formulario
-    document.getElementById('consultaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+function openModal(id) {
+  currentIndex = tratamientosOrden.indexOf(id);
+  cargarTratamiento(id);
+  document.body.classList.add("bloqueado");
+  modalOverlay.style.display = "block";
+  modal.classList.add("show");
+}
 
-    // Campos del formulario
-    const nombre = this.nombre.value.trim();
-    const correo = this.correo.value.trim();
-    const asunto = this.asunto.value.trim();
-    const mensaje = this.mensaje.value.trim();
+function closeModal() {
+  modalOverlay.style.display = "none";
+  modal.classList.remove("show");
+  document.body.classList.remove("bloqueado");
+}
 
-    // Validar campos básicos
-    if (!nombre || !correo || !asunto || !mensaje) {
-        alert('Por favor completa todos los campos.');
-        return;
-    }
+function navegar(direccion) {
+  currentIndex = (currentIndex + direccion + tratamientosOrden.length) % tratamientosOrden.length;
+  cargarTratamiento(tratamientosOrden[currentIndex]);
+}
 
-    // Validar reCAPTCHA
-    if (grecaptcha.getResponse() === '') {
-        alert('Por favor, verifica que no eres un robot.');
-        return;
-    }
+if (modalOverlay) modalOverlay.addEventListener("click", closeModal);
+if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
+if (nextBtn) nextBtn.addEventListener("click", () => navegar(1));
+if (prevBtn) prevBtn.addEventListener("click", () => navegar(-1));
 
-    // Simulación de envío (aquí pondrías el fetch/ajax real)
-    alert('Consulta enviada correctamente. ¡Gracias!');
+const safeKeys = {
+  "ortodoncia": "ortodoncia",
+  "ortopedia maxilar": "ortopedia",
+  "implantes dentales": "implantes",
+  "estética dental": "estetica",
+  "blanqueamiento dental": "blanqueamiento",
+  "periodoncia": "periodoncia",
+  "prótesis dentales": "protesis",
+  "endodoncia": "endodoncia",
+  "cirugía bucal": "cirugia",
+  "odontopediatría": "odontopediatria",
+  "bruxismo y placas": "bruxismo",
+  "rehabilitación oral": "rehabilitacion",
+  "radiología odontológica": "radiologia",
+  "diagnóstico y prevención": "prevencion",
+  "urgencias odontológicas": "urgencias"
+};
 
-    // Reiniciar formulario y reCAPTCHA
-    this.reset();
-    grecaptcha.reset();
+document.querySelectorAll(".card").forEach(card => {
+  const btn = card.querySelector(".btn-toggle");
+  const rawTitle = card.querySelector("h2").textContent.trim().toLowerCase();
+  const id = safeKeys[rawTitle];
+  if (id && tratamientosData[id]) {
+    btn.addEventListener("click", () => openModal(id));
+  }
+});
+
+// ========== WHATSAPP ==========
+document.getElementById("whatsapp-btn")?.addEventListener("click", function () {
+  const phoneNumber = "598092745398";
+  const message = "Hola, quiero agendar una cita.";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+});
+
+// ========== FOOTER DESPLEGABLE ==========
+function toggleFooterSection(button) {
+  const section = button.parentElement;
+  const isActive = section.classList.contains("active");
+
+  document.querySelectorAll(".footer-section").forEach(s => s.classList.remove("active"));
+  if (!isActive) {
+    section.classList.add("active");
+  }
+}
+
+// ========== FORMULARIO ==========
+document.getElementById('consultaForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const nombre = this.nombre.value.trim();
+  const correo = this.correo.value.trim();
+  const asunto = this.asunto.value.trim();
+  const mensaje = this.mensaje.value.trim();
+
+  if (!nombre || !correo || !asunto || !mensaje) {
+    alert('Por favor completa todos los campos.');
+    return;
+  }
+
+  if (grecaptcha.getResponse() === '') {
+    alert('Por favor, verifica que no eres un robot.');
+    return;
+  }
+
+  alert('Consulta enviada correctamente. ¡Gracias!');
+  this.reset();
+  grecaptcha.reset();
 });
