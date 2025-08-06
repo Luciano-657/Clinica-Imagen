@@ -52,91 +52,91 @@ const tratamientosData = {
     titulo: "Ortodoncia",
     descripcion: "Corrige la alineación dental y mejora la mordida.",
     beneficios: ["Mejora estética facial", "Mordida funcional", "Higiene oral más fácil"],
-    imagen: '../images/tratamientos_imagenes/ortodoncia.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/ortodoncia.jpg'
   },
   ortopedia: {
     titulo: "Ortopedia Maxilar",
     descripcion: "Corrige problemas óseos en los niños.",
     beneficios: ["Guía el crecimiento óseo", "Previene tratamientos complejos a futuro"],
-    imagen: '../images/tratamientos_imagenes/Ortopedia_Maxilar.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/ortopedia-Maxilar.jpg'
   },
   implantes: {
     titulo: "Implantes Dentales",
     descripcion: "Reemplaza dientes perdidos de forma fija.",
     beneficios: ["Funcionalidad", "Estética", "Evita pérdida ósea"],
-    imagen: '../images/tratamientos_imagenes/implantes_dentales.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/implantes-dentales.jpg'
   },
   estetica: {
     titulo: "Estética Dental",
     descripcion: "Mejora la apariencia de tu sonrisa.",
     beneficios: ["Sonrisa armónica", "Seguridad al sonreír", "Correcciones visibles"],
-    imagen: '../images/tratamientos_imagenes/estetica_dental.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/estetica-dental.jpg'
   },
   blanqueamiento: {
     titulo: "Blanqueamiento Dental",
     descripcion: "Ilumina y aclara tus dientes.",
     beneficios: ["Sonrisa más blanca", "Confianza", "Resultados rápidos"],
-    imagen: '../images/tratamientos_imagenes/blanqueamiento_dental.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/blanqueamiento-dental.jpg'
   },
   periodoncia: {
     titulo: "Periodoncia",
     descripcion: "Tratamiento de encías y tejidos de soporte.",
     beneficios: ["Encías sanas", "Prevención de pérdida dental"],
-    imagen: '../images/tratamientos_imagenes/peridoncia.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/peridoncia.jpg'
   },
   protesis: {
     titulo: "Prótesis Dentales",
     descripcion: "Reemplazan piezas dentarias perdidas.",
     beneficios: ["Mejora masticación", "Habla", "Estética facial"],
-    imagen: '../images/tratamientos_imagenes/protesis_dental.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/protesis-dental.jpg'
   },
   endodoncia: {
     titulo: "Endodoncia",
     descripcion: "Tratamiento de conductos o nervios.",
     beneficios: ["Elimina dolor", "Conserva el diente natural"],
-    imagen: '../images/tratamientos_imagenes/endodoncia.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/endodoncia.jpg'
   },
   cirugia: {
     titulo: "Cirugía Bucal",
     descripcion: "Extracciones y procedimientos quirúrgicos.",
     beneficios: ["Remueve lesiones", "Cordales", "Mejora funcionalidad"],
-    imagen: '../images/tratamientos_imagenes/cirugia_bucal.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/cirugia-bucal.jpg'
   },
   odontopediatria: {
     titulo: "Odontopediatría",
     descripcion: "Odontología infantil preventiva y curativa.",
     beneficios: ["Controla crecimiento", "Educación temprana en salud bucal"],
-    imagen: '../images/tratamientos_imagenes/odontopediatria.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/odontopediatria.jpg'
   },
   bruxismo: {
     titulo: "Bruxismo y Placas",
     descripcion: "Controla el rechinar de los dientes.",
     beneficios: ["Evita desgaste dental", "Relaja mandíbula", "Reduce dolor"],
-    imagen: '../images/tratamientos_imagenes/bruxismo_placas.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/bruxismo-placas.jpg'
   },
   rehabilitacion: {
     titulo: "Rehabilitación Oral",
     descripcion: "Recupera funcionalidad oral completa.",
     beneficios: ["Funcionalidad total", "Estética integral"],
-    imagen: '../images/tratamientos_imagenes/rehabiltiacion_oral.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/rehabiltiacion-oral.jpg'
   },
   radiologia: {
     titulo: "Radiología Odontológica",
     descripcion: "Diagnóstico con imágenes dentales.",
     beneficios: ["Diagnóstico preciso", "Planificación adecuada"],
-    imagen: '../images/tratamientos_imagenes/radiografia_odontologica.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/radiografia-odontologica.jpg'
   },
   prevencion: {
     titulo: "Diagnóstico y Prevención",
     descripcion: "Chequeos y cuidados para evitar enfermedades.",
     beneficios: ["Detección temprana", "Ahorro de tratamientos mayores"],
-    imagen: '../images/tratamientos_imagenes/prevencion.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/prevencion.jpg'
   },
   urgencias: {
     titulo: "Urgencias Odontológicas",
     descripcion: "Atención inmediata ante emergencias dentales.",
     beneficios: ["Alivio rápido", "Control del daño", "Solución inmediata"],
-    imagen: '../images/tratamientos_imagenes/urgencia_odontologica.jpg'
+    imagen: '../../src/images/tratamientos_imagenes/ortodoncia.jpg'
   }
 };
 
