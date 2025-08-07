@@ -47,128 +47,155 @@
             <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
             <span class="tooltip">Agendate ahora</span>
         </div>  
-        <section class="grid-container">
-            <div class="card">
-                <div class="card-header">
-                    <h2>Ortodoncia</h2>
-                    <p>Corrige la alineación dental y mejora la mordida.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+        <div class="filtros-container">
+            <button class="filtro-btn active" data-filtro="todos">Todos</button>
+            <button class="filtro-btn" data-filtro="ortodoncia">Ortodoncia</button>
+            <button class="filtro-btn" data-filtro="estetica">Estética</button>
+            <button class="filtro-btn" data-filtro="rehabilitacion">Rehabilitación</button>
+            <button class="filtro-btn" data-filtro="prevencion">Prevención</button>
+            <button class="filtro-btn" data-filtro="infantil">Infantil</button>
+            <button class="filtro-btn" data-filtro="especialidades">Especialidades</button>
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="grid-container">
+            <div class="card-tratamiento" data-categoria="ortodoncia">
+            <img src="src/images/ortodoncia.jpg" alt="Ortodoncia" />
+            <div class="card-header">
+                <h3>Ortodoncia</h3>
+                <p>Corrige la alineación dental y mejora la mordida.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Ortopedia Maxilar</h2>
-                    <p>Corrige problemas óseos en los niños.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="infantil">
+            <img src="src/images/ortopedia-Maxilar.jpg" alt="Ortopedia Maxilar" />
+            <div class="card-header">
+                <h3>Ortopedia Maxilar</h3>
+                <p>Corrige problemas óseos en los niños.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Implantes Dentales</h2>
-                    <p>Reemplaza dientes perdidos de forma fija.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="rehabilitacion">
+            <img src="src/images/implantes-dentales.jpg" alt="Implantes" />
+            <div class="card-header">
+                <h3>Implantes Dentales</h3>
+                <p>Reemplaza dientes perdidos de forma fija.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Estética Dental</h2>
-                    <p>Mejora la apariencia de tu sonrisa.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="estetica">
+            <img src="src/images/estetica-dental.jpg" alt="Estética Dental" />
+            <div class="card-header">
+                <h3>Estética Dental</h3>
+                <p>Mejora la apariencia de tu sonrisa.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Blanqueamiento Dental</h2>
-                    <p>Ilumina y aclara tus dientes.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="estetica">
+            <img src="src/images/blanqueamiento-dental.jpg" alt="Blanqueamiento" />
+            <div class="card-header">
+                <h3>Blanqueamiento Dental</h3>
+                <p>Ilumina y aclara tus dientes.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Periodoncia</h2>
-                    <p>Tratamiento de encías y tejidos de soporte.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="src/images/peridoncia.jpg" alt="Periodoncia" />
+            <div class="card-header">
+                <h3>Periodoncia</h3>
+                <p>Tratamiento de encías y tejidos de soporte.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Prótesis Dentales</h2>
-                    <p>Reemplazan piezas dentarias perdidas.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="rehabilitacion">
+            <img src="src/images/protesis-dental.jpg" alt="Prótesis" />
+            <div class="card-header">
+                <h3>Prótesis Dentales</h3>
+                <p>Reemplazan piezas dentarias perdidas.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Endodoncia</h2>
-                    <p>Tratamiento de conductos o nervios.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="src/images/endodoncia.jpg" alt="Endodoncia" />
+            <div class="card-header">
+                <h3>Endodoncia</h3>
+                <p>Tratamiento de conductos o nervios.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Cirugía Bucal</h2>
-                    <p>Extracciones y procedimientos quirúrgicos.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="src/images/cirugia-bucal.jpg" alt="Cirugía" />
+            <div class="card-header">
+                <h3>Cirugía Bucal</h3>
+                <p>Extracciones y procedimientos quirúrgicos.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Odontopediatría</h2>
-                    <p>Odontología infantil preventiva y curativa.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="infantil">
+            <img src="src/images/odontopediatria.jpg" alt="Odontopediatría" />
+            <div class="card-header">
+                <h3>Odontopediatría</h3>
+                <p>Odontología infantil preventiva y curativa.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Bruxismo y Placas</h2>
-                    <p>Controla el rechinar de los dientes.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="src/images/bruxismo-placas.jpg" alt="Bruxismo" />
+            <div class="card-header">
+                <h3>Bruxismo y Placas</h3>
+                <p>Controla el rechinar de los dientes.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Rehabilitación Oral</h2>
-                    <p>Recupera funcionalidad oral completa.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="rehabilitacion">
+            <img src="src/images/rehabiltiacion-oral.jpg" alt="Rehabilitación" />
+            <div class="card-header">
+                <h3>Rehabilitación Oral</h3>
+                <p>Recupera funcionalidad oral completa.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Radiología Odontológica</h2>
-                    <p>Diagnóstico con imágenes dentales.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="src/images/radiografia-odontologica.jpg" alt="Radiología" />
+            <div class="card-header">
+                <h3>Radiología Odontológica</h3>
+                <p>Diagnóstico con imágenes dentales.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Diagnóstico y Prevención</h2>
-                    <p>Chequeos y cuidados para evitar enfermedades.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="prevencion">
+            <img src="src/images/prevencion.jpg" alt="Prevención" />
+            <div class="card-header">
+                <h3>Diagnóstico y Prevención</h3>
+                <p>Chequeos y cuidados para evitar enfermedades.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
             </div>
 
-            <div class="card">
-                <div class="card-header">
-                    <h2>Urgencias Odontológicas</h2>
-                    <p>Atención inmediata ante emergencias dentales.</p>
-                    <button class="btn-toggle">Ver más</button>
-                </div>
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="src/images/urgencia-odontologica.jpg" alt="Urgencias" />
+            <div class="card-header">
+                <h3>Urgencias Odontológicas</h3>
+                <p>Atención inmediata ante emergencias dentales.</p>
+                <button class="btn-toggle">Ver más</button>
             </div>
+            </div>
+        </div>
 
-        </section>
+
         <div id="modal-overlay" class="modal-overlay"></div>
         <div id="modal-tratamiento" class="modal hidden">
             <button class="modal-close" aria-label="Cerrar modal">✖</button>

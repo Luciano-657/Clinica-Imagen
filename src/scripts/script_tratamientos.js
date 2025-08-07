@@ -48,100 +48,97 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // ========== MODAL TRATAMIENTOS ==========
 const tratamientosData = {
-  ortodoncia: {
+  "ortodoncia": {
     titulo: "Ortodoncia",
     descripcion: "Corrige la alineación dental y mejora la mordida.",
     beneficios: ["Mejora estética facial", "Mordida funcional", "Higiene oral más fácil"],
     imagen: "src/images/ortodoncia.jpg"
   },
-  ortopedia: {
+  "ortopedia maxilar": {
     titulo: "Ortopedia Maxilar",
     descripcion: "Corrige problemas óseos en los niños.",
     beneficios: ["Guía el crecimiento óseo", "Previene tratamientos complejos a futuro"],
     imagen: "src/images/ortopedia-Maxilar.jpg"
   },
-  implantes: {
+  "implantes dentales": {
     titulo: "Implantes Dentales",
     descripcion: "Reemplaza dientes perdidos de forma fija.",
     beneficios: ["Funcionalidad", "Estética", "Evita pérdida ósea"],
     imagen: "src/images/implantes-dentales.jpg"
   },
-  estetica: {
+  "estética dental": {
     titulo: "Estética Dental",
     descripcion: "Mejora la apariencia de tu sonrisa.",
     beneficios: ["Sonrisa armónica", "Seguridad al sonreír", "Correcciones visibles"],
     imagen: "src/images/estetica-dental.jpg"
   },
-  blanqueamiento: {
+  "blanqueamiento dental": {
     titulo: "Blanqueamiento Dental",
     descripcion: "Ilumina y aclara tus dientes.",
     beneficios: ["Sonrisa más blanca", "Confianza", "Resultados rápidos"],
     imagen: "src/images/blanqueamiento-dental.jpg"
   },
-  periodoncia: {
+  "periodoncia": {
     titulo: "Periodoncia",
     descripcion: "Tratamiento de encías y tejidos de soporte.",
     beneficios: ["Encías sanas", "Prevención de pérdida dental"],
     imagen: "src/images/peridoncia.jpg"
   },
-  protesis: {
+  "prótesis dentales": {
     titulo: "Prótesis Dentales",
     descripcion: "Reemplazan piezas dentarias perdidas.",
     beneficios: ["Mejora masticación", "Habla", "Estética facial"],
     imagen: "src/images/protesis-dental.jpg"
   },
-  endodoncia: {
+  "endodoncia": {
     titulo: "Endodoncia",
     descripcion: "Tratamiento de conductos o nervios.",
     beneficios: ["Elimina dolor", "Conserva el diente natural"],
     imagen: "src/images/endodoncia.jpg"
   },
-  cirugia: {
+  "cirugía bucal": {
     titulo: "Cirugía Bucal",
     descripcion: "Extracciones y procedimientos quirúrgicos.",
     beneficios: ["Remueve lesiones", "Cordales", "Mejora funcionalidad"],
     imagen: "src/images/cirugia-bucal.jpg"
   },
-  odontopediatria: {
+  "odontopediatría": {
     titulo: "Odontopediatría",
     descripcion: "Odontología infantil preventiva y curativa.",
     beneficios: ["Controla crecimiento", "Educación temprana en salud bucal"],
     imagen: "src/images/odontopediatria.jpg"
   },
-  bruxismo: {
+  "bruxismo y placas": {
     titulo: "Bruxismo y Placas",
     descripcion: "Controla el rechinar de los dientes.",
     beneficios: ["Evita desgaste dental", "Relaja mandíbula", "Reduce dolor"],
     imagen: "src/images/bruxismo-placas.jpg"
   },
-  rehabilitacion: {
+  "rehabilitación oral": {
     titulo: "Rehabilitación Oral",
     descripcion: "Recupera funcionalidad oral completa.",
     beneficios: ["Funcionalidad total", "Estética integral"],
     imagen: "src/images/rehabiltiacion-oral.jpg"
   },
-  radiologia: {
+  "radiología odontológica": {
     titulo: "Radiología Odontológica",
     descripcion: "Diagnóstico con imágenes dentales.",
     beneficios: ["Diagnóstico preciso", "Planificación adecuada"],
     imagen: "src/images/radiografia-odontologica.jpg"
   },
-  prevencion: {
+  "diagnóstico y prevención": {
     titulo: "Diagnóstico y Prevención",
     descripcion: "Chequeos y cuidados para evitar enfermedades.",
     beneficios: ["Detección temprana", "Ahorro de tratamientos mayores"],
     imagen: "src/images/prevencion.jpg"
   },
-  urgencias: {
+  "urgencias odontológicas": {
     titulo: "Urgencias Odontológicas",
     descripcion: "Atención inmediata ante emergencias dentales.",
     beneficios: ["Alivio rápido", "Control del daño", "Solución inmediata"],
     imagen: "src/images/urgencia-odontologica.jpg"
   }
 };
-
-const tratamientosOrden = Object.keys(tratamientosData);
-let currentIndex = 0;
 
 const modal = document.getElementById("modal-tratamiento");
 const modalOverlay = document.getElementById("modal-overlay");
@@ -153,9 +150,14 @@ const closeModalBtn = document.querySelector(".modal-close");
 const nextBtn = document.getElementById("next-tratamiento");
 const prevBtn = document.getElementById("prev-tratamiento");
 
-function cargarTratamiento(id) {
-  const data = tratamientosData[id];
+let currentTratamientoKey = null;
+
+function openModal(tratamientoNombre) {
+  const key = tratamientoNombre.toLowerCase();
+  const data = tratamientosData[key];
   if (!data) return;
+
+  currentTratamientoKey = key;
 
   modalImg.src = data.imagen;
   modalTitle.textContent = data.titulo;
@@ -166,57 +168,50 @@ function cargarTratamiento(id) {
     li.textContent = b;
     modalBeneficios.appendChild(li);
   });
-}
 
-function openModal(id) {
-  currentIndex = tratamientosOrden.indexOf(id);
-  cargarTratamiento(id);
-  document.body.classList.add("bloqueado");
-  modalOverlay.style.display = "block";
   modal.classList.add("show");
+  modalOverlay.style.display = "block";
+  document.body.classList.add("bloqueado");
 }
 
 function closeModal() {
-  modalOverlay.style.display = "none";
   modal.classList.remove("show");
+  modalOverlay.style.display = "none";
   document.body.classList.remove("bloqueado");
 }
 
-function navegar(direccion) {
-  currentIndex = (currentIndex + direccion + tratamientosOrden.length) % tratamientosOrden.length;
-  cargarTratamiento(tratamientosOrden[currentIndex]);
+function navegarModal(direccion) {
+  const keys = Object.keys(tratamientosData);
+  let idx = keys.indexOf(currentTratamientoKey);
+  idx = (idx + direccion + keys.length) % keys.length;
+  openModal(keys[idx]);
 }
 
-if (modalOverlay) modalOverlay.addEventListener("click", closeModal);
-if (closeModalBtn) closeModalBtn.addEventListener("click", closeModal);
-if (nextBtn) nextBtn.addEventListener("click", () => navegar(1));
-if (prevBtn) prevBtn.addEventListener("click", () => navegar(-1));
+document.querySelectorAll(".btn-toggle").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".card-tratamiento");
+    const nombre = card.querySelector("h3").textContent.trim().toLowerCase();
+    openModal(nombre);
+  });
+});
 
-const safeKeys = {
-  "ortodoncia": "ortodoncia",
-  "ortopedia maxilar": "ortopedia",
-  "implantes dentales": "implantes",
-  "estética dental": "estetica",
-  "blanqueamiento dental": "blanqueamiento",
-  "periodoncia": "periodoncia",
-  "prótesis dentales": "protesis",
-  "endodoncia": "endodoncia",
-  "cirugía bucal": "cirugia",
-  "odontopediatría": "odontopediatria",
-  "bruxismo y placas": "bruxismo",
-  "rehabilitación oral": "rehabilitacion",
-  "radiología odontológica": "radiologia",
-  "diagnóstico y prevención": "prevencion",
-  "urgencias odontológicas": "urgencias"
-};
+closeModalBtn?.addEventListener("click", closeModal);
+modalOverlay?.addEventListener("click", closeModal);
+nextBtn?.addEventListener("click", () => navegarModal(1));
+prevBtn?.addEventListener("click", () => navegarModal(-1));
 
-document.querySelectorAll(".card").forEach(card => {
-  const btn = card.querySelector(".btn-toggle");
-  const rawTitle = card.querySelector("h2").textContent.trim().toLowerCase();
-  const id = safeKeys[rawTitle];
-  if (id && tratamientosData[id]) {
-    btn.addEventListener("click", () => openModal(id));
-  }
+// FILTRADO
+document.querySelectorAll(".filtro-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filtro = btn.dataset.filtro;
+    document.querySelectorAll(".filtro-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".card-tratamiento").forEach(card => {
+      const categoria = card.dataset.categoria;
+      card.style.display = (filtro === "todos" || categoria === filtro) ? "flex" : "none";
+    });
+  });
 });
 
 // ========== WHATSAPP ==========

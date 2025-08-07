@@ -96,12 +96,12 @@ nav a:hover::after {
 }
 
 nav a.active {
-    color: #999;
+    color: #04c0f5;
 }
 
 nav a.active::after {
     width: 100%;
-    background: #999;
+    background: #04c0f5;
 }
 
 .login-btn:hover::after {
@@ -660,12 +660,12 @@ nav a.active::after {
     }
 
     nav a.active {
-        color: #999;
+        color: #04c0f5;
     }
 
     nav a.active::after {
         width: 100%;
-        background: #999;
+        background: #04c0f5;
     }
 
     .menu-toggle,
@@ -844,13 +844,13 @@ nav a.active::after {
     }
     
     nav a.active {
-    color: #999;
+    color: #04c0f5;
     font-weight: bolder;
     }
 
     nav a.active::after {
         width: 100%;
-        background: #999;
+        background: #04c0f5;
     }
 
     .menu-toggle,
