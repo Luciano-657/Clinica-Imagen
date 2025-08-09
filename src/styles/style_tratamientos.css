@@ -251,6 +251,81 @@ nav a.active::after {
 }
 
     /* ============================= */
+    /*    SECCIÓN METODOS            */
+    /* ============================= */
+.seccion-metodos-tratamientos {
+    padding: 5%;
+    margin-top: 20%;
+    width: 100%; 
+}
+.seccion-metodos-tratamientos img{
+    display: none;
+}
+.titulo-seccion {
+    color: #2a6496;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2a6496;
+    font-size: 28px;
+}
+.contenedor-metodos {
+    background-color: #F4F4F5;
+    padding: 20px; /* Añade espacio interno */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    width: 100%;
+    max-width: 1400px; /* Límite máximo para escritorio */
+    margin: 0 auto; /* Centrado */
+
+}
+
+.grid-metodos {
+    display: grid;
+    gap: 25px;
+    
+}
+
+.card-metodo {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #2a6496;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-metodo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.numero-metodo {
+    background: #2a6496;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card-metodo p {
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+
+    /* ============================= */
     /*    GRILLA                     */
     /* ============================= */
 
@@ -978,6 +1053,62 @@ font-family: var(--fiont-man);
         width: 500px;
         letter-spacing: 1px;
     }
+
+
+
+    /* ============================= */
+    /*    SECCIÓN METODOS            */
+    /* ============================= */
+
+     
+.seccion-metodos-tratamientos {
+    display: flex;
+    padding: 5%;
+    margin-top: 5%;
+}
+.titulo-seccion {
+    padding: 1%;
+}
+.grid-metodos {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    
+}
+.seccion-metodos-tratamientos img {
+    height: auto;
+    max-height: 800px;
+    box-shadow: 0px 0px 100px rgba(0, 0, 1, 0.5);
+    height: auto;
+    box-shadow: 0px 0px 30px rgba(0, 0, 1, 0.3);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+}
+.contenedor-metodos {
+    background-color: #F4F4F5;
+    height: 800px;
+}
+
+.card-metodo {
+    
+    align-items: flex-start;
+    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    min-width: 0;
+    overflow: hidden; 
+    
+    display: flex;
+    flex-direction: column;
+
+
+} 
+/* La imágen cuando llega a esa anchura hace que se rompa todo el grid */
+@media (max-width: 1350px) {
+    .seccion-metodos-tratamientos img {
+        display: none;
+    }
+} 
 
     /* ============================= */
     /*    GRILLA                     */
