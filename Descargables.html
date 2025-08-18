@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinica Imagen | Descargables</title>
     <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="src/images/logo.ico" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/styles/config_in.css">
-    <link rel="stylesheet" href="src/styles/style_tratamientos.css">
+    <link rel="stylesheet" href="src/styles/style_descargables.css">
     <script src="src/scripts/script_tratamientos.js" defer></script>
 </head>
-
 <body>
     <header id="main-header">
         <a href="index.html" class="logo">
             <img src="src/images/Logo Clinica.png" alt="Logo de la empresa" />
         </a>
-
+        <button class="menu-toggle" id="toggle-btn">☰</button>
+        <nav id="main-nav">
         <!-- Botón hamburguesa -->
         <button class="menu-toggle" id="toggle-btn">☰</button>
 
@@ -38,13 +38,424 @@
             <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
             <span class="tooltip">Agendate ahora</span>
         </div>  
-        <section>
-            <h2>Descargables</h2>
-            <ul>
-                <li><a href="src/descargables/brochure.pdf" target="_blank">Brochure Clínica Imagen</a></li>
-                <li><a href="src/descargables/guia_tratamientos.pdf" target="_blank">Guía de Tratamientos</a></li>
-                <li><a href="src/descargables/politica_privacidad.pdf" target="_blank">Política de Privacidad</a></li>
-            </ul>
+        <section class="seccion-ordenonline">
+            <h1>Descargables</h1>
+            <h2>Orden de estudio</h2>
+            <p>Completa la orden online y nos comunicaremos con tu paciente para agendar la cita.</p>
+            <form id="ordenForm" action="https://clinicaimagenuy.com/ordenes/submit" method="POST">
+                
+                
+            <h2>Datos del paciente</h2>
+            <label for="nombre">Nombre del paciente:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <label for="cedula">Cédula de identidad:</label>
+            <input type="text" id="cedula" name="cedula" required>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <div>
+                <h2>Profesional solicitante</h2>
+                <label for="profesional_nombre">Nombre del profesional:</label>
+                <input type="text" id="profesional_nombre" name="profesional_nombre" required>
+                <label for="Mail">Mail:</label>
+                <input type="email" id="profesional_mail" name="profesional_mail" required>
+            </div>
+            <div>
+                <h2>Radiografías Intrabucales</h2>
+                <h3>Indicar Región de interés</h3>
+                <div class="fila-numeros">
+                    <input type="checkbox" id="intra-55" name="radio-intra[]" value="55"><label for="intra-55">55</label>
+                    <input type="checkbox" id="intra-54" name="radio-intra[]" value="54"><label for="intra-54">54</label>
+                    <input type="checkbox" id="intra-53" name="radio-intra[]" value="53"><label for="intra-53">53</label>
+                    <input type="checkbox" id="intra-52" name="radio-intra[]" value="52"><label for="intra-52">52</label>
+                    <input type="checkbox" id="intra-51" name="radio-intra[]" value="51"><label for="intra-51">51</label>
+                    <input type="checkbox" id="intra-61" name="radio-intra[]" value="61"><label for="intra-61">61</label>
+                    <input type="checkbox" id="intra-62" name="radio-intra[]" value="62"><label for="intra-62">62</label>
+                    <input type="checkbox" id="intra-63" name="radio-intra[]" value="63"><label for="intra-63">63</label>
+                    <input type="checkbox" id="intra-64" name="radio-intra[]" value="64"><label for="intra-64">64</label>
+                    <input type="checkbox" id="intra-65" name="radio-intra[]" value="65"><label for="intra-65">65</label>
+                </div>
+                <div class="fila-numeros-16">
+                    <input type="checkbox" id="intra-18" name="radio-intra[]" value="18"><label for="intra-18">18</label>
+                    <input type="checkbox" id="intra-17" name="radio-intra[]" value="17"><label for="intra-17">17</label>
+                    <input type="checkbox" id="intra-16" name="radio-intra[]" value="16"><label for="intra-16">16</label>
+                    <input type="checkbox" id="intra-15" name="radio-intra[]" value="15"><label for="intra-15">15</label>
+                    <input type="checkbox" id="intra-14" name="radio-intra[]" value="14"><label for="intra-14">14</label>
+                    <input type="checkbox" id="intra-13" name="radio-intra[]" value="13"><label for="intra-13">13</label>
+                    <input type="checkbox" id="intra-12" name="radio-intra[]" value="12"><label for="intra-12">12</label>
+                    <input type="checkbox" id="intra-11" name="radio-intra[]" value="11"><label for="intra-11">11</label>
+                    <input type="checkbox" id="intra-21" name="radio-intra[]" value="21"><label for="intra-21">21</label>
+                    <input type="checkbox" id="intra-22" name="radio-intra[]" value="22"><label for="intra-22">22</label>
+                    <input type="checkbox" id="intra-23" name="radio-intra[]" value="23"><label for="intra-23">23</label>
+                    <input type="checkbox" id="intra-24" name="radio-intra[]" value="24"><label for="intra-24">24</label>
+                    <input type="checkbox" id="intra-25" name="radio-intra[]" value="25"><label for="intra-25">25</label>
+                    <input type="checkbox" id="intra-26" name="radio-intra[]" value="26"><label for="intra-26">26</label>
+                    <input type="checkbox" id="intra-27" name="radio-intra[]" value="27"><label for="intra-27">27</label>
+                    <input type="checkbox" id="intra-28" name="radio-intra[]" value="28"><label for="intra-28">28</label>
+                </div>
+                <div class="fila-numeros-16">
+                    <input type="checkbox" id="intra-48" name="radio-intra[]" value="48"><label for="intra-48">48</label>
+                    <input type="checkbox" id="intra-47" name="radio-intra[]" value="47"><label for="intra-47">47</label>
+                    <input type="checkbox" id="intra-46" name="radio-intra[]" value="46"><label for="intra-46">46</label>
+                    <input type="checkbox" id="intra-45" name="radio-intra[]" value="45"><label for="intra-45">45</label>
+                    <input type="checkbox" id="intra-44" name="radio-intra[]" value="44"><label for="intra-44">44</label>
+                    <input type="checkbox" id="intra-43" name="radio-intra[]" value="43"><label for="intra-43">43</label>
+                    <input type="checkbox" id="intra-42" name="radio-intra[]" value="42"><label for="intra-42">42</label>
+                    <input type="checkbox" id="intra-41" name="radio-intra[]" value="41"><label for="intra-41">41</label>
+                    <input type="checkbox" id="intra-31" name="radio-intra[]" value="31"><label for="intra-31">31</label>
+                    <input type="checkbox" id="intra-32" name="radio-intra[]" value="32"><label for="intra-32">32</label>
+                    <input type="checkbox" id="intra-33" name="radio-intra[]" value="33"><label for="intra-33">33</label>
+                    <input type="checkbox" id="intra-34" name="radio-intra[]" value="34"><label for="intra-34">34</label>
+                    <input type="checkbox" id="intra-35" name="radio-intra[]" value="35"><label for="intra-35">35</label>
+                    <input type="checkbox" id="intra-36" name="radio-intra[]" value="36"><label for="intra-36">36</label>
+                    <input type="checkbox" id="intra-37" name="radio-intra[]" value="37"><label for="intra-37">37</label>
+                    <input type="checkbox" id="intra-38" name="radio-intra[]" value="38"><label for="intra-38">38</label>
+                </div>
+                <div class="fila-numeros-16">
+                    <input type="checkbox" id="intra-48" name="radio-intra[]" value="48"><label for="intra-48">48</label>
+                    <input type="checkbox" id="intra-47" name="radio-intra[]" value="47"><label for="intra-47">47</label>
+                    <input type="checkbox" id="intra-46" name="radio-intra[]" value="46"><label for="intra-46">46</label>
+                    <input type="checkbox" id="intra-45" name="radio-intra[]" value="45"><label for="intra-45">45</label>
+                    <input type="checkbox" id="intra-44" name="radio-intra[]" value="44"><label for="intra-44">44</label>
+                    <input type="checkbox" id="intra-43" name="radio-intra[]" value="43"><label for="intra-43">43</label>
+                    <input type="checkbox" id="intra-42" name="radio-intra[]" value="42"><label for="intra-42">42</label>
+                    <input type="checkbox" id="intra-41" name="radio-intra[]" value="41"><label for="intra-41">41</label>
+                    <input type="checkbox" id="intra-31" name="radio-intra[]" value="31"><label for="intra-31">31</label>
+                    <input type="checkbox" id="intra-32" name="radio-intra[]" value="32"><label for="intra-32">32</label>
+                    <input type="checkbox" id="intra-33" name="radio-intra[]" value="33"><label for="intra-33">33</label>
+                    <input type="checkbox" id="intra-34" name="radio-intra[]" value="34"><label for="intra-34">34</label>
+                    <input type="checkbox" id="intra-35" name="radio-intra[]" value="35"><label for="intra-35">35</label>
+                    <input type="checkbox" id="intra-36" name="radio-intra[]" value="36"><label for="intra-36">36</label>
+                    <input type="checkbox" id="intra-37" name="radio-intra[]" value="37"><label for="intra-37">37</label>
+                    <input type="checkbox" id="intra-38" name="radio-intra[]" value="38"><label for="intra-38">38</label>
+                </div>
+                <div class="my-3 ">
+                    <label for="conductimetria" class="me-4">
+                    <input type="checkbox" id="conductimetria" name="radio-intra-tipo[]" value="Con conductimetría">Con conductimetría</label>
+                    <label for="periapical" class="me-4">
+                    <input type="checkbox" id="periapical" name="radio-intra-tipo[]" value="Periapical">Periapical</label>
+                    <label for="periapical-completo" class="me-4">
+                    <input type="checkbox" id="periapical-completo" name="radio-intra-tipo[]" value="Relevamiento periapical completo">Relevamiento periapical completo</label>
+                    <label for="bitewing" class="me-4">
+                    <input type="checkbox" id="bitewing" name="radio-intra-tipo[]" value="Bitewing">Bitewing</label>
+                    <label for="oclusal" class="me-4">
+                    <input type="checkbox" id="oclusal" name="radio-intra-tipo[]" value="Oclusal">Oclusal</label>
+                </div>
+            </div>
+            <div>
+                <h2>Otros estudios extraorales</h2>
+                <div id="otros-estudios-extraorales" class="accordion-body my-3 text-start text-md-center">
+                    <label for="ATM" class="me-4  d-block d-md-inline-block">
+                    <input type="checkbox" id="ATM" name="otros-estudios-extraorales[]" value="ATM">ATM (Boca abierta y cerrada) (LAMINOGRAFÍA)</label>
+                    <label for="sub-m-vertex" class="me-4  d-block d-md-inline-block">
+                    <input type="checkbox" id="sub-m-vertex" name="otros-estudios-extraorales[]" value="Sub mentón Vertex">Sub mentón Vertex</label>
+                    <label for="mano-puno" class="me-4  d-block d-md-inline-block">
+                    <input type="checkbox" id="mano-puno" name="otros-estudios-extraorales[]" value="Mano y puño">Mano y puño (Carpal)</label>
+                </div>
+            </div>
+            <div>
+                <h2>Documentación para Ortodoncia</h2>
+                <h3>Radiografías extraorales</h3>
+                <div class="row text-start">
+                <div class="col-md textogrupo" data-group="textogrupo4">
+                    <label for="opt" class="fw-semibold border-bottom">
+                    <input type="checkbox" class="input-check" id="opt" name="radio-extraoral[]" value="Panorámica (OPT)">Panorámica(OPT)</label>
+                    <br>
+                    <label for="indiacion-opt">Indicación:</label>
+                    <input type="text" class="w-100 campo-texto" name="opt-indicacion" id="indiacion-opt">
+                </div>
+                <div class="col-md my-3 my-md-0 grupo" data-group="grupo1">
+                    <label for="telerradio-perfil" class="fw-semibold border-bottom d-block d-md-inline-block">
+                    <input type="checkbox" class="padre" id="telerradio-perfil" name="radio-extraoral[]" value="Telerradiografía Perfil">Telerradiografía Perfil</label>
+                    <label for="frankfort" class="d-block d-md-inline-block">
+                    <input type="checkbox" class="hijo" name="telerradio-perfil-tipo[]" id="frankfort" value="Plano de Frankfort">Plano de Frankfort</label>
+                    <label for="horizontal-verdadero" class="d-block d-md-inline-block">
+                    <input type="checkbox" class="hijo" name="telerradio-perfil-tipo[]" id="horizontal-verdadero" value="Horizontal verdadero">Horizontal verdadero</label>
+                    <label for="labios-reposo" class="d-block d-md-inline-block">
+                    <input type="checkbox" class="hijo" name="telerradio-perfil-tipo[]" id="labios-reposo" value="Labios en reposo">Labios en reposo</label>
+                    <label for="labios-contacto" class="d-block d-md-inline-block">
+                    <input type="checkbox" class="hijo" name="telerradio-perfil-tipo[]" id="labios-contacto" value="Labios en contacto">Labios en contacto</label>
+                </div>
+                    <div class="col-md grupo" data-group="grupo2">
+                        <label for="" telerradio-frontal="" class=" fw-semibold border-bottom d-block d-md-inline-block">
+                        <input type="checkbox" class="padre" id="telerradio-frontal" name="radio-extraoral[]" value="Telerradiografía Frontal">Telerradiografía Frontal</label>
+                        <label for="telerradio-frontal-analisis" class="d-block d-md-inline-block">
+                        <input type="checkbox" class="hijo" name="telerradio-frontal-analisis" id="telerradio-frontal-analisis" value="Con analisis">Con análisis</label>
+                    </div>
+                </div>
+                <div id="estudio-cefalo-compu">
+                    <h4>ESTUDIOS CEFALOMÉTRICOS COMPUTARIZADOS</h4>
+                    <label for="ricketts">
+                    <input type="checkbox" id="ricketts" name="estudio-cefalo-compu[]" value="Ricketts">Ricketts</label>
+                    <label for="ricketts-resumido">
+                    <input type="checkbox" id="ricketts-resumido" name="estudio-cefalo-compu[]" value="Ricketts Resumido">Ricketts Resumido</label>
+                    <label for="mcnamara">
+                    <input type="checkbox" id="mcnamara" name="estudio-cefalo-compu[]" value="Mcnamara">Mcnamara</label>
+                    <label for="funcacion-gnathos">
+                    <input type="checkbox" id="funcacion-gnathos" name="estudio-cefalo-compu[]" value="Fundación Gnathos">Fundación Gnathos</label>
+                    <label for="roth-jarabak">
+                    <input type="checkbox" id="roth-jarabak" name="estudio-cefalo-compu[]" value="Roth Jarabak">Roth Jarabak</label>
+                    <label for="bjork">
+                    <input type="checkbox" id="bjork" name="estudio-cefalo-compu[]" value="Bjork Jarabak">Bjork Jarabak</label>
+                    <label for="trevis">
+                    <input type="checkbox" id="trevis" name="estudio-cefalo-compu[]" value="Trevis">Trevis</label>
+                    <label for="steiner">
+                    <input type="checkbox" id="steiner" name="estudio-cefalo-compu[]" value="Steiner Tweed">Steiner Tweed</label>
+                    <label for="vto">
+                    <input type="checkbox" id="vto" name="estudio-cefalo-compu[]" value="VTO">VTO</label>
+                    <br>
+                    <label for="estudio-cefalo-compu-otros" class="text-start d-block">Otros</label>
+                    <input type="text" class="text-start w-100" id="estudio-cefalo-compu-otros" name="estudio-cefalo-compu-otros">
+                </div>
+                <div id="fotografias">
+                    <h4>Fotografías</h4>
+                    <div class="row text-start">
+                        <label class="col-md fw-bold" for="fotografias-todas">
+                        <input type="checkbox" id="fotografias-todas" name="fotografias[]" value="Todas las fotografías">Todas las fotografías</label>
+                        <div class="col-md my-3 my-md-0">
+                            <p class="fw-bold m-0">Fotografías faciales</p>
+                            <label for="ft-rostro-frente">
+                            <input type="checkbox" name="fotografias[]" id="ft-rostro-frente" value="Rostro frente">Rostro frente</label>
+                            <br>
+                            <label for="ft-perfil">
+                            <input type="checkbox" name="fotografias[]" id="ft-perfil" value="Perfil">Perfil</label>
+                            <br>
+                            <label for="ft-rostro-sonrisa">
+                            <input type="checkbox" name="fotografias[]" id="ft-rostro-sonrisa" value="Rostro sonrisa ">Rostro sonrisa </label>
+                            <br>
+                            <label for="ft-tres-cuartos">
+                            <input type="checkbox" name="fotografias[]" id="ft-tres-cuartos" value="3/4 perfil">3/4 perfil</label>
+                        </div>
+                        <div class="col-md bg-primary-subtle">
+                            <p class="fw-bold m-0">Fotografías bucales</p>
+                            <label for="ft-oclusal-2">
+                            <input type="checkbox" name="fotografias[]" id="ft-oclusal-2" value="2 oclusales ">2 oclusales
+                            </label>
+                            <br>
+                            <label for="ft-llave-oclusion">
+                            <input type="checkbox" name="fotografias[]" id="ft-llave-oclusion" value="2 llaves de oclusión ">2 llaves de oclusión </label>
+                            <br>
+                            <label for="ft-overjet">
+                            <input type="checkbox" name="fotografias[]" id="ft-overjet" value="2 overjet/overbite ">2 overjet/overbite </label>
+                            <br>
+                            <label for="ft-oclusion">
+                            <input type="checkbox" name="fotografias[]" id="ft-oclusion" value="1 anterior en oclusión">1 anterior en oclusión</label>
+                            <br>
+                            <label for="ft-oclusion-frente">
+                            <input type="checkbox" name="fotografias[]" id="ft-oclusion-frente" value="1 oclusión frente">1 oclusión frente</label>
+                        </div>
+                    </div>
+                    <div class="row mt-4 text-start">
+                        <label for="contacto-oclusal" class="col-md-3">
+                        <input type="checkbox" name="fotografias[]" id="contacto-oclusal" value="con contacto oclusales">con contacto oclusales</label>
+                        <div class="col-md textogrupo" data-group="textogrupo5">
+                            <label for="ft-dinamica">
+                            <input type="checkbox" class="input-check" name="fotografias[]" id="ft-dinamica" value="foto en dinámica">foto en dinámica</label>
+                            <label for="fotografia-interes">Indique su interés</label> 
+                            <input type="text" class="w-100 campo-texto" name="fotografia-interes" id="fotografia-interes">
+                        </div>
+                    </div>
+                </div>
+                <div id="modelos-digitales" class="text-start text-md-center">
+                    <h4 class="text-center">MODELOS DIGITALES (CON VISUALIZADOR 3D)</h4>
+                    <label for="modelo-digital"><input type="checkbox" name="modelos-digitales[]" id="modelo-digital" value="Modelo Digital">Modelo Digital</label>
+                    <label for="modelo-informe"><input type="checkbox" name="modelos-digitales[]" id="modelo-informe" value="Con informe (Bolton, Moyers, medidas dentarias)">Con informe (Bolton, Moyers, medidas dentarias)</label>
+                    <div class="bg-primary-subtle text-start  p-3">
+                        <label for="modelo-zocalados"><input type="checkbox" name="modelos-digitales[]" id="modelo-zocalados" value="Impresión de modelos zocalados">Impresión de modelos zocalados</label>
+                        <label for="modelos-trabajo"><input type="checkbox" name="modelos-digitales[]" id="modelos-trabajo" value="Impresión de modelos de trabajo">Impresión de modelos de trabajo</label>
+                        <label for="mordida-constructiva">
+                        <input type="checkbox" name="modelos-digitales[]" id="mordida-constructiva" value="Mordida constructiva">Mordida constructiva</label>
+                        <label for="duplicado-yeso"><input type="checkbox" name="modelos-digitales[]" id="duplicado-yeso" value="Duplicado en yeso">Duplicado en yeso</label>
+                        <label for="modelo-articulado"><input type="checkbox" name="modelos-digitales[]" id="modelo-articulado" value="Modelos articulados con bisagra posterior">Modelos articulados con bisagra posterior</label>
+                    </div>
+                </div>
+                <div id="alineadores">
+                    <h4>ORTODONCIA INVISIBLE (ALINEADORES)</h4>
+                    <label for="ortodoncia-marca" class="text-start d-block">Marca o sistema</label>
+                    <input type="text" class="text-start w-100 mb-4" name="ortodoncia-marca" id="ortodoncia-marca">
+                    <label for="ortodoncia-bimaxilar" class="me-4"><input type="checkbox" name="ortodoncia-tipo[]" id="ortodoncia-bimaxilar" value="Bimaxilar">Bimaxilar</label>
+                    <label for="ortodoncia-maxilar" class="me-4"><input type="checkbox" name="ortodoncia-tipo[]" id="ortodoncia-maxilar" value="Maxilar">Maxilar</label>
+                    <label for="ortodoncia-mandibula" class="me-4"><input type="checkbox" name="ortodoncia-tipo[]" id="ortodoncia-mandibula" value="Mandíbula">Mandíbula</label>
+                    <br>
+                    <label for="ortodoncia-info-clinica" class="d-block text-start mt-2">Información clínica</label>
+                    <textarea name="ortodoncia-info-clinica" class="w-100 estilo-inputs" id="ortodoncia-info-clinica"></textarea>
+                </div>
+            </div>
+            <div>
+                <h2>Tomografía Computarizada volumétrica conebeam</h2>
+                <h3>Indicar región de interés</h3>
+                <div id="tomografia-computarizada" class="estudios-form">
+                    <p class="sub-titulos">Indicar región de interés</p>
+                    <label for="maxilar-completo" class="mb-3 me-4"><input type="checkbox" name="tomo-cone-beam[]" id="maxilar-completo" value="Maxilar completo">Maxilar completo</label>
+                    <label for="mandibula-completa" class="mb-3"><input type="checkbox" name="tomo-cone-beam[]" id="mandibula-completa" value="Mandíbula completa">Mandíbula completa</label>
+                    <div class="fila-numeros">
+                        <input type="checkbox" id="tomo-55" name="tomo-cone-beam[]" value="55"><label for="tomo-55">55</label>
+                        <input type="checkbox" id="tomo-54" name="tomo-cone-beam[]" value="54"><label for="tomo-54">54</label>
+                        <input type="checkbox" id="tomo-53" name="tomo-cone-beam[]" value="53"><label for="tomo-53">53</label>
+                        <input type="checkbox" id="tomo-52" name="tomo-cone-beam[]" value="52"><label for="tomo-52">52</label>
+                        <input type="checkbox" id="tomo-51" name="tomo-cone-beam[]" value="51"><label for="tomo-51">51</label>
+                        <input type="checkbox" id="tomo-61" name="tomo-cone-beam[]" value="61"><label for="tomo-61">61</label>
+                        <input type="checkbox" id="tomo-62" name="tomo-cone-beam[]" value="62"><label for="tomo-62">62</label>
+                        <input type="checkbox" id="tomo-63" name="tomo-cone-beam[]" value="63"><label for="tomo-63">63</label>
+                        <input type="checkbox" id="tomo-64" name="tomo-cone-beam[]" value="64"><label for="tomo-64">64</label>
+                        <input type="checkbox" id="tomo-65" name="tomo-cone-beam[]" value="65"><label for="tomo-65">65</label>
+                    </div>
+                    <div class="fila-numeros-16">
+                        <input type="checkbox" id="tomo-18" name="tomo-cone-beam[]" value="18"><label for="tomo-18">18</label>
+                        <input type="checkbox" id="tomo-17" name="tomo-cone-beam[]" value="17"><label for="tomo-17">17</label>
+                        <input type="checkbox" id="tomo-16" name="tomo-cone-beam[]" value="16"><label for="tomo-16">16</label>
+                        <input type="checkbox" id="tomo-15" name="tomo-cone-beam[]" value="15"><label for="tomo-15">15</label>
+                        <input type="checkbox" id="tomo-14" name="tomo-cone-beam[]" value="14"><label for="tomo-14">14</label>
+                        <input type="checkbox" id="tomo-13" name="tomo-cone-beam[]" value="13"><label for="tomo-13">13</label>
+                        <input type="checkbox" id="tomo-12" name="tomo-cone-beam[]" value="12"><label for="tomo-12">12</label>
+                        <input type="checkbox" id="tomo-11" name="tomo-cone-beam[]" value="11"><label for="tomo-11">11</label>
+                        <input type="checkbox" id="tomo-21" name="tomo-cone-beam[]" value="21"><label for="tomo-21">21</label>
+                        <input type="checkbox" id="tomo-22" name="tomo-cone-beam[]" value="22"><label for="tomo-22">22</label>
+                        <input type="checkbox" id="tomo-23" name="tomo-cone-beam[]" value="23"><label for="tomo-23">23</label>
+                        <input type="checkbox" id="tomo-24" name="tomo-cone-beam[]" value="24"><label for="tomo-24">24</label>
+                        <input type="checkbox" id="tomo-25" name="tomo-cone-beam[]" value="25"><label for="tomo-25">25</label>
+                        <input type="checkbox" id="tomo-26" name="tomo-cone-beam[]" value="26"><label for="tomo-26">26</label>
+                        <input type="checkbox" id="tomo-27" name="tomo-cone-beam[]" value="27"><label for="tomo-27">27</label>
+                        <input type="checkbox" id="tomo-28" name="tomo-cone-beam[]" value="28"><label for="tomo-28">28</label>
+                    </div>
+                    <div class="fila-numeros-16">
+                        <input type="checkbox" id="tomo-48" name="tomo-cone-beam[]" value="48"><label for="tomo-48">48</label>
+                        <input type="checkbox" id="tomo-47" name="tomo-cone-beam[]" value="47"><label for="tomo-47">47</label>
+                        <input type="checkbox" id="tomo-46" name="tomo-cone-beam[]" value="46"><label for="tomo-46">46</label>
+                        <input type="checkbox" id="tomo-45" name="tomo-cone-beam[]" value="45"><label for="tomo-45">45</label>
+                        <input type="checkbox" id="tomo-44" name="tomo-cone-beam[]" value="44"><label for="tomo-44">44</label>
+                        <input type="checkbox" id="tomo-43" name="tomo-cone-beam[]" value="43"><label for="tomo-43">43</label>
+                        <input type="checkbox" id="tomo-42" name="tomo-cone-beam[]" value="42"><label for="tomo-42">42</label>
+                        <input type="checkbox" id="tomo-41" name="tomo-cone-beam[]" value="41"><label for="tomo-41">41</label>
+                        <input type="checkbox" id="tomo-31" name="tomo-cone-beam[]" value="31"><label for="tomo-31">31</label>
+                        <input type="checkbox" id="tomo-32" name="tomo-cone-beam[]" value="32"><label for="tomo-32">32</label>
+                        <input type="checkbox" id="tomo-33" name="tomo-cone-beam[]" value="33"><label for="tomo-33">33</label>
+                        <input type="checkbox" id="tomo-34" name="tomo-cone-beam[]" value="34"><label for="tomo-34">34</label>
+                        <input type="checkbox" id="tomo-35" name="tomo-cone-beam[]" value="35"><label for="tomo-35">35</label>
+                        <input type="checkbox" id="tomo-36" name="tomo-cone-beam[]" value="36"><label for="tomo-36">36</label>
+                        <input type="checkbox" id="tomo-37" name="tomo-cone-beam[]" value="37"><label for="tomo-37">37</label>
+                        <input type="checkbox" id="tomo-38" name="tomo-cone-beam[]" value="38"><label for="tomo-38">38</label>
+                    </div>
+                    <div class="fila-numeros">
+                        <input type="checkbox" id="tomo-85" name="tomo-cone-beam[]" value="85"><label for="tomo-85">85</label>
+                        <input type="checkbox" id="tomo-84" name="tomo-cone-beam[]" value="84"><label for="tomo-84">84</label>
+                        <input type="checkbox" id="tomo-83" name="tomo-cone-beam[]" value="83"><label for="tomo-83">83</label>
+                        <input type="checkbox" id="tomo-82" name="tomo-cone-beam[]" value="82"><label for="tomo-82">82</label>
+                        <input type="checkbox" id="tomo-81" name="tomo-cone-beam[]" value="81"><label for="tomo-81">81</label>
+                        <input type="checkbox" id="tomo-71" name="tomo-cone-beam[]" value="71"><label for="tomo-71">71</label>
+                        <input type="checkbox" id="tomo-72" name="tomo-cone-beam[]" value="72"><label for="tomo-72">72</label>
+                        <input type="checkbox" id="tomo-73" name="tomo-cone-beam[]" value="73"><label for="tomo-73">73</label>
+                        <input type="checkbox" id="tomo-74" name="tomo-cone-beam[]" value="74"><label for="tomo-74">74</label>
+                        <input type="checkbox" id="tomo-75" name="tomo-cone-beam[]" value="75"><label for="tomo-75">75</label>
+                    </div>
+                    <div class="row my-4 text-start">
+                        <div class="col-md">
+                            <label for="hemiarco" class="me-4"><input type="checkbox" name="tomo-cone-beam-tipo[]" id="hemiarco" value="Hemiarco">Hemiarco</label>
+                            <label for="tomo-piezas"><input type="checkbox" name="tomo-cone-beam-tipo[]" id="tomo-piezas" value="1 a 3 piezas">1 a 3 piezas</label>
+                            <label for="tomo-sin-separacion"><input type="checkbox" name="tomo-cone-beam-tipo[]" id="tomo-sin-separacion" value="Sin separación de tejidos blandos">Sin separación de tejidos blandos</label>
+                        </div>
+                        <div class="col-md">
+                            <label for="tomo-elementos-sueltos" class="d-block">Elementos sueltos</label>
+                            <input type="text" class="w-100" id="tomo-elementos-sueltos" name="tomo-elementos-sueltos">
+                        </div>
+                    </div>
+                    <div id="tomo-cone-beam-estudio">
+                        <p class="sub-titulos">INDIQUE ESTUDIO PARA</p>
+                        <label for="est-tipo-implante"><input type="checkbox" name="tomo-tipo-estudio[]" id="est-tipo-implante" value="Implante">Implante</label>
+                        <label for="est-tipo-endodoncia"><input type="checkbox" name="tomo-tipo-estudio[]" id="est-tipo-endodoncia" value="Endodoncia">Endodoncia</label>
+                        <label for="est-tipo-ortodoncia"><input type="checkbox" name="tomo-tipo-estudio[]" id="est-tipo-ortodoncia" value="Cirugía Ortodoncia">Cirugía Ortodoncia</label>
+                        <label for="est-tipo-periodoncia"><input type="checkbox" name="tomo-tipo-estudio[]" id="est-tipo-periodoncia" value="Periodoncia">Periodoncia</label>
+                        <label for="est-tipo-atm"><input type="checkbox" name="tomo-tipo-estudio[]" id="est-tipo-atm" value="ATM">ATM</label>
+                        <br>
+                        <label for="interes-estudio-tomo" class="mt-3 d-block text-start fw-bold">Indique interés del estudio</label>
+                        <textarea name="interes-estudio-tomo" class="text-start w-100 estilo-inputs" id="interes-estudio-tomo"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Cirugía guiada para implantes</h2>
+                <h3>Marque el/los servicios que necesita:</h3>
+                <div class="accordion-body my-3">
+                    <div class="bg-primary-subtle text-start p-2 mb-3">
+                        <label class="sub-titulos">Marque el/los servicios que necesita:</label>
+                        <label for="servicio-tomografia" class="me-4"><input type="checkbox" name="guia-implantes-servicio[]" id="servicio-tomografia" value="Tomografía">Tomografía</label>
+                        <label for="servicio-escaneo" class="me-4"><input type="checkbox" name="guia-implantes-servicio[]" id="servicio-escaneo" value="Escaneo">Escaneo</label>
+                        <label for="servicio-planeamiento" class="me-4"><input type="checkbox" name="guia-implantes-servicio[]" id="servicio-planeamiento" value="Planeamiento">Planeamiento</label>
+                    </div>
+                    <div class="text-start row mb-3">
+                        <div class="col-md textogrupo" data-group="textogrupo3">
+                            <label for="guia-precision"><input type="checkbox" class="input-check" name="guia-implante-tipo[]" id="guia-precision" value="Guía de precisión">Guía de precisión.</label>
+                            <label for="implante-marca"> Marca de implante</label><input type="text" class="w-100 campo-texto" id="implante-marca" name="implante-marca">
+                        </div>
+                        <label for="guia-fresa" class="col-md"><input type="checkbox" name="guia-implante-tipo[]" id="guia-fresa" value="Guía de fresa iniciadora">Guía de fresa iniciadora</label>
+                    </div>
+                    <div class="text-start row">
+                            <div class="col-md">
+                                <label for="implante-ubicacion">Indique la ubicación del implante a colocar </label>
+                                <input type="text" class="w-100" name="implante-ubicacion" id="implante-ubicacion">
+                            </div>
+                            <div class="col-md">
+                                <label for="implante-fecha-cirugia" class="d-block">Fecha probable de cirugía</label>
+                                <input type="date" name="implante-fecha-cirugia" id="implante-fecha-cirugia">
+                            </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Ecografías</h2>                
+                    <div class="accordion-body my-3" id="realidad-virtual-m3dmix">
+                        <label for="m3dmix-tercer-molar"><input type="checkbox" name="realidad-virtual-m3dmix[]" id="m3dmix-tercer-molar" value="Tercer molar">Tercer molar</label>
+                        <label for="m3dmix-patologia"><input type="checkbox" name="realidad-virtual-m3dmix[]" id="m3dmix-patologia" value="Patología">Patología</label>
+                        <label for="m3dmix-mandibular"><input type="checkbox" name="realidad-virtual-m3dmix[]" id="m3dmix-mandibular" value="Nervio mandibular">Nervio mandibular</label>
+                        <label for="m3dmix-maxilares-implantes"><input type="checkbox" name="realidad-virtual-m3dmix[]" id="m3dmix-maxilares-implantes" value="Maxilares e implantes">Maxilares e implantes</label>
+                    </div>
+                </div>
+                <div>
+                    <h2>Otros servicios</h2>
+                    <div class="accordion-body text-start textogrupo" data-group="textogrupo2">
+                            <div class="my-2">
+                                    <label for="solo-escaneo"><input type="checkbox" class="input-check" name="otros-servicios[]" id="solo-escaneo" value="Sólo escaneo"><strong>Sólo escaneo.</strong> (Indicar interes del estudio):</label>
+                                    <input type="text" class="w-100 campo-texto" name="solo-escaneo-interes">
+                            </div>
+                            <label for="DOE" class="my-2"><input type="checkbox" name="otros-servicios[]" id="DOE" value="Placa neuromiorelajante/DOE"><strong>Placa neuromiorelajante/DOE </strong>(Escaneado bucal + Planeamiento + Placa impresa)</label>
+                            <br>
+                            <label for="DAM" class="my-2"><input type="checkbox" name="otros-servicios[]" id="DAM" value="DAM"><strong> Dispositivo avance mandibular (DAM)</strong></label>
+                            <br>
+                            <label for="diseno-sonrisa" class="my-2"><input type="checkbox" name="otros-servicios[]" id="diseno-sonrisa" value="Diseño sonrisa e impresión en resina mockup"><strong>Diseño sonrisa e impresión en resina mockup </strong>(Fotografías + Escaneo bucal + Diseño + Impresión modelo)</label>
+                            <div class="my-2 grupo" data-group="grupo3">
+                                <label for="escaneo-ortodoncia-placas"><input type="checkbox" class="padre" name="otros-servicios[]" id="escaneo-ortodoncia-placas" value="Escaneo final de ortodoncia + placas de contención."><strong>Escaneo final de ortodoncia + placas de contención.</strong></label>
+                                <div class="text-center bg-primary-subtle m-2">
+                                    <label for="escaneo-superior" class="me-4"><input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-superior" value="SUPERIOR">SUPERIOR</label>
+                                    <label for="escaneo-inferior" class="me-4"><input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-inferior" value="INFERIOR">INFERIOR</label>
+                                    <label for="escaneo-placa-40" class="me-4"><input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-placa-40" value="0.40">0.40</label>
+                                    <label for="escaneo-placa-60" class="me-4"><input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-placa-60" value="0.60">0.60</label>
+                                    <label for="escaneo-recto" class="me-4"><input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-recto" value="RECTO">RECTO</label>
+                                    <label for="escaneo-festoneado"><input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-festoneado" value="FESTONEADO">FESTONEADO</label>
+                                </div>
+                            </div>
+                            <div class="my-2 grupo" data-group="grupo4">
+                                <label for="placas-blanqueamiento"><input type="checkbox" class="padre" name="otros-servicios[]" id="placas-blanqueamiento" value="Placas de blanqueamiento"><strong>Placas de blanqueamiento</strong>(Escaneo bucal + Impresión de modelo + placas)</label>
+                                <div class="text-center bg-primary-subtle m-2">
+                                    <label for="placas-superior" class="me-4"><input type="checkbox" class="hijo" name="otros-servicios[]" id="placas-superior" value="SUPERIOR">SUPERIOR</label>
+                                    <label for="placas-inferior"><input type="checkbox" class="hijo" name="otros-servicios[]" id="placas-inferior" value="INFERIOR">INFERIOR</label>
+                                </div>
+                            </div>
+                            <label for="perioguide" class="my-2"><input type="checkbox" name="otros-servicios[]" id="perioguide" value="Perioguide para cirugía gingival"><strong>Perioguide para cirugía gingival</strong>(Escaneo bucal + Impresión de modelo + guías)</label>
+                        <br>
+                        <label for="cirugia-ortognatica" class="my-2"><input type="checkbox" name="otros-servicios[]" id="cirugia-ortognatica" value="Planeamiento cirugía ortognática"><strong>Planeamiento cirugía ortognática</strong>(Escaneo bucal + tomografía + planeamiento + Splits)</label>
+                        <br>
+                        <label for="endoguide" class="my-2"><input type="checkbox" name="otros-servicios[]" id="endoguide" value="Endoguide"><strong>Endoguide</strong>(Tomografía + escaneo + planeamiento + guía impresa)</label>
+                        <br>
+                        <div class="textogrupo" data-group="textogrupo1">
+                            <label for="protector-bucal" class="my-2"><input type="checkbox" class="input-check" name="otros-servicios[]" id="protector-bucal" value="Protector bucal"><strong>Protector bucal</strong>(Escaneo + modelo + protector bucal)</label>
+                            <label for="color-protector"><strong>| Color: </strong>
+                            </label><input type="text" class="campo-texto" name="protector-bucal-color" id="color-protector">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Enviar Orden</button>
+            
         </section>
         
     </main>

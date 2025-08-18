@@ -176,6 +176,150 @@ nav a.active::after {
         opacity: 1;
     }
 }
+/* ============================= */
+/*    Sección Orden Online       */
+/* ============================= */
+
+.seccion-ordenonline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    padding: 2rem 1rem;
+    background: #f8fafc;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(22, 51, 74, 0.12);
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seccion-ordenonline h1,
+.seccion-ordenonline h2,
+.seccion-ordenonline h3,
+.seccion-ordenonline h4 {
+    color: #16334a;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 0.7rem;
+    font-weight: 700;
+}
+
+.seccion-ordenonline h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.seccion-ordenonline h2 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.seccion-ordenonline h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.seccion-ordenonline p {
+    color: #2d3e50;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.seccion-ordenonline form {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(22, 51, 74, 0.08);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.seccion-ordenonline label {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #16334a;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    margin-right: 0.7rem;
+    display: inline-block;
+}
+
+.seccion-ordenonline input[type="text"],
+.seccion-ordenonline input[type="email"],
+.seccion-ordenonline input[type="tel"],
+.seccion-ordenonline input[type="date"],
+.seccion-ordenonline textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #99d6dd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background: #f4f8fb;
+    transition: border-color 0.2s;
+}
+
+.seccion-ordenonline input[type="text"]:focus,
+.seccion-ordenonline input[type="email"]:focus,
+.seccion-ordenonline input[type="tel"]:focus,
+.seccion-ordenonline input[type="date"]:focus,
+.seccion-ordenonline textarea:focus {
+    border-color: #04c0f5;
+    outline: none;
+}
+
+.seccion-ordenonline input[type="checkbox"] {
+    accent-color: #04c0f5;
+    margin-right: 0.3rem;
+    transform: scale(1.2);
+    vertical-align: middle;
+}
+
+.seccion-ordenonline .fila-numeros,
+.seccion-ordenonline .fila-numeros-16 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.seccion-ordenonline .my-3,
+.seccion-ordenonline .row,
+.seccion-ordenonline .col-md,
+.seccion-ordenonline .bg-primary-subtle {
+    margin-bottom: 1rem;
+}
+
+.seccion-ordenonline button[type="submit"] {
+    background: #04c0f5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 8px rgba(22, 51, 74, 0.08);
+    transition: background 0.2s;
+}
+
+.seccion-ordenonline button[type="submit"]:hover {
+    background: #16334a;
+}
+
+@media (min-width: 768px) {
+    .seccion-ordenonline {
+        padding: 3rem 2rem;
+    }
+    .seccion-ordenonline form {
+        padding: 2.5rem 2rem;
+    }
+}
 
 /* ============================= */
 /*    FOOTER                     */
