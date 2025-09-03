@@ -73,56 +73,6 @@ document.getElementById("whatsapp-btn").addEventListener("click", function () {
     window.open(url, "_blank");
 });
 
-
-//Carrusel de porque elegirnos
-
-    function scrollCarousel(direction) {
-        const carousel = document.getElementById('carousel');
-        const scrollAmount = carousel.offsetWidth * 0.7; // 70% del ancho visible
-        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-}
-
-// Animación on-scroll desde la izquierda de llamado laboral
-
-    const items = document.querySelectorAll(".accordion-item");
-
-    items.forEach(item => {
-        const header = item.querySelector(".accordion-header");
-
-        header.addEventListener("click", () => {
-            // Cierra los demás
-            items.forEach(i => {
-            if (i !== item) {
-                i.classList.remove("active");
-            }
-            });
-
-            // Toggle actual
-            item.classList.toggle("active");
-        });
-    });
-
-document.addEventListener("DOMContentLoaded", function () {
-    const elementosAnimados = document.querySelectorAll('.anim-left, .anim-right');
-
-    if (!elementosAnimados.length) return;
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px 0px -20% 0px',
-        threshold: 0.05
-    });
-
-    elementosAnimados.forEach(el => observer.observe(el));
-    });
-
 // Boton desplegable mobile
 
 function toggleFooterSection(button) {
