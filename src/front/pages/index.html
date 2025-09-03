@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" style="view-transition-name: page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Imagen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+    <link rel="icon" href="../assets/images/logo.ico" sizes="32x32"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/config_in.css">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <script src="../scripts/script.js" defer></script>
+</head>
+<body>
+    <header id="main-header">
+        <a href="index.html" class="logo">
+            <img src="../assets/images/Logo Clinica.png" alt="Logo de la empresa" />
+        </a>
+
+        <button class="menu-toggle" id="toggle-btn">☰</button>
+
+        <!-- Menú -->
+        <nav id="main-nav">
+            <button class="close-btn" id="close-btn">✖</button>
+            <a href="index.html">Inicio</a>
+            <a href="tratamientos.html">Tratamientos</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="login.html" class="login-btn">Log in</a>
+        </nav>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <main>
+        <section class="hero">
+            <span>
+                <h1>¡Tu sonrisa, nuestra mejor imagen!</h1>
+                <h2>Cuidamos tu sonrisa como si fuera la nuestra</h2>
+                <p>En Clínica Imagen queremos verte sonreír sin preocupaciones. Aquí encontrarás un equipo que te cuida como familia, con tratamientos modernos y un ambiente cómodo pensado para vos. Vení a conocernos y descubrí por qué tantas sonrisas nos eligen todos los días.</p>
+                <a href="tratamientos.html">tratamientos</a>
+            </span>
+        </section>
+        <div class="hero-shadow"></div>
+        <div class="whatsapp-float" id="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
+            <span class="tooltip">Agendate ahora</span>
+        </div>  
+        <h2 class="section-title">¿Por qué elegirnos?</h2>
+
+        <div class="carousel-container">
+            <button class="arrow left" onclick="scrollCarousel(-1)">❮</button>
+            <div class="carousel" id="carousel">
+            <div class="card">
+                <img src="../assets/images/icon 1.png" alt="icono 1" />
+                <h3>Tecnología avanzada</h3>
+                <p>Equipos digitales de última generación para radiografías, tomografías y escaneos.</p>
+            </div>
+            <div class="card">
+                <img src="../assets/images/icon 2.png" alt="icono 2" />
+                <h3>Precisión diagnóstica</h3>
+                <p>Imágenes de alta definición que mejoran la planificación y el tratamiento odontológico.</p>
+            </div>
+            <div class="card">
+                <img src="../assets/images/icon 3.png" alt="icono 3" />
+                <h3>Impresión 3D</h3>
+                <p>Guías quirúrgicas personalizadas y modelos exactos para procedimientos más seguros.</p>
+            </div>
+            <div class="card">
+                <img src="../assets/images/icon 4.png" alt="icono 4" />
+                <h3>Atención profesional</h3>
+                <p>Personal capacitado y especializado en odontología digital.</p>
+            </div>
+            <div class="card">
+                <img src="../assets/images/icon 5.png" alt="icono 5" />
+                <h3>Cobertura nacional</h3>
+                <p>Sucursales en Montevideo y el interior, facilitando el acceso en todo el país.</p>
+            </div>
+            <div class="card">
+                <img src="../assets/images/icon 6.png" alt="icono 6" />
+                <h3>Resultados rápidos</h3>
+                <p>Entrega ágil de estudios digitales, optimizando tiempos para pacientes y odontólogos.</p>
+            </div>
+            </div>
+            <button class="arrow right" onclick="scrollCarousel(1)">❯</button>
+        </div>
+        <section class="sec-instal">
+            <h2 class="sec-title">Nuestro Equipo Profesional</h2>
+            <div class="sec-content">
+                <div class="sec-img anim-left">
+                    <img src="../assets/images/group.jpg" alt="Equipo de la clínica odontológica">
+                </div>
+                <div class="sec-text anim-right">
+                    <p>
+                        En Clínica Imagen contamos con un equipo altamente calificado de profesionales comprometidos con brindar una atención integral, cálida y personalizada. Nos enorgullece trabajar en un entorno moderno y equipado para ofrecer tratamientos eficaces y seguros.
+                    </p>
+                    <a href="Nosotros.html" class="btn-nosotros">Conocé más sobre nosotros</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="jobs-section">
+        <!-- Intro -->
+            <div class="jobs-intro anim-left">
+                <h2>Oportunidades <span>Laborales</span></h2>
+                <p>
+                    En Clinica Imagen buscamos sumar talento profesional a nuestro equipo. 
+                    Si tienes formación en el área de la salud o administrativa, revisa las vacantes abiertas y postúlate.
+                </p>
+            </div>
+
+            <!-- Acordeón -->
+            <div class="accordion anim-right" >
+            <!-- Item 1 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>¿Sos odontólogo? ¡Te estamos buscando!</span>
+                    <span class="accordion-icon"><i class="fa-solid fa-sort-down"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                    <p>
+                        En nuestras sucursales de Carrasco y Atlántida estamos buscando odontólogos/as graduados con experiencia en atención integral. 
+                        Valoramos cercanía a las zonas de trabajo y compromiso con la atención de calidad.
+                    </p>
+                    <a href="formulario.html" class="btn-postulate">👉 Postúlate aquí</a>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>¿Eres instrumentista y buscas trabajo? ¡Unite a nuestro equipo!</span>
+                    <span class="accordion-icon"><i class="fa-solid fa-sort-down"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                    <p>
+                        Buscamos instrumentistas con formación técnica y experiencia en clínicas odontológicas. 
+                        El trabajo es en turnos rotativos y en un ambiente profesional de crecimiento.
+                    </p>
+                    <a href="formulario.html" class="btn-postulate">👉 Postúlate aquí</a>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>¿Te gustaría trabajar en administración? ¡Postúlate!</span>
+                    <span class="accordion-icon"><i class="fa-solid fa-sort-down"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                    <p>
+                        Necesitamos administrativos/as para gestión de pacientes, agendamiento y soporte en nuestras clínicas. 
+                        Preferentemente con experiencia en atención al público y manejo de sistemas informáticos.
+                    </p>
+                    <a href="formulario.html" class="btn-postulate">👉 Postúlate aquí</a>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="../assets/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="Nosotros.html" class="footer-link">Ver más sobre nosotros <i class="fa-solid fa-location-dot"></i></a>
+
+                    <form action="../../back/forms/contacto.php" method="POST" class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <!-- Contenedor para mostrar mensajes -->
+                    <div id="formMsg" style="margin-top:10px; font-weight:bold;"></div>
+
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <p class="footer-text">
+                        abajo encontraras nuestras diferentes sucursales.
+                    </p>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí <i class="fa-solid fa-location-dot"></i></a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

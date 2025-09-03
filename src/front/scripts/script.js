@@ -1,0 +1,153 @@
+// Menu Hamburguesa
+const header = document.getElementById("main-header");
+const toggleBtn = document.getElementById("toggle-btn");
+const closeBtn = document.getElementById("close-btn");
+const overlay = document.getElementById("overlay");
+const menuLinks = document.querySelectorAll("#main-nav a");
+
+function openMenu() {
+    header.classList.add("nav-open");
+    overlay.classList.add("activo");
+    document.body.classList.add("no-scroll");
+    document.documentElement.classList.add("no-scroll"); // también en <html>
+}
+
+function closeMenu() {
+    header.classList.remove("nav-open");
+    overlay.classList.remove("activo");
+    document.body.classList.remove("no-scroll");
+    document.documentElement.classList.remove("no-scroll");
+}
+
+
+toggleBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+
+// ====== EFECTO SHRINK AL SCROLL ======
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 50) {
+        header.classList.add("shrink");
+    } else {
+        header.classList.remove("shrink");
+    }
+});
+
+//Marcado de pagina de menu
+
+const current = window.location.pathname.split("/").pop().toLowerCase();
+const links = document.querySelectorAll("#main-nav a");
+
+links.forEach(link => {
+    const href = link.getAttribute("href").toLowerCase();
+    if (href === current || (href === "index.html" && current === "")) {
+    link.classList.add("active");
+    }
+});
+
+//Marcado de pagina en footer
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const currentPage = window.location.pathname.split('/').pop().split('.')[0];
+        const links = document.querySelectorAll('.footer-link');
+
+        links.forEach(link => {
+            const page = link.dataset.page;
+            if (page && page.toLowerCase() === currentPage.toLowerCase()) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+//Burbuja de whatsapp
+
+document.getElementById("whatsapp-btn").addEventListener("click", function () {
+    const phoneNumber = "598092745398";
+    const message = "Hola, quiero agendar una cita.";
+    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+});
+
+
+//Carrusel de porque elegirnos
+
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById('carousel');
+        const scrollAmount = carousel.offsetWidth * 0.7; // 70% del ancho visible
+        carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+
+// Animación on-scroll desde la izquierda de llamado laboral
+
+    const items = document.querySelectorAll(".accordion-item");
+
+    items.forEach(item => {
+        const header = item.querySelector(".accordion-header");
+
+        header.addEventListener("click", () => {
+            // Cierra los demás
+            items.forEach(i => {
+            if (i !== item) {
+                i.classList.remove("active");
+            }
+            });
+
+            // Toggle actual
+            item.classList.toggle("active");
+        });
+    });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elementosAnimados = document.querySelectorAll('.anim-left, .anim-right');
+
+    if (!elementosAnimados.length) return;
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -20% 0px',
+        threshold: 0.05
+    });
+
+    elementosAnimados.forEach(el => observer.observe(el));
+    });
+
+    // Boton desplegable mobile
+function toggleFooterSection(button) {
+    const section = button.parentElement;
+    const isActive = section.classList.contains("active");
+
+  // Cerrar todas las demás
+    document.querySelectorAll(".footer-section").forEach((s) => {
+    s.classList.remove("active");
+    });
+
+  // Si no estaba activa, activarla
+    if (!isActive) {
+    section.classList.add("active");
+    }
+}
+
+// ========== FORMULARIO ==========
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+        let captcha = document.getElementById("captcha").value.trim();
+        let captchaError = document.getElementById("captchaError");
+
+        if (captcha !== "7") {
+            e.preventDefault();
+            captchaError.textContent = "Captcha incorrecto, inténtalo de nuevo.";
+        } else {
+            captchaError.textContent = "";
+        }
+    });

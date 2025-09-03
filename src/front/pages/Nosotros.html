@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" style="view-transition-name: page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Imagen - Nosotros</title>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/logo.ico" sizes="32x32"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/config_in.css">
+    <link rel="stylesheet" href="../assets/styles/style_nosotros.css">
+    <script src="../scripts/script_nosotros.js" defer></script>
+</head>
+<body>
+    <header id="main-header">
+        <a href="index.html" class="logo">
+            <img src="../assets/images/Logo clinica.png" alt="Logo de la empresa" />
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="toggle-btn">☰</button>
+
+        <!-- Menú -->
+        <nav id="main-nav">
+            <button class="close-btn" id="close-btn">✖</button>
+            <a href="index.html">Inicio</a>
+            <a href="tratamientos.html">Tratamientos</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="login.html" class="login-btn">Log in</a>
+        </nav>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <section class="equipo">
+        <span>
+            <h2>Comprometidos en brindarte lo mejor</h2>
+            <p class="equipo-descripcion">
+                Las personas son el pilar de nuestra actividad, por eso nuestro equipo se capacita continuamente para poner a su disposición los últimos avances científicos y tecnológicos en el servicio que le brindamos.
+            </p>
+        </span>
+        <div class="tarjeta-container">
+            <button id="prev-btn" class="flecha">&#10094;</button>
+
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <img src="../assets/images/javier.JPG" alt="Dr. Javier De Lima Moreno">
+                    <h3>Dr. Javier De Lima Moreno</h3>
+                    <p class="rol">Director - CEO</p>
+                    <a href="equipo.html?persona=javier" class="btn-ver-mas">Ver más</a>
+                </div>
+                <div class="tarjeta">
+                    <img src="../assets/images/laura.jpg" alt="Dra. Laura Duque">
+                    <h3>Dra. Laura Duque</h3>
+                    <p class="rol">Odontología / Imagenología</p>
+                    <a href="equipo.html?persona=laura" class="btn-ver-mas">Ver más</a>
+                </div>
+                <div class="tarjeta">
+                    <img src="../assets/images/sabrina.jpg" alt="Dra. Sabrina Nieves">
+                    <h3>Dra. Sabrina Nieves</h3>
+                    <p class="rol">Ortodoncia / Trazados Cefalométricos</p>
+                    <a href="equipo.html?persona=sabrina" class="btn-ver-mas">Ver más</a>
+                </div>
+                <div class="tarjeta">
+                    <img src="../assets/images/rosina.jpg" alt="Rosina Canavero">
+                    <h3>Rosina Canavero</h3>
+                    <p class="rol">Secretaría Coordinadora</p>
+                    <a href="equipo.html?persona=rosina" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+            
+            <button id="next-btn" class="flecha">&#10095;</button>
+        </div>
+        <div class="info-section">
+            <div class="info-card from-left">
+                <h3>Objetivos</h3>
+                <p>Consolidarse como referente nacional en imagenología dental digital, expandiendo sus servicios con tecnología de vanguardia y accesibilidad online total, en múltiples sedes dentro de Uruguay.</p>
+            </div>
+
+            <div class="info-card from-right">
+                <h3>Metas</h3>
+                <p>Impulsar el acceso universal al diagnóstico odontológico digital mediante escaneos, tomografías cone beam, impresión 3D y plataformas como MedCloud para compartir resultados en línea en tiempo real.</p>
+            </div>
+
+            <div class="info-card from-left">
+                <h3>Misión</h3>
+                <p>Brindar servicios de diagnóstico por imágenes odontológicas con alta precisión, bajo nivel de radiación y tecnología de última generación, asegurando rapidez, seguridad y disponibilidad digital constante.</p>
+            </div>
+
+            <div class="info-card from-right">
+                <h3>Visión</h3>
+                <p>Universalizar la odontología digital en Uruguay, liderando la transformación tecnológica del sector con innovación, accesibilidad y excelencia en cada sede y estudio realizado.</p>
+            </div>
+
+            <div class="info-card from-left">
+                <h3>Valores</h3>
+                <p>Innovación tecnológica, precisión diagnóstica, seguridad del paciente, accesibilidad digital, atención personalizada y profesionalismo humano como pilares del servicio.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="../assets/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="Nosotros.html" class="footer-link">Ver más sobre nosotros <i class="fa-solid fa-location-dot"></i></a>
+
+                    <form action="../../back/forms/contacto.php" method="POST" class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <!-- Contenedor para mostrar mensajes -->
+                    <div id="formMsg" style="margin-top:10px; font-weight:bold;"></div>
+
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <p class="footer-text">
+                        abajo encontraras nuestras diferentes sucursales.
+                    </p>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí <i class="fa-solid fa-location-dot"></i></a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* ============================= */
+/* 🎨 PALETA DE LA CLÍNICA       */
+/* ============================= */
+:root {
+    /* Colores base */
+    --color-bg: #D1ECF9;
+    --color-primary: #1A3C57;      
+    --color-white: #F4F4F5;
+    --color-mint: #72e681;
+    --color-black: #141313;
+
+    /* Hover y estados */
+    --color-hover-primary: #16334a;
+    --color-hover-mint: #9be0a6;
+
+    /* Texto */
+    --text-primary: var(--color-primary);
+    --text-on-dark: var(--color-black);
+
+  /* Tipografía */
+    --fiont-man: "Roboto", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;;
+    --font-size-base: 16px;
+
+    /* Dimensiones */
+    --header-height: 60px;
+    --border-radius: 6px;
+
+    /* Otros */
+    --transition: 0.3s ease-in-out;
+}
+
+/* View Transitions - Animación deslizante*/
+
+@view-transition{
+    navigation: auto;
+}
+
+::view-transition-group(*){
+    animation-duration: 1s;
+}
+
+::view-transition-old(root){
+    animation: slide-out-to-left 1s forwards;
+}
+
+::view-transition-new(root){
+    animation: slide-in-from-right 1s forwards;
+}
+
+@keyframes slide-out-to-left{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-in-from-right{
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* ============================= */
+/* 🔃 RESETEO Y BASE             */
+/* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--fiont-man);
+    font-size: var(--font-size-base);
+    background-color: var(--color-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}

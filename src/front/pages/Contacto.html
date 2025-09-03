@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" style="view-transition-name: page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Imagen | Contacto</title>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/logo.ico" sizes="32x32"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/config_in.css">
+    <link rel="stylesheet" href="../assets/styles/style_contacto.css">
+    <script src="../scripts/script_contacto.js" defer></script>
+</head>
+<body>
+    <header id="main-header">
+        <a href="index.html" class="logo">
+            <img src="../assets/images/Logo Clinica.png" alt="Logo de la empresa" />
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="toggle-btn">☰</button>
+
+        <!-- Menú -->
+        <nav id="main-nav">
+            <button class="close-btn" id="close-btn">✖</button>
+            <a href="index.html">Inicio</a>
+            <a href="tratamientos.html">Tratamientos</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="login.html" class="login-btn">Log in</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <span>
+            <h1>Contáctanos</h1>
+            <h2>Estamos aquí para ayudarte</h2>
+            <p>
+                Si tienes alguna consulta sobre nuestros servicios, necesitas agendar una cita o simplemente quieres
+                más información sobre nuestras sedes y horarios, no dudes en comunicarte con nosotros. 
+                Nuestro equipo de atención al cliente responderá a tu mensaje lo antes posible para brindarte
+                la asistencia que necesitas.
+            </p>
+            </span>
+        </section>
+        <div class="whatsapp-float" id="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
+            <span class="tooltip">Agendate ahora</span>
+        </div>  
+        <div class="hero-shadow"></div>
+                <section class="sede-principal">
+            <h2 class="sede-titulo">Nuestra Sede Principal</h2>
+            <div class="sede-contenido">
+                <div class="sede-video">
+                    <video controls>
+                        <source src="../assets/videos/video-sede.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <div class="sede-texto">
+                    <p>
+                        Nuestra clínica principal se encuentra ubicada en nuestra Sede Carrasco, más exacto en el Portal de las Américas, Av. De las Américas 6000, loc 109, Departamento de Canelones.
+                    </p>
+                    <p>
+                        Clínica Imagen emplea entre 11 y 50 personas, distribuidas en distintas sedes y laboratorios, lo que garantiza una atención eficiente y personalizada en cada etapa del proceso diagnóstico y de atención.
+                    </p>
+                    <p>
+                        Nuestra clínica odontológica cuenta con profesionales con más de 10 años de experiencia, por lo cual podemos asegurarte tranquilidad y seguridad a la hora de cuidar tu salud dental.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="ubicacion-header">
+            <h2>Elija aquí un departamento para información directa</h2>
+            <select id="departamentoSelect">
+            <option value="">Buscar por departamento</option>
+            <option value="Montevideo">Montevideo</option>
+            <option value="Canelones">Canelones</option>
+            <option value="Maldonado">Maldonado</option>
+            <option value="Colonia">Colonia</option>
+            <option value="San José">San José</option>
+            </select>
+        </section>
+
+        <div class="carousel-wrapper">
+            <button class="arrow left" id="prevBtn">&#10094;</button>
+            <div class="carousel-container" id="carousel"></div>
+            <button class="arrow right" id="nextBtn">&#10095;</button>
+        </div>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Resultados</h2>
+                <p id="modal-info" class="modal-info"></p>
+                <div id="modal-results" class="card-list"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="../assets/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="Nosotros.html" class="footer-link">Ver más sobre nosotros <i class="fa-solid fa-location-dot"></i></a>
+
+                    <form action="../../back/forms/contacto.php" method="POST" class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <!-- Contenedor para mostrar mensajes -->
+                    <div id="formMsg" style="margin-top:10px; font-weight:bold;"></div>
+
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <p class="footer-text">
+                        abajo encontraras nuestras diferentes sucursales.
+                    </p>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí <i class="fa-solid fa-location-dot"></i></a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

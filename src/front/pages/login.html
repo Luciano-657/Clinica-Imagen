@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" style="view-transition-name: page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Imagen | Log in</title>
+    <link rel="icon" href="src/images/logo.ico" sizes="32x32"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/login.css">
+    <script src="../scripts/Script_login.js" defer></script>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="container">
+
+        <!-- REGISTRO -->
+        <div class="form-container register-container">
+            <form id="registerForm">
+                <h1>Registrarse Aquí</h1>
+                <input type="text" id="nombre" placeholder="Nombre" required />
+                <input type="email" id="register-email" placeholder="Correo" required />
+                <div class="password-container">
+                    <input type="password" id="register-pass" placeholder="Contraseña" required />
+                    <button type="button" class="toggle-pass"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <button type="submit">Registrarse</button>
+                <button type="button" class="mobile-switch" id="back-to-login">Volver</button>
+                <span>O usá tu cuenta</span>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
+                    <a href="#" class="social"><i class="lni lni-google"></i></a>
+                    <a href="#" class="social"><i class="lni lni-linkedin-original"></i></a>
+                </div>
+            </form>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="form-container login-container">
+            <form id="loginForm">
+                <a href="index.html"><i class="fa-solid fa-arrow-rotate-left"></i> Regresar</a>
+                <h1>Iniciar sesión Aquí</h1>
+                <input type="email" id="login-email" placeholder="Correo" required />
+                <div class="password-container">
+                    <input type="password" id="login-pass" placeholder="Contraseña" required />
+                    <button type="button" class="toggle-pass"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <div class="content">
+                    <div class="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <label for="checkbox">Recuérdame</label>
+                    </div>
+                    <div class="pass-link">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+                <button type="submit">Log in</button>
+                <button type="button" class="mobile-switch" id="show-register">¿No tenés cuenta? Registrate</button>
+                <span>O usá tu Cuenta</span>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="lni lni-facebook-fill"></i></a>
+                    <a href="#" class="social"><i class="lni lni-google"></i></a>
+                    <a href="#" class="social"><i class="lni lni-linkedin-original"></i></a>
+                </div>
+            </form>
+        </div>
+
+        <!-- OVERLAY -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1 class="title">Hola <br> Amigo</h1>
+                    <p>Si ya tienes una cuenta logueate aquí</p>
+                    <button class="ghost" id="login">Log in
+                        <i class="lni lni-arrow-left login"></i>
+                    </button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 class="title">Comienza aquí</h1>
+                    <p>Si no tienes tu cuenta todavía, unetenos</p>
+                    <button class="ghost" id="register">Registrarse
+                        <i class="lni lni-arrow-right register"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Mensajes de login/register -->
+    <div id="mensaje"></div>
+</body>
+</html>

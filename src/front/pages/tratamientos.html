@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es" style="view-transition-name: page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Imagen | Tratamientos</title>
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/images/logo.ico" sizes="32x32"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/config_in.css">
+    <link rel="stylesheet" href="../assets/styles/style_tratamientos.css">
+    <script src="../scripts/script_tratamientos.js" defer></script>
+</head>
+
+<body>
+    <header id="main-header">
+        <a href="index.html" class="logo">
+            <img src="../assets/images/Logo Clinica.png" alt="Logo de la empresa" />
+        </a>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle" id="toggle-btn">☰</button>
+
+        <!-- Menú -->
+        <nav id="main-nav">
+            <button class="close-btn" id="close-btn">✖</button>
+            <a href="index.html">Inicio</a>
+            <a href="tratamientos.html">Tratamientos</a>
+            <a href="Contacto.html">Contacto</a>
+            <a href="login.html" class="login-btn">Log in</a>
+        </nav>
+    </header>
+    <div id="overlay"></div>
+    <main>
+        <section class="hero">
+            <span>
+                <h1>Tu aliado en derivación odontológica</h1>
+                <p>
+                    En CEO nos especializamos en brindar servicios de alta calidad a odontólogos que desean derivar a sus pacientes con la seguridad de que recibirán una atención ética, profesional y especializada. <br>
+                    Nos comprometemos a devolver al paciente a su profesional de cabecera, fortaleciendo la confianza y el trabajo colaborativo.
+                </p>
+            </span>
+        </section>
+        <div class="hero-shadow"></div>
+        <div class="whatsapp-float" id="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
+            <span class="tooltip">Agendate ahora</span>
+        </div>  
+        <section class="seccion-metodos-tratamientos">
+        <div class="contenedor-metodos">            
+            <h2 class="titulo-seccion">Nuestros Métodos y Tratamientos</h2>
+            <div class="grid-metodos">
+            
+                <div class="card-metodo">
+                    <div class="numero-metodo">1</div>
+                    <p>Mantener un ambiente esterilizado rigurosamente antes de cada tratamiento, asegurando un entorno limpio y libre de infecciones para la tranquilidad de nuestros pacientes.</p>
+                </div>
+                
+                <div class="card-metodo">
+                    <div class="numero-metodo">2</div>
+                    <p>Realizar estudios multidisciplinarios en conjunto con un equipo de odontólogos y especialistas para diseñar planes de tratamiento personalizados y adaptados a cada necesidad.</p>
+                </div>
+            
+                <div class="card-metodo">
+                    <div class="numero-metodo">3</div>
+                    <p>Emplear escáneres intraorales que permiten capturar impresiones tridimensionales sin molestias, facilitando procedimientos más cómodos y efectivos.</p>
+                </div>
+            
+                <div class="card-metodo">
+                    <div class="numero-metodo">4</div>
+                    <p>Seguir estrictos protocolos en la administración de medios de contraste y mantener una comunicación clara con el paciente sobre cada procedimiento realizado.</p>
+                </div>
+
+                <div class="card-metodo">
+                    <div class="numero-metodo">5</div>
+                    <p>Fomentar la formación continua de nuestro equipo clínico, garantizando la actualización constante en técnicas, tecnologías y mejores prácticas odontológicas.</p>
+                </div>
+                        
+                <div class="card-metodo">
+                    <div class="numero-metodo">6</div>
+                    <p>Documentar y planificar nuestros tratamientos mediante fotografías clínicas intra y extraorales para asegurar un seguimiento detallado de la evolución de cada caso.</p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <div class="filtros-container">
+            <button class="filtro-btn active" data-filtro="todos">Todos</button>
+            <button class="filtro-btn" data-filtro="ortodoncia">Ortodoncia</button>
+            <button class="filtro-btn" data-filtro="estetica">Estética</button>
+            <button class="filtro-btn" data-filtro="rehabilitacion">Rehabilitación</button>
+            <button class="filtro-btn" data-filtro="prevencion">Prevención</button>
+            <button class="filtro-btn" data-filtro="infantil">Infantil</button>
+            <button class="filtro-btn" data-filtro="especialidades">Especialidades</button>
+        </div>
+
+        <!-- TARJETAS -->
+        <div class="grid-container">
+            <div class="card-tratamiento" data-categoria="ortodoncia">
+            <img src="../assets/images/ortodoncia.jpg" alt="Ortodoncia" />
+            <div class="card-header">
+                <h3>Ortodoncia</h3>
+                <p>Corrige la alineación dental y mejora la mordida.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="infantil">
+            <img src="../assets/images/ortopedia-Maxilar.jpg" alt="Ortopedia Maxilar" />
+            <div class="card-header">
+                <h3>Ortopedia Maxilar</h3>
+                <p>Corrige problemas óseos en los niños.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="rehabilitacion">
+            <img src="../assets/images/implantes-dentales.jpg" alt="Implantes" />
+            <div class="card-header">
+                <h3>Implantes Dentales</h3>
+                <p>Reemplaza dientes perdidos de forma fija.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="estetica">
+            <img src="../assets/images/estetica-dental.jpg" alt="Estética Dental" />
+            <div class="card-header">
+                <h3>Estética Dental</h3>
+                <p>Mejora la apariencia de tu sonrisa.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="estetica">
+            <img src="../assets/images/blanqueamiento-dental.jpg" alt="Blanqueamiento" />
+            <div class="card-header">
+                <h3>Blanqueamiento Dental</h3>
+                <p>Ilumina y aclara tus dientes.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="../assets/images/peridoncia.jpg" alt="Periodoncia" />
+            <div class="card-header">
+                <h3>Periodoncia</h3>
+                <p>Tratamiento de encías y tejidos de soporte.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="rehabilitacion">
+            <img src="../assets/images/protesis-dental.jpg" alt="Prótesis" />
+            <div class="card-header">
+                <h3>Prótesis Dentales</h3>
+                <p>Reemplazan piezas dentarias perdidas.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="../assets/images/endodoncia.jpg" alt="Endodoncia" />
+            <div class="card-header">
+                <h3>Endodoncia</h3>
+                <p>Tratamiento de conductos o nervios.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="../assets/images/cirugia-bucal.jpg" alt="Cirugía" />
+            <div class="card-header">
+                <h3>Cirugía Bucal</h3>
+                <p>Extracciones y procedimientos quirúrgicos.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="infantil">
+            <img src="../assets/images/odontopediatria.jpg" alt="Odontopediatría" />
+            <div class="card-header">
+                <h3>Odontopediatría</h3>
+                <p>Odontología infantil preventiva y curativa.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="../assets/images/bruxismo-placas.jpg" alt="Bruxismo" />
+            <div class="card-header">
+                <h3>Bruxismo y Placas</h3>
+                <p>Controla el rechinar de los dientes.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="rehabilitacion">
+            <img src="../assets/images/rehabiltiacion-oral.jpg" alt="Rehabilitación" />
+            <div class="card-header">
+                <h3>Rehabilitación Oral</h3>
+                <p>Recupera funcionalidad oral completa.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="../assets/images/radiografia-odontologica.jpg" alt="Radiología" />
+            <div class="card-header">
+                <h3>Radiología Odontológica</h3>
+                <p>Diagnóstico con imágenes dentales.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="prevencion">
+            <img src="../assets/images/prevencion.jpg" alt="Prevención" />
+            <div class="card-header">
+                <h3>Diagnóstico y Prevención</h3>
+                <p>Chequeos y cuidados para evitar enfermedades.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+
+            <div class="card-tratamiento" data-categoria="especialidades">
+            <img src="../assets/images/urgencia-odontologica.jpg" alt="Urgencias" />
+            <div class="card-header">
+                <h3>Urgencias Odontológicas</h3>
+                <p>Atención inmediata ante emergencias dentales.</p>
+                <button class="btn-toggle">Ver más</button>
+            </div>
+            </div>
+        </div>
+
+
+        <div id="modal-overlay" class="modal-overlay"></div>
+        <div id="modal-tratamiento" class="modal hidden">
+            <button class="modal-close" aria-label="Cerrar modal">✖</button>
+            <div class="modal-content">
+                <img id="modal-img" alt="" class="modal-img" />
+                <h2 id="modal-title">Título</h2>
+                <p id="modal-desc-corta" class="desc-corta">Descripción corta</p>
+                <h3>Beneficios</h3>
+                <ul id="modal-beneficios">
+                <li>Beneficio 1</li>
+                <li>Beneficio 2</li>
+                </ul>
+                <div class="modal-nav">
+                    <button id="prev-tratamiento" class="modal-nav-btn">⟵ Anterior</button>
+                    <button id="next-tratamiento" class="modal-nav-btn">Siguiente ⟶</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Logo de la clínica -->
+            <div class="footer-logo">
+                <img src="../assets/images/Logo Clinica.png" alt="Logo Clínica Imagen">
+            </div>
+
+            <!-- Sección: Sobre Nosotros -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Sobre Nosotros <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-sobre">
+                    <p class="footer-text">
+                        Somos especialistas en odontología integral con enfoque humano.
+                    </p>
+                    <a href="Nosotros.html" class="footer-link">Ver más sobre nosotros <i class="fa-solid fa-location-dot"></i></a>
+
+                    <form action="../../back/forms/contacto.php" method="POST" class="footer-form" id="consultaForm">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                        <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <!-- Contenedor para mostrar mensajes -->
+                    <div id="formMsg" style="margin-top:10px; font-weight:bold;"></div>
+
+                </div>
+            </div>
+
+            <!-- Sección: Contacto -->
+            <div class="footer-section">
+                <button class="footer-toggle" onclick="toggleFooterSection(this)">
+                    Contacto  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="footer-content-contacto">
+                    <p class="footer-text">
+                        abajo encontraras nuestras diferentes sucursales.
+                    </p>
+                    <a href="Contacto.html" class="footer-link" data-page="Contacto">Encuéntranos Aquí <i class="fa-solid fa-location-dot"></i></a>
+                    <p class="footer-text">Disfrutá nuestras redes sociales:</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/clinicaimagenuy/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/clinicaimagenuy" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/clinicaimagenuy/" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/ClinicaImagenUy/" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Derechos -->
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Imagen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

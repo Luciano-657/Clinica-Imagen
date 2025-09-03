@@ -1,0 +1,69 @@
+# Docker Compose para Apache + PHP + MySQL + phpMyAdmin
+# Configuración optimizada para desarrollo local
+# Autor: Chris
+
+version: '3.8'
+
+services:
+  # Servidor web Apache con PHP
+  web:
+    build: .
+    container_name: apache_php
+    ports:
+      - "8080:80"  # Tu sitio estará en http://localhost:8080
+    volumes:
+      - ./src:/var/www/html  # Carpeta donde pondrás tu código
+    depends_on:
+      - db
+    networks:
+      - lamp_network
+    # Extensiones PHP necesarias
+    command: >
+      bash -c "
+        docker-php-ext-install pdo pdo_mysql mysqli &&
+        apache2-foreground
+      "
+
+  # Base de datos MySQL
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: mi_app_db
+      MYSQL_USER: chris
+      MYSQL_PASSWORD: chris123
+    ports:
+      - "3306:3306"  # Para conectar Workbench
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Script inicial
+    networks:
+      - lamp_network
+
+  # phpMyAdmin para administrar la BD
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"  # phpMyAdmin en http://localhost:8081
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    depends_on:
+      - db
+    networks:
+      - lamp_network
+
+# Red interna para que los contenedores se comuniquen
+networks:
+  lamp_network:
+    driver: bridge
+
+# Volumen persistente para la base de datos
+volumes:
+  mysql_data:

@@ -1,0 +1,9 @@
+# construir y levantar todos los contenedores
+docker-compose up -d
+
+# ver el estado de los contenedores
+docker-compose ps
+
+
+# acceso al front
+localhost:8080/front/index.html

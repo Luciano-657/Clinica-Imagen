@@ -1,0 +1,2 @@
+# Ignorar script de creación de base de datos
+/init.sql
