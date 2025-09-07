@@ -181,8 +181,8 @@ header.shrink nav a {
 }
 
 /* Ocultar tooltip en mobile/tablet */
-.tooltip {
-    display: none;
+.tooltipp {
+    display: none !important;
 }
 
 /* === ANIMACIÓN === */
@@ -196,6 +196,280 @@ header.shrink nav a {
         opacity: 1;
     }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ==================================== */
+/*    Sección introducción orden online */
+/* ==================================== */
+.seccion-introduccion-orden {
+    margin-top: 6rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+/* ============================= */
+/*    Sección Orden Online       */
+/* ============================= */
+.my-3 {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+}
+.me-4 {
+    border-radius: 6px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.me-4 p{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 0.5;
+    
+}
+.accordion-body {
+    display: flex;
+    
+    justify-content: center;
+    flex-direction: column;
+}
+.fila-numeros input {
+    display: none;
+}
+.fila-numeros-16 input {
+    display: none;
+}
+.fila-numeros {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0px;
+    justify-content: center;
+    max-width: 180px;
+    margin: auto;
+    
+}
+.fila-numeros-16 {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    margin: auto;
+}
+.fila-numeros-16 label {
+    border: 1px solid #66acb2;
+    
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    color: #3a3957;
+    border: 1px solid #66acb2;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fcfcfd;
+    transition: background 0.3s, border-color 0.3s;
+    
+
+}
+.fila-numeros label {
+    border: 1px solid #66acb2;
+    width: 25px;
+    height: 25px;
+    color: #3a3957;
+    border: 1px solid #66acb2;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+input[type="checkbox"] {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #fcfcfd;
+    border: solid 1px #66acb2 !important;
+    border-radius: 3px;
+    
+}
+.text-start {
+    text-align: center;
+}
+.col-md {
+    display: flex;
+    flex-direction: column;
+}
+.col-md input {
+    flex: 1;
+    border: 1px solid #99d6dd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.seccion-ordenonline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 2rem 1rem;
+    background: #f8fafc;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(22, 51, 74, 0.12);
+    max-width: 900px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seccion-ordenonline h1,
+.seccion-ordenonline h2,
+.seccion-ordenonline h3,
+.seccion-ordenonline h4 {
+    color: #16334a;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 0.7rem;
+    font-weight: 700;
+}
+
+.seccion-ordenonline h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.seccion-ordenonline h2 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.seccion-ordenonline h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.seccion-ordenonline p {
+    color: #2d3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.seccion-ordenonline form {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(22, 51, 74, 0.1);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.seccion-ordenonline label {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #16334a;
+    font-size: 1rem;
+    display: inline-block;
+}
+#estudio-cefalo-compu label {
+    font-size: 0.9rem;
+    padding: 5px;
+}
+#modelos-digitales {
+    font-size: 0.9rem;
+    padding: 5px;
+}
+
+.seccion-ordenonline input[type="text"],
+.seccion-ordenonline input[type="email"],
+.seccion-ordenonline input[type="tel"],
+.seccion-ordenonline input[type="date"],
+.seccion-ordenonline textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #99d6dd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background: #f4f8fb;
+    transition: border-color 0.2s;
+}
+
+.seccion-ordenonline input[type="text"]:focus,
+.seccion-ordenonline input[type="email"]:focus,
+.seccion-ordenonline input[type="tel"]:focus,
+.seccion-ordenonline input[type="date"]:focus,
+.seccion-ordenonline textarea:focus {
+    border-color: #04c0f5;
+    outline: none;
+}
+
+.seccion-ordenonline input[type="checkbox"] {
+    accent-color: #04c0f5;
+    margin-right: 0.3rem;
+    transform: scale(1.2);
+    vertical-align: middle;
+}
+
+.sacar-color {
+    background-color: transparent !important;
+    
+}
+
+
+.seccion-ordenonline .my-3,
+.seccion-ordenonline .row,
+.seccion-ordenonline .col-md,
+.seccion-ordenonline .bg-primary-subtle {
+    margin-bottom: 1rem;
+}
+
+.seccion-ordenonline button[type="submit"] {
+    background: #04c0f5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 8px rgba(22, 51, 74, 0.08);
+    transition: background 0.2s;
+}
+
+.seccion-ordenonline button[type="submit"]:hover {
+    background: #16334a;
+}
+
+@media (min-width: 768px) {
+    .seccion-ordenonline {
+        padding: 3rem 2rem;
+    }
+    .seccion-ordenonline form {
+        padding: 2.5rem 2rem;
+    }
+}
+
+
+/* ============================= */
+/*    FOOTER                     */
+/* ============================= */
 
 @keyframes fadeIn {
     from {
@@ -383,68 +657,13 @@ header.shrink nav a {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
+/* ============================= */
+/*    TABLET                     */
+/* ============================= */
+
 @media (min-width: 768px) and (max-width: 1023px) {
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
-
-    nav {
-        position: static;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        height: auto;
-        background-color: transparent;
-        width: auto;
-        max-width: none;
-        padding: 0;
-        gap: 0.5rem;
-        right: auto;
-        transition: none;
-    }
-
-    nav a{
-        font-size: 1rem;
-    }
-
-    nav a.active {
-        color: #04c0f5;
-    }
-
-    nav a.active::after {
-        width: 100%;
-        background: #04c0f5;
-    }
-
-    .menu-toggle,
-    .close-btn,
-    .overlay {
-        display: none !important;
-    }
-
-    .logo img {
-        height: 70px;
-    }
-
-    /* ============================= */
-    /*    WHATSAPP-ICON              */
-    /* ============================= */
-
-    .whatsapp-float{
-        width: 75px;
-        height: 75px;
-    }
-
-    .fa-xl {
-    font-size: 3.5em;
-    }
-
-    /* ============================= */
-    /*    FOOTER                     */
-    /* ============================= */
-
-        .footer-container {
+    .footer-container {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -494,15 +713,51 @@ header.shrink nav a {
 /* ============================= */
 
 @media (min-width: 1024px) {
+    /* ============================= */
+    /*    WHATSAPP-ICON              */
+    /* ============================= */
 
-/* ============================= */
-/*    HEADER Y MENÚ              */
-/* ============================= */
-
-    header {
-    padding: 0.5rem 0.5rem;
+    .tooltipp {
+        display: inline-block !important;
+        position: absolute;
+        right: 70px;
+        background-color: #25d366;
+        color: var(--color-white);
+        padding: 6px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        font-size: 14px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        margin-right: 20px;
+        font-weight: bold;
     }
 
+
+    .whatsapp-float{
+        width: 75px;
+        height: 75px;
+    }
+
+    .fa-xl {
+    font-size: 3.5em;
+    }
+
+    .whatsapp-float:hover .tooltipp {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+    }
+    .menu-toggle,
+    .close-btn,
+    #overlay {
+        display: none !important;
+    }
     nav {
         position: static;
         display: flex;
@@ -517,14 +772,12 @@ header.shrink nav a {
         right: auto;
         transition: none;
     }
-
-    nav a{ 
-    font-size: 1rem;
+    nav a{
+        font-size: 1rem;
     }
 
     nav a.active {
-    color: #04c0f5;
-    font-weight: bolder;
+        color: #04c0f5;
     }
 
     nav a.active::after {
@@ -538,20 +791,39 @@ header.shrink nav a {
         display: none !important;
     }
 
+    .logo img {
+        height: 70px;
+    }
     .login-btn {
         border-left: 3px solid rgba(255, 255, 255, 0.6);
         padding-left: 1rem;
         border-radius: 0px;
     }
+    /* ==================================== */
+    /*  Sección introducción orden online   */
+    /* ==================================== */
+    .seccion-ordenonline {
+        margin-bottom: 5vh;
+    }
+    .intro-section {
+        padding: 2rem 0;
+        background-color: var(--color-background);
+    }
 
-    .logo img {
-        height: 80px;
+    .intro-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+    }
+
+    .intro-section p {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
     }
 
     /* ============================= */
-    /*    WHATSAPP-ICON              */
+    /*    FOOTER                     */
     /* ============================= */
-
     .footer-container {
         flex-direction: row;
         justify-content: space-between;

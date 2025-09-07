@@ -9,8 +9,11 @@
     <link rel="icon" href="../assets/images/logo.ico" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/styles/config_in.css">
-    <link rel="stylesheet" href="../assets/styles/style_descargables.css">
+    <link rel="stylesheet" href="../assets/styles/style_Descargables.css">
     <script src="../scripts/script_descargables.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 <body>
     <header id="main-header">
@@ -30,11 +33,11 @@
     <div id="overlay"></div>
     <main>
         <div class="hero-shadow"></div>
-        <div class="whatsapp-float" id="whatsapp-btn">
+        <div class="whatsapp-float no-bootstrap" id="whatsapp-btn">
             <i class="fa-brands fa-whatsapp fa-xl" style="color: #ffffff;"></i>
-            <span class="tooltip">Agendate ahora</span>
+            <span class="tooltipp no-bootstrap">Agendate ahora</span>
         </div>  
-        <section id="ordenes-descargables" class="container text-center pt-5 mt-5">
+        <section id="ordenes-descargables" class="seccion-introduccion-orden">
             <h1 class="mt-md-5 mt-3">Orden de estudio</h1>
             <div class="row justify-content-center">
                 <div class="col-md-4">
@@ -45,16 +48,16 @@
                         para
                         agendar la cita.</h2>
         </section>
-        <section id="formulario-orden" class="px-lg-4 mb-5">
+        <section id="formulario-orden" class="seccion-ordenonline">
             <form action="mail.php" method="post" class="container  mb-5" id="form-orden">
                 <div id="datos-paciente" class="row  justify-content-center ">
                     <h3>Datos del paciente</h3>
                     <div class="col-md">
-                        <label class="d-block" for="paciente">Nombre y apellido*</label>
+                        <label class="d-block" for="paciente">Nombre y apellido <span style="color:red">*</span></label>
                         <input type="text" class="w-100" id="paciente" name="paciente" required>
                     </div>
                     <div class="col-md">
-                        <label class="d-block" for="celular-paciente">Celular*</label>
+                        <label class="d-block" for="celular-paciente">Celular <span style="color:red">*</span></label>
                         <input type="number" class="w-100" id="celular-paciente" name="celular-paciente" required>
                     </div>
                     <div class="col-md">
@@ -65,12 +68,12 @@
                 <div id="datos-doctor" class="row justify-content-center my-4">
                     <h3>Profesional solicitante</h3>
                     <div class="col-md">
-                        <label class="d-block" for="nombre-doctor">Nombre</label>
+                        <label class="d-block" for="nombre-doctor">Nombre <span style="color:red">*</span></label>
                         <input type="text" class="w-100" id="nombre-doctor" name="nombre-doctor" autocomplete="on" required>
                     </div>
                     <div class="col-md">
-                        <label class="d-block" for="contacto-doctor">Mail</label>
-                        <input type="email" class="w-100" id="contacto-doctor" name="contacto-doctor" autocomplete="on">
+                        <label class="d-block" for="contacto-doctor">Mail <span style="color:red">*</span></label>
+                        <input type="email" class="w-100" id="contacto-doctor" name="contacto-doctor" autocomplete="on" required>
                     </div>
                     <div>
                         <label class="d-block mt-2" for="aclaracion">Aclaración</label>
@@ -86,8 +89,7 @@
                         <label for="imagencloud" class="me-4  d-block d-md-inline-block">
                             <input type="checkbox" id="imagencloud" name="medio[]" value="Imagen Cloud">
                             <i class="fi fi-ss-cloud-upload-alt  mx-1"></i>
-                            IMAGEN
-                                                CLOUD
+                            IMAGEN CLOUD
                         </label>
                         <label for="email-medio" class="me-4  d-block d-md-inline-block">
                             <input type="checkbox" id="email-medio" name="medio[]" value="Mail">
@@ -384,7 +386,7 @@
                                                                                         perfil
                                             </label>
                                         </div>
-                                        <div class="col-md bg-primary-subtle">
+                                        <div class="sacar-color">
                                             <p class="fw-bold m-0">Fotografías
                                                                                         bucales</p>
                                             <label for="ft-oclusal-2">
@@ -394,7 +396,7 @@
                                             </label>
                                             <br>
                                             <label for="ft-llave-oclusion">
-                                                <input type="checkbox" name="fotografias[]" id="ft-llave-oclusion" value="2 llaves de oclusión ">2
+                                                <input type="checkbox" name="fotografias[]"  value="2 llaves de oclusión ">2
                                                                                         llaves de oclusión 
                                             </label>
                                             <br>
@@ -444,7 +446,7 @@
                                                                         informe(Bolton, Moyers, medidas
                                                                         dentarias)
                                     </label>
-                                    <div class="bg-primary-subtle text-start  p-3">
+                                    <div class="text-start  p-3">
                                         <label for="modelo-zocalados">
                                             <input type="checkbox" name="modelos-digitales[]" id="modelo-zocalados" value="Impresión de modelos zocalados">Impresión
                                                                                 de modelos
@@ -680,7 +682,7 @@
                         </h3>
                         <div id="collapse5" class="accordion-collapse collapse ">
                             <div class="accordion-body my-3">
-                                <div class="bg-primary-subtle text-start p-2 mb-3">
+                                <div class="text-start p-2 mb-3">
                                     <label class="sub-titulos">Marque el/los servicios que
                                                                         necesita:</label>
                                     <label for="servicio-tomografia" class="me-4">
@@ -819,7 +821,7 @@
                                                                                 ortodoncia + placas de
                                                                                 contención.</strong>
                                     </label>
-                                    <div class="text-center bg-primary-subtle m-2">
+                                    <div class="text-center m-2">
                                         <label for="escaneo-superior" class="me-4">
                                             <input type="checkbox" class="hijo" name="otros-servicios[]" id="escaneo-superior" value="SUPERIOR">SUPERIOR
                                         </label>
@@ -849,7 +851,7 @@
                                         (Escaneo bucal + Impresión de modelo +
                                                                         placas)
                                     </label>
-                                    <div class="text-center bg-primary-subtle m-2">
+                                    <div class="text-center m-2">
                                         <label for="placas-superior" class="me-4">
                                             <input type="checkbox" class="hijo" name="otros-servicios[]" id="placas-superior" value="SUPERIOR">SUPERIOR
                                         </label>
@@ -894,7 +896,7 @@
                                                                         bucal)
                                     </label>
                                     <label for="color-protector">
-                                        <strong>| Color: </strong>
+                                        <strong>Color: </strong>
                                     </label>
                                     <input type="text" class="campo-texto" name="protector-bucal-color" id="color-protector">
                                 </div>
@@ -910,7 +912,7 @@
 </form></section>
         
     </main>
-    <footer class="footer">
+    <footer class="footer no-bootstrap">
         <div class="footer-container">
             
             <!-- Logo de la clínica -->

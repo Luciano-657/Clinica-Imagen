@@ -6,4 +6,4 @@ docker-compose ps
 
 
 # acceso al front
-localhost:8080/front/index.html
+localhost:8080/front/pages/index.html
