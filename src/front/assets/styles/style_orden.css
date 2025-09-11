@@ -385,6 +385,14 @@ input[type="checkbox"] {
     font-size: 1rem;
     display: inline-block;
 }
+.caja-ingresar-orden {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+}
 #estudio-cefalo-compu label {
     font-size: 0.9rem;
     padding: 5px;

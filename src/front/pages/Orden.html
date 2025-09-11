@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinica Imagen | Descargables</title>
+    <title>Clinica Imagen | Orden Online</title>
     <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/images/logo.ico" sizes="32x32"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/styles/config_in.css">
-    <link rel="stylesheet" href="../assets/styles/style_Descargables.css">
-    <script src="../scripts/script_descargables.js" defer></script>
+    <link rel="stylesheet" href="../assets/styles/style_orden.css">
+    <script src="../scripts/script_orden.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
@@ -26,7 +26,7 @@
             <a href="index.html">Inicio</a>
             <a href="tratamientos.html">Tratamientos</a>
             <a href="Contacto.html">Contacto</a>
-            <a href="Descargables.html">Descargables</a>
+            <a href="Orden.html">Orden Online</a>
             <a href="login.html" class="login-btn">Log in</a>
         </nav>
     </header>
@@ -49,8 +49,8 @@
                         agendar la cita.</h2>
         </section>
         <section id="formulario-orden" class="seccion-ordenonline">
-            <form action="mail.php" method="post" class="container  mb-5" id="form-orden">
-                <div id="datos-paciente" class="row  justify-content-center ">
+            <form action="../../back/forms/orden-online.php" method="post" class="container mb-5" id="form-orden">
+                <div id="datos-paciente" class="row justify-content-center">
                     <h3>Datos del paciente</h3>
                     <div class="col-md">
                         <label class="d-block" for="paciente">Nombre y apellido <span style="color:red">*</span></label>
@@ -79,35 +79,14 @@
                         <label class="d-block mt-2" for="aclaracion">Aclaración</label>
                         <input type="text" class="w-100" id="aclaracion" name="aclaracion">
                     </div>
-                    <fieldset class="text-start text-md-center pt-2" id="medio">
-                        <p class="sub-titulos">Medio*</p>
-                        <label for="impreso" class="me-4  d-block d-md-inline-block">
-                            <input type="checkbox" id="impreso" name="medio[]" value="Impreso">
-                            <i class="fi fi-ss-file-spreadsheet mx-1"></i>
-                            Impreso
-                        </label>
-                        <label for="imagencloud" class="me-4  d-block d-md-inline-block">
-                            <input type="checkbox" id="imagencloud" name="medio[]" value="Imagen Cloud">
-                            <i class="fi fi-ss-cloud-upload-alt  mx-1"></i>
-                            IMAGEN CLOUD
-                        </label>
-                        <label for="email-medio" class="me-4  d-block d-md-inline-block">
-                            <input type="checkbox" id="email-medio" name="medio[]" value="Mail">
-                            <i class="fi fi-ss-at  mx-1"></i>
-                            Email
-                        </label>
-                        <label for="medcloud" class="me-4  d-block d-md-inline-block">
-                            <input type="checkbox" id="medcloud" name="medio[]" value="Medcloud">
-                            <i class="fi fi-ss-cloud-upload-alt  mx-1"></i>
-                            Medcloud
-                        </label>
-                    </fieldset>
                 </div>
                 <div class="accordion accordion" id="accordionExample">
-                    <div class="accordion-item  text-center">
+                    <!-- Radiografías Intrabucales -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed text-center titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Radiografías Intrabucales
-                                                </button>
+                            <button class="accordion-button collapsed text-center titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Radiografías Intrabucales
+                            </button>
                         </h3>
                         <div id="collapseOne" class="accordion-collapse collapse">
                             <div id="radiografias-intrabucales" class="accordion-body my-3">
@@ -224,32 +203,37 @@
                                     <input type="checkbox" id="intra-75" name="radio-intra[]" value="75">
                                     <label for="intra-75">75</label>
                                 </div>
-                                <div class="my-3 ">
+                                <div class="my-3">
                                     <label for="conductimetria" class="me-4">
-                                        <input type="checkbox" id="conductimetria" name="radio-intra-tipo[]" value="Con conductimetría">Con
-                                                                        conductimetría
+                                        <input type="checkbox" id="conductimetria" name="radio-intra-tipo[]" value="Con conductimetría">
+                                        Con conductimetría
                                     </label>
                                     <label for="periapical" class="me-4">
-                                        <input type="checkbox" id="periapical" name="radio-intra-tipo[]" value="Periapical">Periapical
+                                        <input type="checkbox" id="periapical" name="radio-intra-tipo[]" value="Periapical">
+                                        Periapical
                                     </label>
                                     <label for="periapical-completo" class="me-4">
-                                        <input type="checkbox" id="periapical-completo" name="radio-intra-tipo[]" value="Relevamiento periapical completo">Relevamiento
-                                                                        periapical completo
+                                        <input type="checkbox" id="periapical-completo" name="radio-intra-tipo[]" value="Relevamiento periapical completo">
+                                        Relevamiento periapical completo
                                     </label>
                                     <label for="bitewing" class="me-4">
-                                        <input type="checkbox" id="bitewing" name="radio-intra-tipo[]" value="Bitewing">Bitewing
+                                        <input type="checkbox" id="bitewing" name="radio-intra-tipo[]" value="Bitewing">
+                                        Bitewing
                                     </label>
                                     <label for="oclusal" class="me-4">
-                                        <input type="checkbox" id="oclusal" name="radio-intra-tipo[]" value="Oclusal">Oclusal
+                                        <input type="checkbox" id="oclusal" name="radio-intra-tipo[]" value="Oclusal">
+                                        Oclusal
                                     </label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- Otros estudios extraorales -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Otros estudios extraorales
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Otros estudios extraorales
+                            </button>
                         </h3>
                         <div id="collapse2" class="accordion-collapse collapse">
                             <div id="otros-estudios-extraorales" class="accordion-body my-3 text-start text-md-center">
@@ -267,13 +251,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- Documentación para ortodoncia -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Documentación para ortodoncia
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Documentación para ortodoncia
+                            </button>
                         </h3>
-                        <div id="collapse3" class="accordion-collapse collapse ">
-                            <div class="accordion-body ">
+                        <div id="collapse3" class="accordion-collapse collapse">
+                            <div class="accordion-body">
                                 <h4>RADIOGRAFÍAS EXTRAORALES</h4>
                                 <div class="row text-start">
                                     <div class="col-md textogrupo" data-group="textogrupo4">
@@ -495,12 +481,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- Tomografía Computarizada Volumétrica CONE BEAM -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">Tomografía Computarizada Volumétrica CONE BEAM
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Tomografía Computarizada Volumétrica CONE BEAM
+                            </button>
                         </h3>
-                        <div id="collapse4" class="accordion-collapse collapse ">
+                        <div id="collapse4" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
                                 <div id="tomografia-computarizada" class="estudios-form">
                                     <p class="sub-titulos">Indicar región de interés</p>
@@ -675,12 +663,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- CIRUGÍA GUIADA PARA IMPLANTES -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">CIRUGÍA GUIADA PARA IMPLANTES
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                CIRUGÍA GUIADA PARA IMPLANTES
+                            </button>
                         </h3>
-                        <div id="collapse5" class="accordion-collapse collapse ">
+                        <div id="collapse5" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
                                 <div class="text-start p-2 mb-3">
                                     <label class="sub-titulos">Marque el/los servicios que
@@ -729,12 +719,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- REALIDAD VIRTUAL M3DMIX -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">REALIDAD VIRTUAL M3DMIX
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                REALIDAD VIRTUAL M3DMIX
+                            </button>
                         </h3>
-                        <div id="collapse6" class="accordion-collapse collapse ">
+                        <div id="collapse6" class="accordion-collapse collapse">
                             <div class="accordion-body my-3" id="realidad-virtual-m3dmix">
                                 <label for="m3dmix-tercer-molar">
                                     <input type="checkbox" name="realidad-virtual-m3dmix[]" id="m3dmix-tercer-molar" value="Tercer molar">Tercer molar
@@ -753,12 +745,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- Ecografías -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">Ecografías
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                Ecografías
+                            </button>
                         </h3>
-                        <div id="collapse7" class="accordion-collapse collapse ">
+                        <div id="collapse7" class="accordion-collapse collapse">
                             <div class="accordion-body text-start">
                                 <div class="text-center mb-3">
                                     <label for="eco-atm">
@@ -773,12 +767,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item  text-center">
+                    <!-- Otros servicios -->
+                    <div class="accordion-item text-center">
                         <h3 class="accordion-header text-center">
-                            <button class="accordion-button collapsed  titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">Otros servicios
-                                                </button>
+                            <button class="accordion-button collapsed titulos-estudios" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                Otros servicios
+                            </button>
                         </h3>
-                        <div id="collapse8" class="accordion-collapse collapse ">
+                        <div id="collapse8" class="accordion-collapse collapse">
                             <div class="accordion-body text-start textogrupo" data-group="textogrupo2">
                                 <div class="my-2">
                                     <label for="solo-escaneo">
@@ -886,30 +882,30 @@
                                                                 impresa)
                                 </label>
                                 <br>
-                                <div class="textogrupo" data-group="textogrupo1">
-                                    <label for="protector-bucal" class="my-2">
-                                        <input type="checkbox" class="input-check" name="otros-servicios[]" id="protector-bucal" value="Protector bucal">
-                                        <strong>Protector
-                                                                                bucal
-                                                                        </strong>
-                                        (Escaneo + modelo + protector
-                                                                        bucal)
-                                    </label>
-                                    <label for="color-protector">
-                                        <strong>Color: </strong>
-                                    </label>
-                                    <input type="text" class="campo-texto" name="protector-bucal-color" id="color-protector">
-                                </div>
+                                    <div class="textogrupo" data-group="textogrupo1">
+                                        <label for="protector-bucal" class="my-2">
+                                            <input type="checkbox" class="input-check" name="otros-servicios[]" id="protector-bucal" value="Protector bucal">
+                                            <strong>Protector
+                                                                                    bucal
+                                                                            </strong>
+                                            (Escaneo + modelo + protector
+                                                                            bucal)
+                                        </label>
+                                        <label for="color-protector">
+                                            <strong>Color: </strong>
+                                        </label>
+                                        <input type="text" class="campo-texto" name="protector-bucal-color" id="color-protector">
+                                        </div>
                             </div>
                         </div>
                     </div>
+                <div class="caja-ingresar-orden">
+                    <div class="g-recaptcha" data-sitekey="6Ld3634rAAAAACylP6JaGQ8nRaoYWaSb_9fCck-_"></div>
+                    <button type="submit" id="boton-envio" name="submit">Ingresar
+                                            orden</button>
                 </div>
-</div>
-<div class="d-flex justify-content-center my-3">
-    <button type="submit" id="boton-envio" name="submit">Ingresar
-                                        orden</button>
-</div>
-</form></section>
+        </form>
+    </section>
         
     </main>
     <footer class="footer no-bootstrap">
@@ -931,7 +927,7 @@
                     </p>
                     <a href="Nosotros.html" class="footer-link">Ver más sobre nosotros <i class="fa-solid fa-location-dot"></i></a>
 
-                    <form action="../../back/forms/contacto.php" method="POST" class="footer-form" id="consultaForm">
+                    <form action="src/back/forms/contacto.php" method="POST" class="footer-form" id="consultaForm">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" required>
 
