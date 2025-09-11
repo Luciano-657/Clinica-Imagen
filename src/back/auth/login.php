@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 header('Content-Type: application/json');
 require '../db/connection.php';
 
@@ -14,8 +14,8 @@ if (!$email || !$password) {
 }
 
 try {
-    // Obtener acceso
-    $stmt = $conn->prepare("SELECT a.contrasena_hash, p.id_persona, p.nombre, p.email
+    // Obtener acceso con rol
+    $stmt = $conn->prepare("SELECT a.contrasena_hash, a.rol, p.id_persona, p.nombre, p.email
                             FROM acceso a
                             JOIN persona p ON a.persona_id = p.id_persona
                             WHERE a.correo = ?");
@@ -29,12 +29,19 @@ try {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (password_verify($password, $user['contrasena_hash'])) {
+        // Guardar en sesión
+        $_SESSION['id_persona'] = $user['id_persona'];
+        $_SESSION['nombre'] = $user['nombre'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['rol'] = $user['rol'];
+
         echo json_encode([
             "success" => true,
             "user" => [
                 "id" => $user['id_persona'],
                 "nombre" => $user['nombre'],
-                "email" => $user['email']
+                "email" => $user['email'],
+                "rol" => $user['rol']
             ]
         ]);
     } else {
