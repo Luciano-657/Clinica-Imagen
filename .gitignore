@@ -1,2 +1,4 @@
 # Ignorar script de creación de base de datos
 /init.sql
+
+/src/back/auth/hybridauth.php
