@@ -22,11 +22,23 @@ if(!$paciente){
 
 $id_paciente = $paciente['id_paciente'];
 
-// Traer citas
-$stmt = $conn->prepare("SELECT c.fecha_hora_inicio, c.fecha_hora_fin, c.estado, c.notas, s.nombre AS sucursal 
-                        FROM cita c 
-                        JOIN sucursal s ON c.sucursal_id=s.id_sucursal 
-                        WHERE c.paciente_id=? ORDER BY c.fecha_hora_inicio DESC");
+// Traer citas con nombre y apellido del doctor
+$stmt = $conn->prepare("
+    SELECT 
+        c.fecha_hora_inicio, 
+        c.fecha_hora_fin, 
+        c.estado, 
+        c.notas, 
+        s.nombre AS sucursal,
+        p.nombre AS doctor_nombre,
+        p.apellido AS doctor_apellido
+    FROM cita c
+    JOIN sucursal s ON c.sucursal_id = s.id_sucursal
+    JOIN funcionario f ON c.funcionario_id = f.id_funcionario
+    JOIN persona p ON f.persona_id = p.id_persona
+    WHERE c.paciente_id = ?
+    ORDER BY c.fecha_hora_inicio DESC
+");
 $stmt->execute([$id_paciente]);
 $citas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

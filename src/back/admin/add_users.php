@@ -1,20 +1,27 @@
 <?php
 require '../db/connection.php';
-header('Content-Type: application/json'); // Siempre devolver JSON
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING); // Ocultar notices y warnings
+header('Content-Type: application/json');
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
-$data = json_decode(file_get_contents("php://input"), true);
+// Detectar si viene JSON o FormData
+$rawInput = file_get_contents("php://input");
+$data = json_decode($rawInput, true);
 
-if (!$data) {
-    echo json_encode(["success" => false, "message" => "No se recibieron datos"]);
-    exit;
+if ($data) {
+    // JSON
+    $nombre   = trim($data['nombre'] ?? '');
+    $apellido = trim($data['apellido'] ?? '');
+    $email    = trim($data['email'] ?? '');
+    $password = trim($data['password'] ?? '');
+    $rol      = trim($data['rol'] ?? '');
+} else {
+    // FormData
+    $nombre   = trim($_POST['nombre'] ?? '');
+    $apellido = trim($_POST['apellido'] ?? '');
+    $email    = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $rol      = trim($_POST['rol'] ?? '');
 }
-
-$nombre = trim($data['nombre'] ?? '');
-$apellido = trim($data['apellido'] ?? '');
-$email = trim($data['email'] ?? '');
-$password = trim($data['password'] ?? '');
-$rol = trim($data['rol'] ?? '');
 
 if (empty($nombre) || empty($apellido) || empty($email) || empty($password) || empty($rol)) {
     echo json_encode(["success" => false, "message" => "Todos los campos son obligatorios"]);
@@ -48,6 +55,5 @@ try {
 
     echo json_encode(["success" => true, "message" => "Usuario agregado correctamente"]);
 } catch (PDOException $e) {
-    // Devuelve solo el mensaje del error, sin HTML
     echo json_encode(["success" => false, "message" => "Error al agregar usuario: " . $e->getMessage()]);
 }

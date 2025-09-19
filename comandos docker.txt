@@ -7,3 +7,128 @@ docker-compose ps
 
 # acceso al front
 localhost:8080/front/pages/index.html
+
+Manual de prueba
+
+🧩 Paso a paso para probar el sistema
+1. Registro inicial
+
+Abrir el programa en el navegador.
+
+Ir a la zona de Registro.
+
+Crear el primer usuario → este será automáticamente Administrador.
+
+Todos los usuarios que se registren después, desde el mismo panel de registro, serán Pacientes.
+
+2. Panel del Administrador
+🔑 Ingreso
+
+Iniciar sesión con las credenciales del Administrador.
+
+Se abrirá el panel de administración.
+
+👥 Gestión de usuarios
+
+El panel muestra dos tarjetas:
+
+Agregar usuarios → Pacientes y Recepcionistas.
+
+Agregar funcionarios → pero antes hay que crear una sucursal.
+
+🏢 Crear sucursal
+
+Ir a la sección Agregar sucursal.
+
+Ejemplo: “Sede Atlántida”.
+
+Guardar la sucursal.
+
+👨‍⚕️ Crear funcionario
+
+Volver a la sección de Agregar funcionario.
+
+Ingresar datos de acceso, elegir la sede creada y guardar.
+
+📑 Ver registros
+
+En el panel del admin hay dos apartados:
+
+Ver funcionarios.
+
+Ver sucursales.
+
+3. Panel de la Recepcionista
+
+(la crea el Admin en la sección de usuarios)
+
+🔑 Ingreso
+
+La recepcionista inicia sesión con su cuenta.
+
+Accede a su panel con las siguientes funciones:
+
+🧍‍♀️ Pacientes
+
+Puede agregar pacientes.
+
+Puede editar su propio perfil.
+
+📅 Citas
+
+Ir a la sección Agendar cita.
+
+Elegir:
+
+Paciente.
+
+Funcionario (cargados por el admin).
+
+Sucursal.
+
+Fecha y hora.
+
+Guardar → la cita aparece tanto en el panel del paciente como en el de la recepción.
+
+También puede reagendar, cancelar o confirmar la cita.
+
+💵 Facturas
+
+Ir a la sección Facturas.
+
+Elegir un paciente, monto y estado (pagada o no).
+
+Guardar → aparece en el panel del paciente.
+
+📋 Historial clínico
+
+Ir a la sección Historial clínico.
+
+Seleccionar una cita → autocompleta datos del paciente y funcionario.
+
+Ingresar los datos clínicos y opcionalmente adjuntar archivos (ej. imágenes).
+
+Guardar.
+
+👉 En esta sección la recepcionista recibe solicitudes de historial clínico de los pacientes.
+
+Puede aceptar o rechazar.
+
+Si acepta, el historial se envía automáticamente al paciente.
+
+4. Panel del Paciente
+🔑 Ingreso
+
+El paciente se registra (o es agregado por recepcionista).
+
+Inicia sesión en su panel.
+
+📌 Funciones
+
+Perfil → ver y editar sus datos.
+
+Citas → ver citas programadas.
+
+Facturas → ver facturas y su estado (pagada o no).
+
+Historial clínico → solicitarlo y recibirlo si la recepcionista lo aprueba.

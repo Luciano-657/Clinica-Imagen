@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Root\\Html\\' => array($baseDir . '/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'Hybridauth\\' => array($vendorDir . '/hybridauth/hybridauth/src'),
 );

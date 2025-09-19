@@ -1,132 +1,229 @@
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-body { background:#f4f4f4; }
+/* ================= RESET Y TIPOGRAFÍA ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #f4f4f4;
+    min-height: 100vh;
+}
 
-/* Contenedor */
+/* ================= CONTENEDOR PRINCIPAL ================= */
 .admin-container {
-    display:flex;
-    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Sidebar */
+/* ================= SIDEBAR ================= */
 .sidebar {
-    width:250px;
-    background:#2c3e50;
-    color:#fff;
-    display:flex;
-    flex-direction:column;
-    padding:20px 0;
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    flex-shrink: 0;
 }
-.admin-info { 
-    text-align:center; 
-    padding:10px 20px; 
+.admin-info {
+    text-align: center;
+    margin-bottom: 20px;
 }
-.admin-photo img { 
-    width:90px; 
-    height:90px; 
-    border-radius:50%; 
-    object-fit:cover; 
-    margin-bottom:10px; 
-    border:2px solid #fff; 
+.admin-info h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
 }
-.sidebar-nav { 
-    display:flex; 
-    flex-direction:column; 
-    gap:10px; 
-    margin-top:20px; 
-    padding:0 20px; 
+.admin-info p {
+    font-size: 14px;
+    color: #bdc3c7;
 }
-.sidebar-nav button, .sidebar-nav a {
-    padding:12px;
-    border:none;
-    background:#34495e;
-    color:#fff;
-    text-align:left;
-    cursor:pointer;
-    font-size:16px;
-    border-radius:6px;
-    transition:0.3s;
+.admin-photo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
 }
-.sidebar-nav button:hover, .sidebar-nav a:hover { background:#1abc9c; }
-.logout { text-decoration:none; display:block; }
 
-/* Main */
+/* ================= NAVEGACIÓN ================= */
+.sidebar-nav {
+    display: grid;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sidebar-nav button,
+.sidebar-nav a {
+    padding: 12px;
+    border: none;
+    background: #34495e;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+    word-break: break-word;
+}
+.sidebar-nav button:hover,
+.sidebar-nav a:hover {
+    background: #1abc9c;
+}
+.logout {
+    text-decoration: none;
+    display: block;
+}
+
+/* ================= MAIN CONTENT ================= */
 .main-content {
-    flex:1;
-    padding:20px;
-    overflow-y:auto;
+    flex: 1;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.section { display:none; }
-.section.active { display:block; }
-h2 { margin-bottom:20px; color:#2c3e50; }
 
-/* Tarjetas */
+/* ================= SECCIONES ================= */
+.section {
+    display: none;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+.section.active {
+    display: block;
+}
+h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* ================= TARJETAS ================= */
 .cards-container {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap:15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+    justify-items: center;
+    word-break: break-word;
 }
-.user-card {
-    background:#fff;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-.user-card button {
-    margin-top:10px;
-    background:#e74c3c;
-    color:#fff;
-    border:none;
-    padding:8px 12px;
-    border-radius:5px;
-    cursor:pointer;
-}
-.user-card button:hover { background:#c0392b; }
 
-/* Formularios */
-.form-card {
-    background:#fff;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    max-width:450px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+.user-card,
+.funcionario-card,
+.sucursal-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    overflow-wrap: break-word;
+    transition: transform 0.3s;
+    width: 100%;
+    max-width: 350px;
 }
-.form-card input, .form-card select {
-    padding:12px;
-    border-radius:5px;
-    border:1px solid #ccc;
-    font-size:15px;
+.user-card:hover,
+.funcionario-card:hover,
+.sucursal-card:hover {
+    transform: translateY(-5px);
+}
+
+.user-card img,
+.funcionario-card img,
+.sucursal-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.user-card p,
+.funcionario-card p,
+.sucursal-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.user-card button,
+.funcionario-card button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.user-card button:hover,
+.funcionario-card button:hover {
+    background: #c0392b;
+}
+
+/* ================= FORMULARIOS ================= */
+.form-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.form-card input,
+.form-card select {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    width: 100%;
 }
 .form-card .btn {
-    background:#27ae60;
-    color:#fff;
-    border:none;
-    padding:12px;
-    border-radius:6px;
-    cursor:pointer;
-    font-size:16px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
 }
-.form-card .btn:hover { background:#1e8449; }
-
-/* Imagen de perfil dentro del formulario */
-.form-card .admin-photo-edit {
-    display:flex;
-    justify-content:center;
-    margin-bottom:10px;
-}
-.form-card .admin-photo-edit img {
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid #ccc;
+.form-card .btn:hover {
+    background: #1e8449;
 }
 
-/* Mensajes flotantes */
+/* ================= PREVISUALIZACIÓN DE FOTO ================= */
+.admin-photo-edit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.admin-photo-edit img,
+#fotoPreviewAdd,
+#fotoPreviewEdit,
+#fotoPreviewFuncionario {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+/* ================= MENSAJES FLOTANTES ================= */
 .toast-container {
     position: fixed;
     top: 20px;
@@ -136,9 +233,8 @@ h2 { margin-bottom:20px; color:#2c3e50; }
     display: flex;
     flex-direction: column;
     gap: 10px;
-    pointer-events: none; /* para que no bloquee clicks */
+    pointer-events: none;
 }
-
 .toast {
     min-width: 250px;
     padding: 12px 20px;
@@ -150,49 +246,115 @@ h2 { margin-bottom:20px; color:#2c3e50; }
     transition: all 0.4s ease;
     pointer-events: auto;
 }
-
 .toast.show {
     opacity: 1;
     transform: translateY(0);
 }
+.toast.success {
+    background-color: #27ae60;
+}
+.toast.error {
+    background-color: #e74c3c;
+}
 
-/* Tipos de mensaje */
-.toast.success { background-color: #27ae60; }
-.toast.error { background-color: #e74c3c; }
+/* ================= MENSAJES CUANDO NO HAY ELEMENTOS ================= */
+.cards-container p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 8px;
+}
 
+/* ================= FUNCIONARIOS Y SUCURSALES ================= */
+.funcionario-fields {
+    display: none;
+}
+.sucursal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.sucursal-card p {
+    font-size: 14px;
+}
 
-/* 📱 Responsive */
-@media (max-width: 1024px) {
-    .admin-container { flex-direction:column; }
-    .sidebar {
-        width:100%;
-        flex-direction:row;
-        align-items:center;
-        justify-content:space-around;
-        padding:10px 0;
+/* ================= TABLET ================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     }
+
     .sidebar-nav {
-        flex-direction:row;
-        flex-wrap:wrap;
-        gap:5px;
-        margin:0;
-        padding:10px;
+    display: grid;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+    grid-template-columns: repeat(2, 1fr);
     }
-    .sidebar-nav button, .sidebar-nav a {
-        flex:1 1 auto;
-        text-align:center;
-        font-size:14px;
-        padding:10px;
+    .sidebar {
+    padding: 20px;
+    flex-shrink: 0;
     }
-    .admin-info { display:none; }
-    .form-card { max-width:100%; padding:15px; }
+    .main-content {
+        padding: 20px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-items: stretch;
+    }
+    .user-card,
+    .funcionario-card,
+    .sucursal-card {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
 }
 
-@media (max-width: 768px) {
-    .sidebar { flex-direction:column; text-align:center; }
-    .sidebar-nav { flex-direction:column; }
-    .main-content { padding:10px; }
-    .form-card input, .form-card select { font-size:14px; padding:10px; }
-    .form-card .btn { font-size:15px; padding:10px; }
-}
+/* ================= PC ================= */
+@media (min-width: 1024px) {
+    .admin-container {
+        flex-direction: row;
+    }
 
+    .sidebar-nav { display:flex; flex-direction:column; gap:12px; padding:0 15px; }
+    .sidebar {
+        width: 250px;
+        padding: 30px 20px;
+        position: relative;
+    }
+    .main-content {
+        padding: 30px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(1fr, 1fr);
+        justify-items: stretch;
+    }
+    
+    .user-card,
+    .funcionario-card,
+    .sucursal-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+        max-width: 100%;
+    }
+    .funcionario-card img,
+    .user-card img {
+        width: 90px;
+        height: 90px;
+    }
+    .funcionario-card p,
+    .user-card p {
+        font-size: 15px;
+        text-align: left;
+    }
+}

@@ -1,21 +1,30 @@
 <?php
-require '../db/connection.php';
 session_start();
+require $_SERVER['DOCUMENT_ROOT'].'/back/db/connection.php';
 
-header('Content-Type: application/json'); // siempre devolver JSON
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING); // ocultar notices y warnings
-$current_admin_id = $_SESSION['id_persona'] ?? 0;
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'admin') {
+    http_response_code(403);
+    exit('Acceso denegado');
+}
+
+$admin_id = $_SESSION['id_persona'];
 
 $stmt = $conn->prepare("
-    SELECT p.id_persona AS id, p.nombre, p.apellido, p.email, p.telefono, p.foto, a.rol 
-    FROM persona p 
-    JOIN acceso a ON a.persona_id = p.id_persona
-    WHERE a.rol != 'admin' OR p.id_persona != ?
+    SELECT p.id_persona, p.nombre, p.apellido, p.foto, a.correo, a.rol
+    FROM persona p
+    LEFT JOIN acceso a ON a.persona_id = p.id_persona
+    WHERE p.id_persona != ?
+    ORDER BY p.nombre ASC
 ");
-$stmt->execute([$current_admin_id]);
-
+$stmt->execute([$admin_id]);
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-header('Content-Type: application/json');
+foreach ($users as &$u) {
+    if (!$u['foto'] || !file_exists($_SERVER['DOCUMENT_ROOT'].'/'.$u['foto'])) {
+        $u['foto'] = '/front/assets/images/default_user.png';
+    } else {
+        $u['foto'] = '/'.$u['foto'];
+    }
+}
+
 echo json_encode($users);
-?>
