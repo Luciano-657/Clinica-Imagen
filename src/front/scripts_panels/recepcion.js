@@ -101,6 +101,35 @@ document.addEventListener("DOMContentLoaded", () => {
             showMessage("Error al cargar pacientes","error");
         }
     }
+    
+    /* -------------------- Form agregar paciente -------------------- */
+    const addPacienteForm = document.getElementById("addPacienteForm");
+    if (addPacienteForm) {
+        addPacienteForm.addEventListener("submit", async e => {
+            e.preventDefault(); // Evita recargar la página
+
+            const formData = new FormData(addPacienteForm);
+
+            try {
+                const res = await fetch("/back/recepcionista/add_paciente.php", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    alert("✅ Paciente agregado correctamente");
+                    addPacienteForm.reset();
+                    loadPacientes();
+                } else {
+                    alert("⚠️ Error: " + (data.error || "No se pudo agregar el paciente"));
+                }
+            } catch (err) {
+                console.error(err);
+                alert("❌ Error al conectar con el servidor");
+            }
+        });
+    }
 
     /* -------------------- Cargar facturas -------------------- */
     async function loadFacturas() {
@@ -137,6 +166,17 @@ document.addEventListener("DOMContentLoaded", () => {
             container.innerHTML = `<p class="error">Error al cargar facturas</p>`;
         }
     }
+    /* -------------------- Formulario agregar factura -------------------- */ 
+    const addFacturaForm = document.getElementById("addFacturaForm"); 
+    if (addFacturaForm) 
+        { addFacturaForm.onsubmit = async e => 
+            { e.preventDefault(); const formData = new FormData(addFacturaForm); 
+                try { const res = await fetch("/back/recepcionista/add_factura.php", 
+                    { method: "POST", body: formData }); 
+                    const result = await res.json();
+                    showMessage(result.message || result.mensaje, result.success ? "success" : "error"); 
+                    if (result.success) { addFacturaForm.reset(); loadFacturas(); } } 
+                    catch (err) { console.error(err); showMessage("Error al agregar factura", "error"); } }; }
 
     /* -------------------- Cargar citas -------------------- */
     async function loadCitas() {
@@ -187,6 +227,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    /* -------------------- Form agregar cita -------------------- */
+    const addCitaForm = document.getElementById("addCitaForm");
+    if (addCitaForm) {
+        addCitaForm.addEventListener("submit", async e => {
+            e.preventDefault(); // Evita que el form recargue la página
+
+            // Convertir FormData a objeto normal
+            const formData = Object.fromEntries(new FormData(addCitaForm));
+
+            try {
+                const res = await fetch("/back/recepcionista/add_cita.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData) // Mandar JSON al PHP
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    alert("✅ " + data.message);
+                    addCitaForm.reset();
+                    loadCitas(); // recargar lista
+                } else {
+                    alert("⚠️ " + data.message);
+                }
+            } catch (err) {
+                console.error(err);
+                alert("❌ Error de conexión con el servidor");
+            }
+        });
+    }
+
     /* -------------------- Autocompletar paciente/funcionario/fechas -------------------- */
     const citaSelect = document.getElementById("citaSelect");
     if (citaSelect) {
@@ -203,19 +274,24 @@ document.addEventListener("DOMContentLoaded", () => {
     async function loadSelects() {
         try {
             const fetchData = [
-                { url: "/back/recepcionista/get_patients.php", select: "paciente_id", text: p => `${p.nombre} ${p.apellido}`, value: "id_paciente" },
-                { url: "/back/recepcionista/get_sucursales.php", select: "sucursal_id", text: s => s.nombre, value: "id_sucursal" },
-                { url: "/back/recepcionista/get_funcionarios.php", select: "funcionario_id", text: f => `${f.nombre} ${f.apellido}`, value: "id_funcionario" }
+                { url: "/back/recepcionista/get_patients.php", select: "id_paciente", text: p => `${p.nombre} ${p.apellido}`, value: "id_paciente" },
+                { url: "/back/recepcionista/get_sucursales.php", select: "id_sucursal", text: s => s.nombre, value: "id_sucursal" },
+                { url: "/back/recepcionista/get_funcionarios.php", select: "id_funcionario", text: f => `${f.nombre} ${f.apellido}`, value: "id_funcionario" }
             ];
             for (let f of fetchData) {
                 const res = await fetch(f.url);
                 const data = await res.json();
+                console.debug('loadSelects:', f.url, data); 
                 const select = document.querySelector(`select[name='${f.select}']`);
                 if (!select) continue;
+                // Si no hay datos, no tocar el select (evita borrar opciones server-side)
+                if (!Array.isArray(data) || data.length === 0) continue;
                 select.innerHTML = "";
                 data.forEach(item => {
                     const option = document.createElement("option");
-                    option.value = item[f.value];
+                    // fallback por si el backend devuelve id_persona en vez de id_paciente/id_funcionario
+                    const value = (item[f.value] !== undefined) ? item[f.value] : (item.id_persona ?? item.id_paciente ?? item.id_funcionario ?? '');
+                    option.value = value;
                     option.textContent = f.text(item);
                     select.appendChild(option);
                 });

@@ -1,0 +1,12 @@
+# Robots.txt provisional para desarrollo local en localhost
+# Paso 1: Bloqueamos los paneles de administración que no queremos indexar
+Disallow: /front/panels/admin.php
+Disallow: /front/panels/paciente.php
+Disallow: /front/panels/recepcionista.php
+
+# Paso 2: Permitimos todo lo demás
+Allow: /
+
+# Paso 3: Sitemap local provisional
+# Nota: cuando subas la web a internet, cambiar por la URL pública: https://www.tuclinica.com/sitemap.xml
+Sitemap: C:\Users\ariel\Downloads\Diseñitosss\Clinica-Imagen\src\front\pages\sitemap.xml

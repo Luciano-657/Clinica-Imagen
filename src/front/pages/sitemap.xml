@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap provisional para desarrollo local -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Página principal -->
+    <url>
+        <loc>http://localhost:8080/front/pages/index.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Página de tratamientos -->
+    <url>
+        <loc>http://localhost:8080/front/pages/tratamientos.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Página de contacto -->
+    <url>
+        <loc>http://localhost:8080/front/pages/contacto.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Página de equipo -->
+    <url>
+        <loc>http://localhost:8080/front/pages/equipo.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Página de orden online -->
+    <url>
+        <loc>http://localhost:8080/front/pages/orden-online.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Página nosotros -->
+    <url>
+        <loc>http://localhost:8080/front/pages/nosotros.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Página gracias -->
+    <url>
+        <loc>http://localhost:8080/front/pages/gracias.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Página login (privada, opcional bloquear con robots.txt) -->
+    <url>
+        <loc>http://localhost:8080/front/pages/login.html</loc>
+        <lastmod>2025-09-19</lastmod>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

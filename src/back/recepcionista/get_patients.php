@@ -3,13 +3,13 @@ require '../db/connection.php';
 header('Content-Type: application/json');
 
 try {
-    $stmt = $conn->query("
-        SELECT id_persona, nombre, apellido, email, foto 
-        FROM persona 
-        WHERE id_persona IN (
-            SELECT persona_id FROM acceso WHERE rol='paciente'
-        )
-    ");
+    // Obtener pacientes usando la tabla paciente para devolver id_paciente
+    $stmt = $conn->query(
+        "SELECT pa.id_paciente, p.id_persona, p.nombre, p.apellido, p.email, p.foto
+         FROM paciente pa
+         JOIN persona p ON pa.persona_id = p.id_persona
+         ORDER BY p.nombre ASC"
+    );
     $pacientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Asegurar que la ruta de la foto sea correcta

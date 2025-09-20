@@ -31,13 +31,17 @@ try {
         $fotoPath = $filePath;
     }
 
-    // Insertar persona
-    $stmt = $conn->prepare("INSERT INTO persona(nombre, apellido, email, foto, password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$nombre, $apellido, $correo, $fotoPath, $password]);
+    // Insertar persona (sin password, porque va en acceso)
+    $stmt = $conn->prepare("INSERT INTO persona(nombre, apellido, email, foto) VALUES (?, ?, ?, ?)");
+    $stmt->execute([$nombre, $apellido, $correo, $fotoPath]);
     $persona_id = $conn->lastInsertId();
 
+    // Insertar en acceso (credenciales)
+    $stmtAcceso = $conn->prepare("INSERT INTO acceso(persona_id, correo, contrasena_hash, rol) VALUES (?, ?, ?, ?)");
+    $stmtAcceso->execute([$persona_id, $correo, $password, 'funcionario']);
+
     // Insertar funcionario
-    $stmt2 = $conn->prepare("INSERT INTO funcionario(persona_id, matricula_profesional, tipo_funcionario, sucursal_id) VALUES (?, ?, ?, ?)");
+    $stmt2 = $conn->prepare("INSERT INTO funcionario(persona_id, matricula_profesional, tipo_funcionario, sucursal_id, fecha_contratacion) VALUES (?, ?, ?, ?, CURDATE())");
     $stmt2->execute([$persona_id, $matricula, $tipo, $sucursal_id]);
 
     echo json_encode(["success"=>true, "message"=>"Funcionario agregado correctamente"]);

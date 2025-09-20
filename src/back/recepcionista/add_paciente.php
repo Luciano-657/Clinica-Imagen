@@ -1,58 +1,43 @@
 <?php
-require '../db/connection.php';
-header('Content-Type: application/json');
+session_start();
+require '../../back/db/connection.php';
+header('Content-Type: application/json; charset=utf-8');
 
-$data = json_decode(file_get_contents("php://input"), true);
-if(!$data) { 
-    echo json_encode(["success"=>false,"message"=>"No se recibieron datos"]); 
-    exit; 
-}
+try {
+    $nombre   = trim($_POST['nombre'] ?? '');
+    $apellido = trim($_POST['apellido'] ?? '');
+    $email    = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
 
-$nombre = trim($data['nombre'] ?? '');
-$apellido = trim($data['apellido'] ?? '');
-$email = trim($data['email'] ?? '');
-$password = trim($data['password'] ?? '');
-
-if(empty($nombre) || empty($apellido) || empty($email) || empty($password)){
-    echo json_encode(["success"=>false,"message"=>"Todos los campos son obligatorios"]); 
-    exit;
-}
-
-try{
-    // Verificar si ya existe el email
-    $stmtCheck = $conn->prepare("SELECT id_persona FROM persona WHERE email=?");
-    $stmtCheck->execute([$email]);
-    if($stmtCheck->rowCount() > 0){
-        echo json_encode(["success"=>false,"message"=>"El email ya está registrado"]); 
+    if (!$nombre || !$apellido || !$email || !$password) {
+        echo json_encode(["success" => false, "error" => "Todos los campos son obligatorios"]);
         exit;
     }
 
-    // Insertar persona
-    $stmt = $conn->prepare("INSERT INTO persona (nombre, apellido, email) VALUES (?,?,?)");
-    $stmt->execute([$nombre,$apellido,$email]);
-    $id_persona = $conn->lastInsertId();
+    // Verificar si ya existe correo
+    $stmt = $conn->prepare("SELECT id_acceso FROM acceso WHERE correo = ?");
+    $stmt->execute([$email]);
+    if ($stmt->rowCount() > 0) {
+        echo json_encode(["success" => false, "error" => "El correo ya está registrado"]);
+        exit;
+    }
 
-    // Insertar acceso con hash de contraseña
+    // Insertar en persona
+    $stmt = $conn->prepare("INSERT INTO persona (nombre, apellido, email) VALUES (?, ?, ?)");
+    $stmt->execute([$nombre, $apellido, $email]);
+    $persona_id = $conn->lastInsertId();
+
+    // Insertar en acceso
     $hash = password_hash($password, PASSWORD_BCRYPT);
-    $stmt2 = $conn->prepare("INSERT INTO acceso (persona_id, correo, contrasena_hash, rol) VALUES (?,?,?,?)");
-    $stmt2->execute([$id_persona, $email, $hash, 'paciente']);
+    $stmt = $conn->prepare("INSERT INTO acceso (persona_id, correo, contrasena_hash, rol) VALUES (?, ?, ?, 'paciente')");
+    $stmt->execute([$persona_id, $email, $hash]);
 
-    // Insertar paciente
-    $stmt3 = $conn->prepare("INSERT INTO paciente (persona_id) VALUES (?)");
-    $stmt3->execute([$id_persona]);
+    // Insertar en paciente
+    $stmt = $conn->prepare("INSERT INTO paciente (persona_id) VALUES (?)");
+    $stmt->execute([$persona_id]);
 
-    // Asignar foto predeterminada
-    $defaultFoto = 'front/assets/images/avatar.jpg';
-    $stmt4 = $conn->prepare("UPDATE persona SET foto=? WHERE id_persona=?");
-    $stmt4->execute([$defaultFoto, $id_persona]);
+    echo json_encode(["success" => true, "mensaje" => "Paciente agregado correctamente"]);
 
-    echo json_encode([
-        "success" => true,
-        "message" => "Paciente agregado correctamente",
-        "id_persona" => $id_persona,
-        "foto" => $defaultFoto
-    ]);
-
-}catch(PDOException $e){
-    echo json_encode(["success"=>false,"message"=>"Error: ".$e->getMessage()]);
+} catch (Exception $e) {
+    echo json_encode(["success" => false, "error" => "Error en el servidor: " . $e->getMessage()]);
 }

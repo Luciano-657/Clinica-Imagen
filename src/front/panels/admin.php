@@ -72,7 +72,7 @@ $fotoAdmin = $admin['foto'] ? '/'.$admin['foto'] : "/front/assets/images/default
             <form id="addUserForm" class="form-card" enctype="multipart/form-data">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellido" placeholder="Apellido" required>
-                <input type="email" name="correo" placeholder="Correo" required>
+                <input type="email" name="email" placeholder="Correo" required>
                 <input type="password" name="password" placeholder="Contraseña" required>
                 <select name="rol" required>
                     <option value="">Seleccionar rol</option>

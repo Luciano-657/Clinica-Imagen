@@ -3,14 +3,13 @@ require '../db/connection.php';
 header('Content-Type: application/json');
 
 try {
-    // Obtener solo los funcionarios
-    $stmt = $conn->prepare("
-        SELECT p.id_persona, p.nombre, p.apellido, p.email
-        FROM persona p
-        INNER JOIN acceso a ON p.id_persona = a.persona_id
-        WHERE a.rol = 'funcionario'
-        ORDER BY p.nombre ASC
-    ");
+    // Obtener funcionarios desde la tabla funcionario para devolver id_funcionario
+    $stmt = $conn->prepare(
+        "SELECT f.id_funcionario, p.id_persona, p.nombre, p.apellido, p.email
+         FROM funcionario f
+         JOIN persona p ON f.persona_id = p.id_persona
+         ORDER BY p.nombre ASC"
+    );
     $stmt->execute();
     $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -122,7 +122,7 @@ $registros = $conn->query("
 
             <h2>Agregar Cita</h2>
             <form id="addCitaForm" class="form-card">
-                <select name="paciente_id" required>
+                <select name="id_paciente" required>
                     <option value="">Seleccione paciente</option>
                     <?php foreach($pacientes as $p): ?>
                         <option value="<?= htmlspecialchars($p['id_paciente']) ?>">
@@ -131,7 +131,7 @@ $registros = $conn->query("
                     <?php endforeach; ?>
                 </select>
 
-                <select name="sucursal_id" required>
+                <select name="id_sucursal" required>
                     <option value="">Seleccione sucursal</option>
                     <?php foreach($sucursales as $s): ?>
                         <option value="<?= htmlspecialchars($s['id_sucursal']) ?>">
@@ -140,7 +140,7 @@ $registros = $conn->query("
                     <?php endforeach; ?>
                 </select>
 
-                <select name="funcionario_id" required>
+                <select name="id_funcionario" required>
                     <option value="">Seleccione funcionario</option>
                     <?php foreach($funcionarios as $f): ?>
                         <option value="<?= htmlspecialchars($f['id_funcionario']) ?>">
