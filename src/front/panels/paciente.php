@@ -43,6 +43,7 @@ $fotoPaciente = $paciente['foto'] ?: "front/assets/images/avatar.jpg";
             <button id="btn-citas"><i class="fas fa-calendar-check"></i> Citas</button>
             <button id="btn-facturas"><i class="fas fa-file-invoice-dollar"></i> Facturas</button>
             <button id="btn-historial"><i class="fas fa-notes-medical"></i> Historial Médico</button>
+            <button id="btn-solicitar-cita"><i class="fas fa-calendar-plus"></i> Solicitar cita online</button>
             <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
         </nav>
     </aside>
@@ -107,6 +108,31 @@ $fotoPaciente = $paciente['foto'] ?: "front/assets/images/avatar.jpg";
                 <textarea name="motivo" rows="4" required placeholder="Explica brevemente por qué solicitas tu historial médico"></textarea>
                 <button type="submit" class="btn">Enviar Solicitud</button>
             </form>
+        </section>
+
+        <!-- Sección: Solicitar cita online -->
+        <section id="section-solicitar-cita" class="section">
+            <h2>Solicitar cita online</h2>
+            <form id="requestCitaForm" class="form-card">
+                <label for="sucursalSelect">Sucursal / Lugar</label>
+                <select name="id_sucursal" id="sucursalSelect" required>
+                    <option value="">Cargando sucursales...</option>
+                </select>
+
+                <label for="fecha_preferida">Fecha y hora preferida</label>
+                <input type="datetime-local" name="fecha_hora_preferida" id="fecha_preferida" required>
+
+                <label for="motivo_cita">Motivo / Observaciones</label>
+                <textarea name="motivo" id="motivo_cita" rows="3" placeholder="Describe brevemente el motivo" required></textarea>
+
+                <label for="medico_preferencia">Preferencia de profesional (opcional)</label>
+                <input type="text" name="profesional_preferencia" id="medico_preferencia" placeholder="Nombre del profesional (opcional)">
+
+                <div style="margin-top:1rem;">
+                    <button type="submit" class="btn">Solicitar cita</button>
+                </div>
+            </form>
+            <div id="requestCitaStatus" style="margin-top:0.8rem; text-align:center;"></div>
         </section>
     </main>
 </div>

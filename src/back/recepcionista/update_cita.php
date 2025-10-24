@@ -1,34 +1,34 @@
 <?php
-require '../db/connection.php';
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
+session_start();
+require __DIR__ . '/../db/connection.php';
 
-$data = json_decode(file_get_contents("php://input"), true);
-if(!$data) {
-    echo json_encode(["success"=>false,"message"=>"No se recibieron datos"]);
-    exit;
+if (!in_array($_SESSION['rol'] ?? '', ['recepcionista','admin'], true)) {
+    http_response_code(403); echo json_encode(['success'=>false,'error'=>'Acceso denegado']); exit;
 }
 
-$id_cita = $data['id_cita'] ?? null;
-$estado = $data['estado'] ?? null;
-$nueva_fecha = $data['nueva_fecha'] ?? null;
+$raw = file_get_contents('php://input');
+$in = json_decode($raw, true) ?: $_POST;
+$id = $in['id_cita'] ?? $in['id'] ?? null;
+if (!$id) { http_response_code(400); echo json_encode(['success'=>false,'error'=>'Falta id_cita']); exit; }
 
-if(!$id_cita || !$estado){
-    echo json_encode(["success"=>false,"message"=>"Datos incompletos"]);
+$fields = [];
+$params = [];
+if (isset($in['id_funcionario'])) { $fields[] = 'funcionario_id = :fid'; $params[':fid'] = $in['id_funcionario'] ?: null; }
+if (isset($in['id_sucursal']))   { $fields[] = 'sucursal_id = :sid'; $params[':sid'] = $in['id_sucursal'] ?: null; }
+if (isset($in['fecha_hora_inicio'])) { $fields[] = 'fecha_hora_inicio = :fini'; $params[':fini'] = $in['fecha_hora_inicio'] ?: null; }
+if (isset($in['fecha_hora_fin']))   { $fields[] = 'fecha_hora_fin = :ffin'; $params[':ffin'] = $in['fecha_hora_fin'] ?: null; }
+
+if (empty($fields)) { echo json_encode(['success'=>false,'error'=>'Nada que actualizar']); exit; }
+
+try {
+    $sql = "UPDATE cita SET " . implode(', ', $fields) . " WHERE id_cita = :id LIMIT 1";
+    $params[':id'] = $id;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($params);
+    echo json_encode(['success'=>true,'message'=>'Cita actualizada']);
     exit;
-}
-
-try{
-    if($estado === "reagendada" && $nueva_fecha){
-        $stmt = $conn->prepare("UPDATE cita SET estado=?, fecha_hora_inicio=?, fecha_hora_fin=? WHERE id_cita=?");
-        // Ajusta fecha fin si deseas agregar la duración de la cita
-        $fecha_fin = date('Y-m-d H:i:s', strtotime($nueva_fecha . ' +1 hour'));
-        $stmt->execute([$estado, $nueva_fecha, $fecha_fin, $id_cita]);
-    } else {
-        $stmt = $conn->prepare("UPDATE cita SET estado=? WHERE id_cita=?");
-        $stmt->execute([$estado, $id_cita]);
-    }
-    echo json_encode(["success"=>true,"message"=>"Cita actualizada correctamente"]);
-}catch(PDOException $e){
-    echo json_encode(["success"=>false,"message"=>"Error al actualizar cita: ".$e->getMessage()]);
+} catch (Exception $e) {
+    http_response_code(500); echo json_encode(['success'=>false,'error'=>$e->getMessage()]); exit;
 }
 ?>

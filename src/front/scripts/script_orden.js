@@ -90,15 +90,35 @@ function toggleFooterSection(button) {
     }
 }
 
-// ========== FORMULARIO ==========
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-        let captcha = document.getElementById("captcha").value.trim();
-        let captchaError = document.getElementById("captchaError");
+document.getElementById("form-orden").addEventListener("submit", async function(e) {
+    e.preventDefault(); // Evita recargar la página
 
-        if (captcha !== "7") {
-            e.preventDefault();
-            captchaError.textContent = "Captcha incorrecto, inténtalo de nuevo.";
+    const form = e.target;
+    const formData = new FormData(form);
+    const errorDiv = document.getElementById("formError"); // Un div donde mostramos errores
+
+    errorDiv.textContent = ""; // Limpiar errores previos
+
+    // Enviar formulario con fetch
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert("Orden ingresada correctamente");
+            form.reset();
+            if (typeof grecaptcha !== "undefined") grecaptcha.reset(); // Reinicia el captcha
         } else {
-            captchaError.textContent = "";
+            // Mostrar mensaje de error sin recargar
+            errorDiv.textContent = result.error || "Ocurrió un error, inténtalo de nuevo";
+            if (typeof grecaptcha !== "undefined") grecaptcha.reset(); // Reinicia captcha si falló
         }
-    });
+    } catch (err) {
+        console.error(err);
+        errorDiv.textContent = "Error de conexión, inténtalo nuevamente";
+    }
+});

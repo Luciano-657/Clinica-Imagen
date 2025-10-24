@@ -45,25 +45,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* -------------------- Agregar Usuario -------------------- */
-    document.getElementById("addUserForm")?.addEventListener("submit", async e => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        try {
-            const res = await fetch("../../back/admin/add_users.php", { method:"POST", body:formData });
-            const result = await res.json();
-            showMessage(result.message, result.success ? "success" : "error");
-            if(result.success){
-                e.target.reset();
-                document.querySelector("#fotoPreviewAdd").src = "/front/assets/images/default_user.png";
-                loadUsers();
-                showSection("section-users");
+
+/* -------------------- Agregar Usuario -------------------- */
+document.getElementById("addUserForm")?.addEventListener("submit", async e => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    try {
+        const res = await fetch("../../back/admin/add_users.php", {
+            method: "POST",
+            body: formData
+        });
+        const result = await res.json();
+        showMessage(result.message, result.success ? "success" : "error");
+
+        if (result.success) {
+            // Reiniciar formulario
+            e.target.reset();
+            // Verificar si el input de imagen está vacío
+            const preview = document.querySelector("#fotoPreviewAdd");
+            const inputFile = document.querySelector("#fotoInputAdd"); // ID del input de archivo
+
+            if (inputFile.files.length === 0) {
+                // No se cargó imagen, usar por defecto si existe
+                preview.src = "/front/assets/images/default_user.png";
+            } else {
+                // Si se subió una imagen y el backend la devuelve (opcional):
+                preview.src = result.image_url ?? "/front/assets/images/default_user.png";
             }
-        } catch(err){
-            console.error(err);
-            showMessage("Error de conexión","error");
+
+            loadUsers();
+            showSection("section-users");
         }
-    });
+
+    } catch (err) {
+        console.error(err);
+        showMessage("Error de conexión", "error");
+    }
+});
+
 
     /* -------------------- Agregar Funcionario -------------------- */
     document.getElementById("addFuncionarioForm")?.addEventListener("submit", async e => {
@@ -289,3 +308,31 @@ async function loadPersonas(){
         showMessage("Error al cargar personas","error");
     }
 }
+
+/* ------------------- Mejora de codigo -------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+    const previews = [
+        {input: "#fotoInputAdd", preview: "#fotoPreviewAdd"},
+        {input: "#fotoInputEdit", preview: "#fotoPreviewEdit"},
+        {input: "#fotoInputFuncionario", preview: "#fotoPreviewFuncionario"}
+    ];
+
+    previews.forEach(({input, preview}) => {
+        const fileInput = document.querySelector(input);
+        const imgPreview = document.querySelector(preview);
+        fileInput?.addEventListener("change", e => {
+            const file = e.target.files[0];
+            if(file){
+                const reader = new FileReader();
+                reader.onload = ev => {
+                    imgPreview.src = ev.target.result;
+                    imgPreview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imgPreview.src = "";
+                imgPreview.style.display = "none";
+            }
+        });
+    });
+});

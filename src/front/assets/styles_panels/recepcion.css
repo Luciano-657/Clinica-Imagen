@@ -247,3 +247,28 @@ h2 {
     .user-card, .factura-card, .cita-card { max-width:320px; }
     .sidebar-nav button, .sidebar-nav a { font-size:16px; padding:14px; }
 }
+
+/* ================= SOLICITUDES DE CITA ================= */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+.btn.rejectRequest {
+    background-color: #e74c3c;
+    color: white;
+    width: 50%;
+}
+.btn.acceptRequest {
+    background-color: #27ae60;
+    color: white;
+    width: 50%;
+}
+.card.solicitud-card {
+    border-left: 5px solid #3498db;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

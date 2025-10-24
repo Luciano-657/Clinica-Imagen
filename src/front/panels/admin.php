@@ -80,17 +80,11 @@ $fotoAdmin = $admin['foto'] ? '/'.$admin['foto'] : "/front/assets/images/default
                     <option value="recepcionista">Recepcionista</option>
                 </select>
 
-                <label>Foto de perfil</label>
-                <input type="file" id="fotoInputAdd" name="foto">
-                <div class="admin-photo-edit">
-                    <img id="fotoPreviewAdd" src="/front/assets/images/default_user.png" alt="Preview">
-                </div>
-
                 <button type="submit" class="btn">Agregar Usuario</button>
             </form>
         </section>
 
-        <!-- SECCIÓN EDITAR PERFIL -->
+       <!-- SECCIÓN EDITAR PERFIL -->
         <section id="section-edit-profile" class="section">
             <h2>Editar Perfil</h2>
             <form id="editProfileForm" class="form-card" enctype="multipart/form-data">
@@ -98,9 +92,9 @@ $fotoAdmin = $admin['foto'] ? '/'.$admin['foto'] : "/front/assets/images/default
                 <input type="text" name="apellido" placeholder="Apellido">
                 <input type="email" name="correo" placeholder="Correo">
                 <label>Foto de perfil</label>
-                <input type="file" id="fotoInputEdit" name="foto">
+                <input type="file" id="fotoInputEdit" name="foto" accept="image/*">
                 <div class="admin-photo-edit">
-                    <img id="fotoPreviewEdit" src="/front/assets/images/default_user.png" alt="Preview">
+                    <img style="display:none;" id="fotoPreviewEdit" src="" alt="Preview">
                 </div>
                 <button type="submit" class="btn">Guardar Cambios</button>
             </form>
@@ -126,14 +120,13 @@ $fotoAdmin = $admin['foto'] ? '/'.$admin['foto'] : "/front/assets/images/default
                 </select>
                 <input type="text" name="matricula" placeholder="Matrícula profesional">
                 <label>Foto de perfil</label>
-                <input type="file" name="foto" id="fotoInputFuncionario">
+                <input type="file" name="foto" id="fotoInputFuncionario" accept="image/*">
                 <div class="admin-photo-edit">
-                    <img id="fotoPreviewFuncionario" src="/front/assets/images/default_user.png" alt="Preview">
+                    <img style="display:none;" id="fotoPreviewFuncionario" src="" alt="Preview">
                 </div>
                 <button type="submit" class="btn">Agregar Funcionario</button>
             </form>
         </section>
-
         <!-- SECCIÓN LISTAR FUNCIONARIOS -->
         <section id="section-list-funcionarios" class="section">
             <h2>Funcionarios</h2>
